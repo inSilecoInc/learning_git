@@ -1,0 +1,155 @@
+---
+title: "Git & GitHub"
+output:
+  xaringan::moon_reader:
+    css: [default, rd.css, rd-font.css, "hygge"]
+    lib_dir: assets
+    seal: false
+    nature:
+      highlightStyle: dracula
+      countIncrementalSlides: false
+      beforeInit: "macros.js"
+---
+
+
+```{r include = FALSE, purl = FALSE}
+source("_setup.R")
+```
+
+
+
+
+---
+
+class: inverse, center, middle
+
+# `r gt()`
+
+![:custom_hr]()
+
+##  `r nf()` `r gt()`, `r gh()`, `r gl()`, etc.
+
+
+
+
+---
+
+# `r gt()`
+
+
+```{bash}
+git --version
+```
+
+
+<!-- ---
+
+https://rdatatoolbox.github.io/instructions.html
+
+==> ask what OS do they use 
+==> ask if they are confortable with command line tools  
+==> ask if they are using Rstudio or other IDE 
+
+
+==> git grep
+
+# Install git 
+
+les concepts 
+
+
+## command line or not..
+
+## at first git may not be easy it is a very strong tool but need to understand how it works, not in details but in some depths
+
+
+Un important changement pour pas mal de developement 
+
+## 
+
+https://desktop.github.com/
+
+https://www.gitkraken.com/
+
+
+`git version`
+
+`git status -s`
+
+
+`git init`
+
+
+`git add`
+
+`git commit`
+
+
+git + webservice is not a cloud substitue 
+
+avoid large file there are alternative options 
+
+
+## Build as history
+
+
+## Work on history
+
+## Manipulate the last commit 
+
+
+## Branch 
+
+
+# GitHub
+
+https://github.blog/2021-11-16-the-2021-state-of-the-octoverse/
+
+
+https://towardsdatascience.com/githubs-path-to-128m-public-repositories-f6f656ab56b1
+
+https://github.blog/2018-11-08-100m-repos/
+
+https://www.upguard.com/blog/bitbucket-vs-github
+
+https://en.wikipedia.org/wiki/Timeline_of_GitHub
+
+
+
+
+https://octoverse.github.com/#lets-look-back-at-the-code-and-communities-built-on-git-hub-this-year
+
+`git checkout`
+
+
+`git checkout -b`
+
+`git switch -c`
+
+`git switch` (2.23)
+
+## 
+
+
+### Best practices 
+
+PPP 
+
+PR 
+
+
+###
+
+
+## Rewrite the history
+
+
+`git rebase`
+
+
+
+
+## Adance gh gh cli 
+
+
+https://happygitwithr.com/ -->

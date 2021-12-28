@@ -1,5 +1,10 @@
 # DFO Git/Github workshop
 
+```{R}
+install.packages("remotes")
+remotes::install_github("iseWorkshops")
+```
+
 ## Workshop content and objectives
 
 **Session 1: Git, GitHub and Gitlab (for coders and not coders)**
@@ -11,7 +16,7 @@
   - key concepts
   - how does it work ?
   - what are GitHub, GitLab, Bitbuckets, …
-  - how do they wor?
+  - how do they work?
 
 **Session 2: Using GitHub to create branches and provide minor edits to already created repositories**
 

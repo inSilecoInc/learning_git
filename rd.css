@@ -125,11 +125,11 @@ a:hover, a:active {
   }
 
   .title-slide {
-    background-image: url('img/raster_ex.png');
+    background-image: url('img/gitlog.png');
     background-color: #0a3152;
     background-size: contain;
     border: 0px;
-    background-position: 580px 0;
+    background-position: 630px 0;
     line-height: 1;
     }
 

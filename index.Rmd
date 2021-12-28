@@ -1,7 +1,7 @@
 ---
-title: "Template R workshop"
+title: "Work more collaboratively in R"
 author: "inSileco Team"
-date: 2021-04-13
+date: 2021-12-20
 output:
   xaringan::moon_reader:
     css: [default, rd.css, rd-font.css, "hygge"]
@@ -31,14 +31,14 @@ xaringanExtra::use_scribble()
 class: title-slide, middle
 
 
-## .font200[`r rp()`eproducible]
+## .font100[Work more collaboratively in `r rp()`]
 
-<br>
+<br><br>
 
 .instructors[
-  .font180[`r rp()` Workshop]
-  <br><br><br>
-  .authors140[David Beauchesne, Kevin Cazelles & Steve Vissault]
+  .font160[`r rp()` Learning & Development community]
+  <br><br><br><br>
+  .authors120[David Beauchesne, Kevin Cazelles & Steve Vissault]
   <br><br>
   `r format(Sys.time(), '%B %d, %Y')`
   <br>
@@ -59,31 +59,67 @@ class: title-slide, middle
 
 
 
+---
+
+class: inverse, center, middle
+
+# `r nf()` Outline
+
+![:custom_hr]()
+
+
+
+---
+# Working collaboratively
+
+- we have to
+- complementarity 
+- more fun 
+
+- depending on task more or less complicated
+- tools help with this 
+
+<!-- maybe add prob -->
+
+
+
+---
+# Working collaboratively
+
+- working with R and generate R Markdown
+- good tools is GitHub and Git 
+- Git control versioning 
+- developer of linux kernel 
+- Web services such as GitHub lots of services make even better
+
+
+---
+# Learning objectifs 
+
+- Here we'll leran about git and github 
+- use case Rmarkdown document (R + markdown) / csasdown
+- help guide people working together more efficiently
+
+- better understand git
+- better understand github
+- apply this to work on a document 
+
+
 
 ---
 
 class: inverse, center, middle
 
-# Learning objectives
+# PART I
 
 ![:custom_hr]()
 
-## .font160[`r rfa("map")`  + `r rp()`]
+##  `r nf()` `r gt()`, `r gh()`, `r gl()`, etc.
 
 
 
----
-# Learning objectives
-
-<br>
-
-### Main Goal
-
---
-
-1. L.O. 1 
-
-1. L.O. 2
+```{R part 1, child = "_01_git_github.Rmd"}
+```
 
 
 
@@ -91,68 +127,29 @@ class: inverse, center, middle
 
 class: inverse, center, middle
 
-# `r nf()` Rationalize
+# PART II
 
 ![:custom_hr]()
 
-## Why (`r ck()` ~ 15min)
-
-???
-
-With the 3 ? you can add useful comments.
+## Basic actions
 
 
----
-# Shortcuts
 
-```{r, include = FALSE}
-cool <- rfa(help = TRUE)
+```{R part 2, child = "_02_basic_git_actions.Rmd"}
 ```
-
-.pull-left[
-```{r, echo = FALSE}
-kableExtra::kbl(cool[1:9,], row.names = FALSE)
-```
-
-]
-
-.pull-right[
-```{r, echo = FALSE}
-kableExtra::kbl(cool[10:17,], row.names = FALSE)
-```
-]
-
 
 
 
 ---
-# Plot
 
-```{R plot1}
-plot(1,1)
-```
+class: inverse, center, middle
 
+# PART III
 
----
-# Exercice 
+![:custom_hr]()
 
-### Description
-
-Use countdown with `cdw`
-
-`r cdw(minutes = 15, seconds = 0)`
+## Beyond the "pull, push and pray" paradigm
 
 
-
----
-# Resources `r lk()`
-
-### Add ressources here 
-
-- [Geocomputation with R](https://geocompr.robinlovelace.net/)
-
-
-
-
-```{R, child = "_last.Rmd"}
+```{R part 3, child = "_03_beyond_pppp.Rmd"}
 ```
