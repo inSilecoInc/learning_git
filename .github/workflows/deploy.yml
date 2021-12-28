@@ -7,12 +7,13 @@ on:
 
 jobs:
   
-  env: 
-    GITHUB_PAT: ${{ secrets.PAT_R }}
-  
   build:
+    
     runs-on: ubuntu-latest
     container: rocker/verse:latest
+    env: 
+      GITHUB_PAT: ${{ secrets.PAT_R }}
+  
     steps:
       - name: Checkout Repository
         uses: actions/checkout@master
