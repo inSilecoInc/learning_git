@@ -11,5 +11,5 @@ Imports:
   rmarkdown,
   csasdown
 Remotes:
-  inSilecoInc/iseWorkshops
+  inSilecoInc/iseWorkshops,
   pbs-assess/csasdown
