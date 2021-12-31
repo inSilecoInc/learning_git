@@ -89,3 +89,14 @@ output:
 - [`vitae`](https://github.com/mitchelloharawild/vitae): Build a CV
 - [`blogdown`](https://bookdown.org/yihui/blogdown/): Generate a blog
 - [`pkgdown`](https://pkgdown.r-lib.org/): Generate R package documentation
+
+
+<!--
+  Begin with intro to bookdown
+-->
+
+<!--
+  Continue with csasdown
+
+  github link: https://github.com/pbs-assess/csasdown
+-->
