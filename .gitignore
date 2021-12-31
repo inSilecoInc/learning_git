@@ -1,4 +1,4 @@
-# Workshop-specific files 
+# Workshop-specific files
 
 index.html
 index.pdf
@@ -47,3 +47,5 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+_04_rmarkdown.html

@@ -1,0 +1,899 @@
+---
+title: "R Markdown"
+output:
+  xaringan::moon_reader:
+    css: [default, rd.css, rd-font.css, "hygge"]
+    lib_dir: assets
+    seal: false
+    nature:
+      highlightStyle: dracula
+      countIncrementalSlides: false
+      beforeInit: "macros.js"
+---
+
+
+```{r include = FALSE, purl = FALSE}
+source("_setup.R")
+```
+
+<!-- rmarkdown::render("_04_rmarkdown.Rmd") -->
+
+
+class: inverse, center, middle
+
+# Markdown
+
+![:custom_hr]()
+
+## .font200[`r rfa("markdown")`]
+
+
+---
+
+# `r rfa("markdown")` Markdown
+
+## Dynamic documents
+
+- Creating dynamic documents to automate workflows
+  - Code & text living together
+
+--
+
+## Markup language
+
+- Rendering text using tags to format document
+  - LaTex, HTML `r rfa("html5")`, Markdown `r rfa("markdown")`
+  - Forget word! `r rfa("ban")` `r rfa("file-word")` .font60[as much as allowed by collaborators]
+
+--
+
+## Computing language
+
+- Code for analyses and figures
+  - `r rfa("r-project")`, Python `r rfa("python")`, Julia, Matlab, C++, ...
+  - Forget excel! `r rfa("ban")` `r rfa("file-excel")` .font60[as much as humanly possible]
+
+---
+
+# `r rfa("markdown")` Markdown
+
+## The genesis
+
+HTML markup is complex:
+
+```html
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Section header</h1>
+        <p>Paragraph</p>
+    </body>
+</html>
+```
+
+---
+
+# `r rfa("markdown")` Markdown
+
+## The genesis
+
+In comes markdown, a lightweight markup language:
+
+  > Markdown is a text-to-HTML conversion tool for web writers. Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML).
+
+  > The overriding design goal for Markdown’s formatting syntax is to make it as readable as possible. .font90[[John Gruber, 2004](https://daringfireball.net/projects/markdown/)]
+
+---
+
+# `r rfa("markdown")` Markdown
+
+## The genesis
+
+.pull-left[
+From this:
+
+```html
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Section header</h1>
+        <p>Paragraphe</p>
+    </body>
+</html>
+```
+]
+
+
+.pull-right[
+To this:
+```md
+# Section header
+
+Paragraph
+```
+]
+
+---
+
+# `r rfa("markdown")` Markdown
+
+## Variants
+
+- Original developers (John Gruber and Aaron Swartz) did not continue developing Markdown after its release in 2004
+
+--
+
+- Avid enthusiasts took care of that. The results: many variants.
+  - [GitHub Flavored Markdown (GFM)](https://docs.github.com/en/github/writing-on-github)
+  - [Kramdown](https://kramdown.gettalong.org/)
+  - [Markdown Extra](https://michelf.ca/projects/php-markdown/extra/)
+  - [Multi Markdow](https://github.com/fletcher/MultiMarkdown/wiki/MultiMarkdown-Syntax-Guide#math-support)
+  - [Pandoc's Markdown](https://pandoc.org/MANUAL.html)
+
+--
+
+- [CommonMark](https://commonmark.org/) is addressing standardizing issues with Markdown.
+
+---
+
+# `r rfa("markdown")` Markdown
+
+## Pandoc's Markdown
+
+**Why?**
+
+  - `r rfa("r-project")` uses it through [R Markdown](https://rmarkdown.rstudio.com/lesson-8.html) .font60[much more on this later]
+
+--
+
+**What is Pandoc?**
+
+> a universal document converter
+
+> `r rfa("markdown")` `r rfa("arrow-right")` <i>LaTeX</i> `r rfa("arrow-right")` `r rfa("file-pdf")`
+<br/>
+> `r rfa("markdown")` `r rfa("arrow-right")` `r rfa("file-word")`
+<br/>
+> `r rfa("html5")` `r rfa("arrow-right")` `r rfa("markdown")`
+<br/>
+> **...**
+
+.fon80[See [Pandoc's website](https://pandoc.org/index.html) for a list of all possible conversions]
+
+
+
+---
+
+class: inverse, center, middle
+
+# .font200[`r rfa("r-project")`]
+
+![:custom_hr]()
+
+<img src="img/knitr.png" style="vertical-align: middle;margin:10px" width="120px"></img>
+<img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="120px"></img>
+
+
+---
+
+# <img src="img/knitr.png" style="vertical-align: middle;margin:10px" width="50px"></img> knitr
+
+[`knitr`](https://cran.r-project.org/package=knitr) .font90[01/2012 (0.1) &nbsp; // &nbsp; 01/2021 (1.3.1)]
+
+> Elegant, flexible, and fast dynamic report generation with R .font80[([Yihui Xie, creator](https://yihui.org/knitr/))]
+
+--
+
+- `knitr` executes code embedded in a dynamic document and "knits" it back into the document.
+
+---
+
+# <img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="50px"></img> R Markdown
+
+[`rmarkdown`](https://cran.r-project.org/package=rmarkdown) .font90[09/2014 (0.3.3) &nbsp; // &nbsp; 02/2021 (2.7)]
+
+> Convert R Markdown documents into a variety of formats.
+
+<center><img src="img/Rmdformat.png" style="vertical-align: middle"></img></center>
+
+
+---
+
+class: inverse, center, middle
+
+# Questions?
+
+![:custom_hr]()
+
+## .font150[`r icons::fontawesome("question-circle")`]
+
+
+---
+
+class: inverse, center, middle
+
+# <img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
+
+![:custom_hr]()
+
+## .font160[**YAML** + `r rfa("markdown")` + `r rfa("r-project")`]
+
+---
+
+# <img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
+
+## R Markdown file
+
+.pull-left[
+- A `r rfa("markdown")` file written with (`r rfa("r-project")`) has the extension `.Rmd` (capital optional)
+
+- Structured in three parts:
+  - .font80[**YAML**]: Metadata / front matter
+  - `r rfa("markdown")`: Text / document content
+  - `r rfa("r-project")`: Code chunks .font70[(optional)]
+]
+
+.pull-right[
+<img src="img/rmd.png" style="vertical-align: middle" width="100%"></img>
+]
+
+---
+
+# <img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
+
+## Exporting .font80[*a.k.a.* knitting 🧶]
+
+.pull-left[
+- `knitr` executes the code and converts `.Rmd` to `.md`
+- Pandoc renders the `.md` file to the output format you want.
+]
+
+.pull-right[
+<img src="img/Rmdformat.png" style="vertical-align: middle"></img>
+]
+
+
+---
+
+# <img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
+
+## Exporting .font80[*a.k.a.* knitting 🧶]
+
+### `rmarkdown::render()`
+
+- Use [`render()`](https://www.rdocumentation.org/packages/rmarkdown/versions/2.6/topics/render) from the [`rmarkdown`](https://cran.r-project.org/package=rmarkdown) package
+- Generates the desired output from the `.Rmd` file
+
+--
+
+Main arguments:
+
+```md
+input: name of file to render
+output_format: one or more output formats, as specified in the YAML header.
+               "all" exports all the specified formats (optional).
+output_file: name of output file (optional).
+```
+
+--
+
+Minimal example:
+
+```{r, eval = FALSE}
+rmarkdown::render(input = "myrmd.Rmd")
+```
+
+
+---
+
+class: inverse, center, middle
+
+# Metadata
+
+![:custom_hr]()
+
+## .font160[**YAML**]
+
+---
+
+# .font60[**YAML**] Metadata
+
+- Contains the metadata of the document
+- Starts and ends with three hyphens (---)
+- Comes first in the `.Rmd` file
+- Sets *Pandoc* document options with `key: value` (.font60[**YAML**] syntax)
+- Available options depend on the output format .font90[(see `?html_document `, `?pdf_document`, `?word_document`)]
+
+--
+
+<br/>
+
+Minimal .font60[**YAML**] metadata for `r rfa("file-pdf")` PDF output:
+
+```yaml
+---
+output: pdf_document
+---
+```
+
+---
+
+# .font60[**YAML**] Metadata
+
+## Document information
+
+Title, author and date options
+
+```yaml
+---
+title: "My document title"
+date: "01-03-2021"
+author: Me, you, them
+output: pdf_document
+---
+```
+
+---
+
+# .font60[**YAML**] Metadata
+
+## Document options: additional options
+
+- There is a wide variety of [.font60[**YAML**] options](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf) available
+
+.font90[
+```yaml
+---
+title: "My document title"
+date: "01-03-2021"
+author: Me, you, them
+abstract: "The objective of our work was to ..."
+fontfamily: fourier
+linestretch: 1
+fontsize: 10pt
+geometry: margin=1in
+urlcolor: red
+citecolor: blue
+output:
+  pdf_document:
+    toc: true
+  html_document:
+    toc: true
+  word_document:
+    toc: true
+---
+```
+]
+
+
+---
+
+class: inverse, center, middle
+
+# Text
+
+![:custom_hr]()
+
+## .font160[`r rfa("markdown")`]
+
+---
+
+# `r rfa("markdown")` Text formatting
+
+
+.pull-left[
+.font80[
+```md
+Normal text
+```
+]
+]
+
+.pull-right[
+.font80[Normal text]
+]
+
+--
+
+.pull-left[
+.font80[
+```md
+_Italic_ *text*
+```
+]
+]
+
+.pull-right[
+.font80[_Italic_ *text*]
+]
+
+--
+
+.pull-left[
+.font80[
+```md
+__Bold__ **text**
+```
+]
+]
+
+.pull-right[
+.font80[__Bold__ **text**]
+]
+
+--
+
+.pull-left[
+.font80[
+```md
+***Bold italic*** **_text_**
+```
+]
+]
+
+.pull-right[
+.font80[***Bold italic*** **_text_**]
+]
+
+--
+
+.pull-left[
+.font80[
+```md
+~~Strikethrough text~~
+```
+]
+]
+
+.pull-right[
+.font80[~~Strikethrough text~~]
+]
+
+
+
+---
+
+# `r rfa("markdown")` Document formatting
+
+## Titles
+
+.pull-left[
+.font80[
+```md
+# Header 1
+## Header 2
+### Header 3
+#### Header 4
+##### Header 5
+###### Header 6
+```
+]
+]
+
+.pull-right[
+.font80[
+# Header 1
+## Header 2
+### Header 3
+#### Header 4
+##### Header 5
+###### Header 6
+]
+]
+
+---
+
+# `r rfa("markdown")` Document formatting
+
+Link to a book
+
+---
+
+class: inverse, center, middle
+
+#  `r rfa("code")` Code chunks
+
+<html><div style='float:left'></div><hr color='#ffdd55'style="margin-top: -60px;" size=1px width=720px></html>
+
+## The `r rfa("r-project")`  part
+
+---
+
+# `r rfa("code")` Code chunks
+
+```{r include=FALSE}
+knitr::opts_chunk$set(eval=FALSE)
+```
+
+
+
+````md
+This text is written in markdown
+
+```{r}`r ''`
+library(tibble)
+data(iris)
+head(iris)
+```
+````
+
+- `r rfa("exclamation-triangle")` `r` between brackets `{}`, why is that?
+- Where is the `r rfa("r-project")` code and the `r rfa("markdown")` section?
+
+
+
+---
+
+# `r rfa("code")` Code chunks
+
+### Code
+
+```{r}
+library(tibble)
+data(iris)
+head(iris)
+```
+
+### Print output
+
+```{r echo = FALSE, eval = TRUE}
+library(tibble)
+data(iris)
+head(iris)
+```
+
+
+---
+
+# `r rfa("code")` Code chunks
+.pull-left[
+
+### Code
+
+```{r}
+library(ggplot2)
+data(iris)
+ggplot(
+      data=iris,
+      aes(x = Sepal.Length,
+          y = Sepal.Width)
+  ) +
+geom_point(
+  aes(color=Species, shape=Species)
+) +
+xlab("Sepal Length") +
+ylab("Sepal Width") +
+ggtitle("Sepal Length-Width")
+```
+]
+
+.pull-right[
+### Graphic output
+
+```{r echo = FALSE, eval = TRUE, dpi=300, fig.height=5, fig.width=5}
+library(ggplot2)
+data(iris)
+ggplot(
+      data=iris,
+      aes(x = Sepal.Length,
+          y = Sepal.Width)
+  ) +
+  geom_point(aes(color=Species, shape=Species)) +
+  xlab("Sepal Length") +  ylab("Sepal Width") +
+  ggtitle("Sepal Length-Width")
+```
+]
+
+---
+
+# `r rfa("code")` Inline code chunks
+
+### `r rfa("code")` Syntax
+
+We studied `` `r
+length(levels(iris$Species))` `` iris species and took
+measurements on `` `r
+nrow(iris)` `` flowers.
+
+We found that Iris virginica had the longest sepal with a mean of
+`` `r
+mean(subset(iris,Species=="virginica")$Sepal.Length)`
+`` millimeters!
+
+### `r rfa("file-alt")` Output
+
+````md
+This text is written in markdown.
+
+We studied `r length(levels(iris$Species))` iris species and took measurements on `r nrow(iris)` flowers.
+
+We found that Iris virginica had the longest sepal with a mean of `r mean(iris$Sepal.Length[iris$Species=="virginica"])` millimeters!
+````
+
+---
+
+class: inverse, center, middle
+
+# `r rfa("rocket")` Chunk options
+
+<html><div style='float:left'></div><hr color='#ffdd55' style="margin-top: -60px;" size=1px width=720px></html>
+
+---
+
+# `r rfa("code")` Code chunk options
+
+
+.pull-left[
+- Place between curly braces
+  `{r option=value}`
+
+- Multiple options separated by commas
+  `{r option1=value, option2=value}`
+
+- Label your code chunk!
+<img height="160px" width="160px" src="https://d33wubrfki0l68.cloudfront.net/6fcddff214345601f998805adce94ab0e21d8615/2a098/screenshots/rmarkdown-chunk-nav.png"></img>
+
+]
+
+
+.pull-right[
+
+.font90[
+````md
+```{r dispIris, option1=value, option2=value}`r ''`
+library(tibble)
+data(iris)
+head(iris)
+```
+````
+]
+]
+
+
+---
+
+# `r rfa("code")` Code chunk options
+
+## What output each option suppresses?
+
+Option             | Run code | Show code | Output | Plots | Messages | Warnings
+-------------------|:--------:|:---------:|:------:|:-----:|:--------:|:-------:
+`eval = FALSE`     |`r rfa("times")`|         |`r rfa("times")`|`r rfa("times")`|`r rfa("times")`|`r rfa("times")`
+`include = FALSE`  | |`r rfa("times")`|`r rfa("times")`|`r rfa("times")`|`r rfa("times")`|`r rfa("times")`
+`echo = FALSE`     |  |`r rfa("times")`|     |    |      |
+`results = "hide"` |        |        |`r rfa("times")`|     |        |
+`fig.show = "hide"`|        |       |     | `r rfa("times")`|      |
+`message = FALSE`  |          |           |        |       |`r rfa("times")`|
+`warning = FALSE`  |          |           |        |       |          |`r rfa("times")`
+
+Table from [R for Data Science](https://r4ds.had.co.nz/r-markdown.html#chunk-options)
+
+
+---
+
+class: inverse, center, middle
+
+# Bibliography and citations
+
+![:custom_hr]()
+
+<img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="120px"></img>
+
+---
+
+# Bibliography
+
+## Bibliographic files
+
+- Bibliographies are typically included to a `.Rmd` document using an external bibliographic file
+
+--
+
+- *Pandoc* can use a wide variety of [bibliographic files](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#Specifying_a_Bibliography) to manage bibliographies and citations.
+
+--
+
+- For scientific writing, we recommend using a `mybiblio.bib` file in BiBTeX format, which you can export from your favorite reference manager software (*e.g.* [Zotero](https://www.zotero.org/), [`r rfa("mendeley")` Mendeley](https://www.mendeley.com/), [EndNote](https://endnote.com/))
+
+--
+
+- Note that bibliographic metadata can be included in the [YAML header](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#Inline_References). We however do not recommend using this strategy, unless you wish to cite few references.
+
+
+---
+
+# Bibliography
+
+## `.bib` file
+
+```md
+@article{galbraith2012,
+  author = {Galbraith, Peter S. and Larouche, Pierre and Chass{\'e}, Jo{\"e}l and Petrie, Brian},
+  title = {Sea-Surface Temperature in Relation to Air Temperature in the {{Gulf}} of {{St}}. {{Lawrence}}: {{Interdecadal}} Variability and Long Term Trends},
+  journal = {Deep Sea Research Part II: Topical Studies in Oceanography},
+  volume = {77-80},
+  pages = {10--20},
+  year = {2012},
+  doi = {10.1016/j.dsr2.2012.04.001},
+  series = {Satellite {{Oceanography}} and {{Climate Change}}}
+}
+```
+
+- Use the citation key `galbraith2012` for in-text citations (more on this later)
+
+---
+
+# Bibliography
+
+## Include to `.Rmd`
+
+- Include a bibliography to a `.Rmd` in the .font60[**YAML**] header using the `bibliography` option
+
+```yaml
+---
+title: "My document title"
+date: "01-03-2021"
+author: Me, you, them
+output: pdf_document
+bibliography: mybiblio.bib
+---
+```
+
+.font90[
+`r rfa("exclamation-triangle")` Be sure that the path to your `.bib` file is well identified.
+]
+
+
+
+---
+
+# Bibliography
+
+## Placement
+
+- A bibliography will be added at the end of the document by default. Use an appropriate header at the end and you are good to go.
+
+```md
+...that will revolutionize the way we think about science.
+
+# References
+```
+
+--
+
+- If you wish to include text after the bibliography, such as an appendix, your can use the `<div id="refs"></div>` HTML tag (see [here](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html) for more on this):
+
+```md
+...that will revolutionize the way we think about science.
+
+# References
+
+<div id="refs"></div>
+
+# Appendix
+```
+
+---
+
+# Bibliography
+
+## Citation syntax
+
+- Use citation key with `@` to refer to a reference: `@id`
+
+.pull-left[
+.font80[
+```md
+Cite in parentheses [@galbraith2012].
+```
+]
+]
+
+.pull-right[
+.font80[Cite in parentheses (Galbraith et al. 2012)]
+]
+
+--
+
+.pull-left[
+.font80[
+```md
+Cite in parentheses [@galbraith2012; @cazelles2018].
+```
+]
+]
+
+.pull-right[
+.font80[Cite in parentheses (Galbraith et al. 2012, Cazelles et al. 2018)]
+]
+
+--
+
+.pull-left[
+.font80[
+```md
+Cite in parentheses + text [see @galbraith2012 pp. 30].
+```
+]
+]
+
+.pull-right[
+.font80[Cite in parentheses + text (see Galbraith et al. 2012 pp. 30)]
+]
+
+--
+
+.pull-left[
+.font80[
+```md
+Cite @galbraith2012 in a sentence.
+```
+]
+]
+
+.pull-right[
+.font80[Cite Galbraith et al. (2012) in a sentence.]
+]
+
+
+
+---
+
+# Bibliography
+
+## Styling
+
+- By default, pandoc uses the Chicago author-date format
+- You can use another style by specifying CSL style files with the the `csl` option in the .font60[**YAML**] header.
+- CSL files contain bibliographic and citation formatting informations.
+- There are hundreds of styles available on [GitHub](https://github.com/citation-style-language/styles) and scientific journals often provide their own CSL file.
+
+```yaml
+---
+title: "My document title"
+date: "01-03-2021"
+author: Me, you, them
+output: pdf_document
+bibliography: mybiblio.bib
+csl: mystyle.csl
+---
+```
+
+.font90[
+`r rfa("exclamation-triangle")` Be sure that the path to your `.csl` file is well identified.
+]
+
+
+---
+
+class: inverse, center, middle
+
+# Wrapping up
+
+![:custom_hr]()
+
+<img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="120px"></img>
+
+
+---
+
+
+# Wrapping up
+
+✔️ **Document your document**: use YAML to set up meaningful metadata
+
+✔️ **Style your document**: use YAML to add options to your chosen output format
+
+✔️ **Organize your text**: use markdown headers with `#`
+
+✔️ **Organize your code**: use `knitr` chunk labels
+
+✔️ **Style your text**: use markdown **bold**, *italics*, `r rfa("list-ul")` bullets, `r rfa("list-ol")` lists, hyperlinks, ...
+
+✔️ **Style your output**: use `knitr` chunk options
+
+✔️ **Add a bibliography**: use `@id`, `mybiblio.bib`, `mystyle.csl`
+
+✔️ **Export your document**: use `rmarkdown::render()`
+
+✔️ **Enjoy a simplified life** .font50[most of the time]
