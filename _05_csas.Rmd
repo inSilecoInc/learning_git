@@ -1,0 +1,91 @@
+---
+title: "bookdown & csasdown"
+output:
+  xaringan::moon_reader:
+    css: [default, rd.css, rd-font.css, "hygge"]
+    lib_dir: assets
+    seal: false
+    nature:
+      highlightStyle: dracula
+      countIncrementalSlides: false
+      beforeInit: "macros.js"
+---
+
+
+```{r include = FALSE, purl = FALSE}
+source("_setup.R")
+```
+
+<!-- rmarkdown::render("_05_csas.Rmd") -->
+
+
+class: inverse, center, middle
+
+# bookdown & csasdown
+
+![:custom_hr]()
+
+## .font200[`r rfa("markdown")`]
+
+
+---
+
+class: inverse, center, middle
+
+# Customizing documents
+
+![:custom_hr]()
+
+---
+
+# Customizing documents
+
+## `r rfa("html5")` Themes
+
+- There are 12 custom themes available in `rmarkdown`, and multiple others available through numerous R packages. See [here](https://www.datadreaming.org/post/r-markdown-theme-gallery/) and [here](https://cran.r-project.org/web/packages/prettydoc/vignettes/tactile.html) for examples.
+
+```yaml
+---
+title: Awesome report
+author: Me, You, Them
+date: 2021-03-01
+output:
+  html_document:
+    theme: lumen
+---
+```
+
+---
+
+# Customizing documents
+
+## `r rfa("file-pdf")` Templates
+
+- Specify a LaTeX template `.tex` file to use pre-specified document formatting guidelines. See [here](https://www.overleaf.com/latex/templates) for many templates. Many scientific journals provide LaTeX templates.
+- Download the desired template and refer to it in the .font80[**YAML**] header.
+
+
+```yaml
+---
+title: Awesome report
+author: Me, You, Them
+date: 2021-03-01
+output:
+  pdf_document:
+    template: my_template.tex
+---
+```
+
+---
+
+# `r rfa("book")` The `down` universe
+
+- [`bookdown`](https://bookdown.org/): Write a notebook
+- [`csasdown`](https://github.com/pbs-assess/csasdown): Write a CSAS document
+- [`thesisdown`](https://github.com/ismayc/thesisdown): Write a thesis
+- [`rticles`](https://github.com/rstudio/rticles): Write a scientific article
+- [`posterdown`](https://github.com/brentthorne/posterdown): Create a poster
+- [`xaringan`](https://github.com/yihui/xaringan): Create nice presentation
+- [`vitae`](https://github.com/mitchelloharawild/vitae): Build a CV
+- [`blogdown`](https://bookdown.org/yihui/blogdown/): Generate a blog
+- [`pkgdown`](https://pkgdown.r-lib.org/): Generate R package documentation
