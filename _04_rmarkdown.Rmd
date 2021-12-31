@@ -897,3 +897,15 @@ class: inverse, center, middle
 ✔️ **Export your document**: use `rmarkdown::render()`
 
 ✔️ **Enjoy a simplified life** .font50[most of the time]
+
+---
+
+# Github pages
+
+see https://github.com/inSileco/ResearchDown
+
+---
+
+# Github actions
+
+prepare this section, just provide an overview for working with multiple people
