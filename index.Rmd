@@ -73,11 +73,11 @@ class: inverse, center, middle
 # Working collaboratively
 
 - we have to
-- complementarity 
-- more fun 
+- complementarity
+- more fun
 
 - depending on task more or less complicated
-- tools help with this 
+- tools help with this
 
 <!-- maybe add prob -->
 
@@ -87,22 +87,22 @@ class: inverse, center, middle
 # Working collaboratively
 
 - working with R and generate R Markdown
-- good tools is GitHub and Git 
-- Git control versioning 
-- developer of linux kernel 
+- good tools is GitHub and Git
+- Git control versioning
+- developer of linux kernel
 - Web services such as GitHub lots of services make even better
 
 
 ---
-# Learning objectifs 
+# Learning objectifs
 
-- Here we'll leran about git and github 
+- Here we'll leran about git and github
 - use case Rmarkdown document (R + markdown) / csasdown
 - help guide people working together more efficiently
 
 - better understand git
 - better understand github
-- apply this to work on a document 
+- apply this to work on a document
 
 
 
@@ -152,4 +152,32 @@ class: inverse, center, middle
 
 
 ```{R part 3, child = "_03_beyond_pppp.Rmd"}
+```
+
+---
+
+class: inverse, center, middle
+
+# PART IV
+
+![:custom_hr]()
+
+## R Markdown
+
+
+```{R part 4, child = "_04_rmarkdown.Rmd"}
+```
+
+---
+
+class: inverse, center, middle
+
+# PART V
+
+![:custom_hr]()
+
+## `bookdown` & `csasdown`
+
+
+```{R part 5, child = "_05_csas.Rmd"}
 ```

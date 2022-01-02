@@ -18,6 +18,7 @@ source("_setup.R")
 
 <!-- rmarkdown::render("_04_rmarkdown.Rmd") -->
 
+---
 
 class: inverse, center, middle
 
@@ -195,17 +196,6 @@ class: inverse, center, middle
 > Convert R Markdown documents into a variety of formats.
 
 <center><img src="img/Rmdformat.png" style="vertical-align: middle"></img></center>
-
-
----
-
-class: inverse, center, middle
-
-# Questions?
-
-![:custom_hr]()
-
-## .font150[`r icons::fontawesome("question-circle")`]
 
 
 ---
@@ -485,7 +475,7 @@ __Bold__ **text**
 
 # `r rfa("markdown")` Document formatting
 
-Link to a book
+Link to a book and resources
 
 ---
 
@@ -500,12 +490,6 @@ class: inverse, center, middle
 ---
 
 # `r rfa("code")` Code chunks
-
-```{r include=FALSE}
-knitr::opts_chunk$set(eval=FALSE)
-```
-
-
 
 ````md
 This text is written in markdown
@@ -528,7 +512,7 @@ head(iris)
 
 ### Code
 
-```{r}
+```{r, eval = FALSE}
 library(tibble)
 data(iris)
 head(iris)
@@ -550,7 +534,7 @@ head(iris)
 
 ### Code
 
-```{r}
+```{r, eval = FALSE}
 library(ggplot2)
 data(iris)
 ggplot(
