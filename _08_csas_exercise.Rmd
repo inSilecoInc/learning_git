@@ -38,6 +38,10 @@ class: inverse, center, middle
 
 - *The goal of the exercise is to work collaboratively using GitHub to create a CSAS document with `csasdown`*
 
+--
+
+- *By the end of this exercise, you should know how to create a DFO Research Document using `csasdown`, and how to work collaboratively on the document by creating and reviewing pull requests on GitHub.*
+
 ---
 
 # Exercise
@@ -56,10 +60,20 @@ class: inverse, center, middle
 **5)** Commit and push changes to your branch
 
 **6)** Create and assign pull request to another participant
+]
 
+---
+
+# Exercise
+
+## Task
+
+.font90[
 **7)** Review and merge pull request assigned to you
 
-**8)** Add child documents to `csas.Rmd` document
+**8)** Add child documents to `_bookdown.yml` document
 
 **9)** Render Research Document
+
+**10)** Commit and push changes to main branch
 ]
