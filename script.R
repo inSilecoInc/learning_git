@@ -27,3 +27,56 @@ xaringanExtra::use_scribble()
 
 
 
+
+## ----part 4, child = "_04_rmarkdown.Rmd"--------------------------------------
+
+## ---- eval = FALSE------------------------------------------------------------
+## rmarkdown::render(input = "myrmd.Rmd")
+
+
+## ---- eval = FALSE------------------------------------------------------------
+## library(tibble)
+## data(iris)
+## head(iris)
+
+
+## ----echo = FALSE, eval = TRUE------------------------------------------------
+library(tibble)
+data(iris)
+head(iris)
+
+
+## ---- eval = FALSE------------------------------------------------------------
+## library(ggplot2)
+## data(iris)
+## ggplot(
+##       data=iris,
+##       aes(x = Sepal.Length,
+##           y = Sepal.Width)
+##   ) +
+## geom_point(
+##   aes(color=Species, shape=Species)
+## ) +
+## xlab("Sepal Length") +
+## ylab("Sepal Width") +
+## ggtitle("Sepal Length-Width")
+
+
+## ----echo = FALSE, eval = TRUE, dpi=300, fig.height=5, fig.width=5------------
+library(ggplot2)
+data(iris)
+ggplot(
+      data=iris,
+      aes(x = Sepal.Length,
+          y = Sepal.Width)
+  ) +
+  geom_point(aes(color=Species, shape=Species)) +
+  xlab("Sepal Length") +  ylab("Sepal Width") +
+  ggtitle("Sepal Length-Width")
+
+
+
+## ----part 5, child = "_05_csas.Rmd"-------------------------------------------
+
+
+

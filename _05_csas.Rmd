@@ -18,6 +18,7 @@ source("_setup.R")
 
 <!-- rmarkdown::render("_05_csas.Rmd") -->
 
+---
 
 class: inverse, center, middle
 
@@ -26,15 +27,6 @@ class: inverse, center, middle
 ![:custom_hr]()
 
 ## .font200[`r rfa("markdown")`]
-
-
----
-
-class: inverse, center, middle
-
-# Customizing documents
-
-![:custom_hr]()
 
 ---
 
@@ -89,14 +81,3 @@ output:
 - [`vitae`](https://github.com/mitchelloharawild/vitae): Build a CV
 - [`blogdown`](https://bookdown.org/yihui/blogdown/): Generate a blog
 - [`pkgdown`](https://pkgdown.r-lib.org/): Generate R package documentation
-
-
-<!--
-  Begin with intro to bookdown
--->
-
-<!--
-  Continue with csasdown
-
-  github link: https://github.com/pbs-assess/csasdown
--->
