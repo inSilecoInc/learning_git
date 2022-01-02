@@ -1,0 +1,134 @@
+---
+title: "Breakout session 2"
+subtitle: "R Markdown"
+output:
+  xaringan::moon_reader:
+    css: [default, rd.css, rd-font.css, "hygge"]
+    lib_dir: assets
+    seal: false
+    nature:
+      highlightStyle: dracula
+      countIncrementalSlides: false
+      beforeInit: "macros.js"
+---
+
+
+```{r include = FALSE, purl = FALSE}
+source("_setup.R")
+```
+
+<!-- rmarkdown::render("_07_rmarkdown_exercise.Rmd") -->
+
+---
+
+class: inverse, center, middle
+
+# Exercise
+
+![:custom_hr]()
+
+
+
+
+---
+
+# Exercise
+
+## Context
+
+- *The goal of the exercise is to create a GitHub repo, add and render a `.Rmd` document in `.html` and create a github page*
+
+--
+
+- *To do this, we will use data on Palmer penguins from [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) and the [Palmer Station, Antarctica LTER](https://pal.lternet.edu/).*
+
+--
+
+- *Data are available through the [`palmerpenguin`](https://github.com/allisonhorst/palmerpenguins) R package.*
+
+```{r palmer, eval = FALSE}
+library(palmerpenguins)
+data(package = 'palmerpenguins')
+```
+
+---
+
+# Exercise
+
+## Context
+
+```{r load, echo = FALSE}
+library(palmerpenguins)
+```
+```{r head}
+head(penguins)
+```
+
+---
+
+# Exercise
+
+## Task
+
+.font90[
+**1)** Create a new GitHub repository
+
+**2)** In the new repository create a new R Markdown document named `index.Rmd`
+
+**3)** Write a .font80[**YAML**] header including the document title, the authors, the date, and output format html
+
+**4)** Include a single section (level 1) with the title of your choice using `# Title`
+]
+
+
+---
+
+# Exercise
+
+## Task
+
+.font90[
+**5)** Install the `palmerpenguins` R Package with `install.packages("palmerpenguins")`
+
+**6)** Include a code chunk to add a graph of a the bill length of penguins as a function of their body mass :
+
+````md
+```{r graph, echo = FALSE, fig.height=3.5, fig.width=4, fig.align='center'}`r ''`
+plot(x = penguins$body_mass_g,
+     y = penguins$bill_length_mm,
+     main = "Bill length as a function of body mass",
+     xlab = "Body mass (g)",
+     ylab = "Bill length (mm)",
+     col = "#5d2756",
+     bg = "#5d275699",
+     pch = 21)
+```
+````
+]
+
+---
+
+# Exercise
+
+## Task
+
+.font90[
+**7)** Render a `.html` document named `index.html`
+
+**8)** Commit and push changes made to the GitHub repository
+
+**9)** Create GitHub page from `index.html`
+]
+
+
+```{r, echo = FALSE, purl = FALSE}
+countdown::countdown(minutes = 30, seconds = 0)
+```
+
+---
+
+# Exercise
+
+## Solution
+
+Load solution file here: [`r rfa("database")`](path/to/solution)
