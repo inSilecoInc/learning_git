@@ -93,7 +93,7 @@ head(penguins)
 **6)** Include a code chunk to add a graph of a the bill length of penguins as a function of their body mass :
 
 ````md
-```{r graph, echo = FALSE, fig.height=3.5, fig.width=4, fig.align='center'}`r ''`
+```{r graph, echo = FALSE, fig.height=5, fig.width=7, fig.align='center'}`r ''`
 plot(x = penguins$body_mass_g,
      y = penguins$bill_length_mm,
      main = "Bill length as a function of body mass",
@@ -131,4 +131,4 @@ countdown::countdown(minutes = 30, seconds = 0)
 
 ## Solution
 
-Load solution file here: [`r rfa("database")`](path/to/solution)
+Load solution file here: [`r rfa("database")`](https://github.com/inSilecoInc/learning_git_bs2)
