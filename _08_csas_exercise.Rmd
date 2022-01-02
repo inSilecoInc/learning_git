@@ -1,0 +1,65 @@
+---
+title: "Breakout session 3"
+subtitle: "bookdown and csasdown"
+output:
+  xaringan::moon_reader:
+    css: [default, rd.css, rd-font.css, "hygge"]
+    lib_dir: assets
+    seal: false
+    nature:
+      highlightStyle: dracula
+      countIncrementalSlides: false
+      beforeInit: "macros.js"
+---
+
+
+```{r include = FALSE, purl = FALSE}
+source("_setup.R")
+```
+
+<!-- rmarkdown::render("_08_csas_exercise.Rmd") -->
+
+---
+
+class: inverse, center, middle
+
+# Exercise
+
+![:custom_hr]()
+
+
+
+
+---
+
+# Exercise
+
+## Context
+
+- *The goal of the exercise is to work collaboratively using GitHub to create a CSAS document with `csasdown`*
+
+---
+
+# Exercise
+
+## Task
+
+.font90[
+**1)** Clone [GitHub repository](https://github.com/inSilecoInc/learning_git_bs3) for the exercise
+
+**2)** Create new branch on repository
+
+**3)** Create child `.Rmd` document, *i.e.* new `.Rmd` document without `YAML` header
+
+**4)** Include a single section (level 1) with the title of your choice using `# Title` and some text and/or code chunk
+
+**5)** Commit and push changes to your branch
+
+**6)** Create and assign pull request to another participant
+
+**7)** Review and merge pull request assigned to you
+
+**8)** Add child documents to `csas.Rmd` document
+
+**9)** Render Research Document
+]
