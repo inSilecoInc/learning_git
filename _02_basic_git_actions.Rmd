@@ -44,3 +44,10 @@ git --version
 ```
 
 
+
+https://github.com/github/gitignore
+
+
+https://nvie.com/posts/a-successful-git-branching-model/
+
+https://danielkummer.github.io/git-flow-cheatsheet/

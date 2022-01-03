@@ -30,6 +30,13 @@ class: inverse, center, middle
 ##  `r nf()` `r gt()`, `r gh()`, `r gl()`, etc.
 
 
+---
+# Key resource 
+
+
+.center[![:scale 40%](https://git-scm.com/images/progit2.png)]
+
+
 
 
 ---
@@ -113,7 +120,7 @@ https://www.upguard.com/blog/bitbucket-vs-github
 
 https://en.wikipedia.org/wiki/Timeline_of_GitHub
 
-
+https://www.git-tower.com/mac?utm_source=learn-website&utm_campaign=git-faq&utm_medium=easy-in-tower&utm_content=undo-last-commit
 
 
 https://octoverse.github.com/#lets-look-back-at-the-code-and-communities-built-on-git-hub-this-year
