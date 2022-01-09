@@ -12,13 +12,25 @@ output:
 ---
 
 
-```{r include = FALSE, purl = FALSE}
-source("_setup.R")
-```
 
 
+---
+#  In this part, we will...
+
+--
+
+### ... learn what are `r gt()`, `r gh()` and `r gl()`;
+
+--
+
+### ... create a first repository that uses `r gt()`;
+
+--
+
+### ... set up a repository in `r gh()` and `r gl()`
 
 
+ a
 ---
 
 class: inverse, center, middle
@@ -31,12 +43,37 @@ class: inverse, center, middle
 
 
 ---
-# Key resource 
+# Key resources 
+
+.center[![:scale 30%](https://git-scm.com/images/progit2.png)]
+
+- `r lk()` S. Chacon & B. Staub (2014), Pro Git https://git-scm.com/book/en/v2
+- `r gh()` https://github.com/progit/progit2 
+- `r bk()` https://github.com/progit/progit2/releases/tag/2.1.336
 
 
-.center[![:scale 40%](https://git-scm.com/images/progit2.png)]
+---
+# Key resources 
+
+.center[![:scale 90%](img/part1/happygit.png)]
+
+- `r lk()` J. Bryan (2022), Happy git with R https://happygitwithr.com/
+
+---
+# Key resources 
+
+.center[![:scale 30%](img/part1/so_cover.jpeg)]
+
+- `r lk()` https://tra38.gitbooks.io/essential-copying-and-pasting-from-stack-overflow/content/
+- `r so()` https://stackoverflow.com/
 
 
+
+---
+
+- https://git.wiki.kernel.org/index.php/GitFaq#Why_the_.27Git.27_name.3F
+
+https://ndpsoftware.com/git-cheatsheet.html#loc=workspace;
 
 
 ---
@@ -46,6 +83,34 @@ class: inverse, center, middle
 ```{bash}
 git --version
 ```
+
+
+
+---
+# Resources 
+
+
+## Books
+
+- https://git-scm.com/
+- https://happygitwithr.com/ 
+
+
+## Websites
+
+- https://git.wiki.kernel.org/index.php/Main_Page
+- Github: https://docs.github.com/en
+- GitLab: https://docs.gitlab.com/ee/topics/git/#git
+
+
+### cheat sheets
+
+- https://ndpsoftware.com/git-cheatsheet.html#loc=workspace
+-https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiQ8qeTnaX1AhUFkIkEHdJ3AFoQFnoECAkQAQ&url=https%3A%2F%2Feducation.github.com%2Fgit-cheat-sheet-education.pdf&usg=AOvVaw2D3W2R0fwoOBi8YrhZYLFJ
+- https://training.github.com/downloads/github-git-cheat-sheet/
+- https://www.freecodecamp.org/news/git-cheat-sheet/
+
+
 
 
 <!-- ---
@@ -159,3 +224,50 @@ PR
 
 
 https://happygitwithr.com/ -->
+
+
+
+
+https://github.com/git-guides
+
+<!-- 
+."Capitalized, short (50 chars or less) summary
+
+More detailed explanatory text, if necessary.  Wrap it to about 72
+characters or so.  In some contexts, the first line is treated as the
+subject of an email and the rest of the text as the body.  The blank
+line separating the summary from the body is critical (unless you omit
+the body entirely); tools like rebase will confuse you if you run the
+two together.
+
+Write your commit message in the imperative: "Fix bug" and not "Fixed bug"
+or "Fixes bug."  This convention matches up with commit messages generated
+by commands like git merge and git revert.
+
+Further paragraphs come after blank lines.
+
+- Bullet points are okay, too
+
+- Typically a hyphen or asterisk is used for the bullet, followed by a
+  single space, with blank lines in between, but conventions vary here
+
+- Use a hanging indent"
+
+
+https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+
+ As a general rule, your messages should start with a single line that’s no more than about 50 characters and that describes the changeset concisely, followed by a blank lin
+  followed by a blank line, followed by a more detailed explanation. 
+ 
+
+gitmoji
+ 
+could be useful but takes chracters
+ 
+ https://git-send-email.io/#step-1
+ 
+ https://docs.ropensci.org/gert/
+ 
+ https://github.com/r-universe/insileco -->
+ 
+ https://happygitwithr.com/
