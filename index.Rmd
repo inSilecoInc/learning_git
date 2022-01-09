@@ -77,11 +77,19 @@ class: inverse, center, middle
 
 ## Why?
 
+<<<<<<< HEAD
 - only way to achieve our goals
 
 - complementarity (skills, experience, etc)
 
 - efficiency
+=======
+- only way to achieve our goals 
+
+- complementarity (skills, experience, etc)
+
+- efficiency 
+>>>>>>> 3e4f6f9 (introduce part 1)
 
 --
 

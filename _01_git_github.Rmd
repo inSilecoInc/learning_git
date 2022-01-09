@@ -54,6 +54,7 @@ output:
 
 
 
+ a
 ---
 
 class: inverse, center, middle
@@ -65,6 +66,12 @@ class: inverse, center, middle
 ## The big picture!
 
 
+
+---
+
+- https://git.wiki.kernel.org/index.php/GitFaq#Why_the_.27Git.27_name.3F
+
+https://ndpsoftware.com/git-cheatsheet.html#loc=workspace;
 
 
 ---
