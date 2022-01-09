@@ -54,7 +54,6 @@ output:
 
 
 
- a
 ---
 
 class: inverse, center, middle
@@ -69,7 +68,132 @@ class: inverse, center, middle
 
 ---
 
-- https://git.wiki.kernel.org/index.php/GitFaq#Why_the_.27Git.27_name.3F
+class: inverse, center, middle
+
+# `r gt()`
+
+![:custom_hr]()
+
+##  `r nf()` `r gt()`, `r gh()`, `r gl()`, etc.
+
+
+
+
+---
+# Genesis
+
+
+### 2005 Linux Kernel developers needed a new tool to replace [BitKeeper](https://en.wikipedia.org/wiki/BitKeeper)
+
+<br>
+
+### Linus Torvald and colleagues start developing of a new tool call `r gt()`
+
+<br>
+
+### 2009 `r ar()` [Junio C. Hanamo (@gitster)](https://github.com/gitster) became the lead developer
+
+---
+# Genesis
+
+.center[![](img/part1/linux.png)]
+
+- `r lk()` https://github.com/torvalds/linux
+
+---
+# Genesis
+
+.center[![](img/part1/git.png)]
+
+- `r lk()` https://github.com/git/git
+
+
+---
+# Genesis
+
+### Why does `r gt()` actually mean?
+
+.center[![](img/part1/name.png)]
+
+- `r lk()` https://git.wiki.kernel.org/index.php/Git_FAQ#Why_the_.27Git.27_name.3F
+
+
+---
+# Genesis
+
+
+### `r gt()` was designed around several goals 
+
+1. Speed
+1. Simple design
+1. Strong support for non-linear development (thousands of parallel branches)
+1. Able to handle large projects like the Linux kernel efficiently (speed and data size) 
+1. **Fully distributed**
+
+
+<br>
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2)
+
+---
+# Version Control Systems (VCS)
+
+
+.center[![:scale 50%](img/part1/vcs.png)]
+
+<br>
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2)
+
+
+---
+# Centralized Version Control Systems (CVCS)
+
+
+.center[![:scale 80%](img/part1/cvcs.png)]
+
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2)
+
+---
+# Distributed Version Control Systems (DVCS)
+
+
+.center[![:scale 40%](img/part1/dvcs.png)]
+
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2)
+
+
+---
+# `r gt()` is fully distributed 
+
+## Every repository includes the entire database 
+
+--
+
+## database = `r emj("file_folder")` `.git` 
+
+--
+
+```sh
+$ tree -a -L 1 
+.
+├── _01_git_github.Rmd
+├── _02_basic_git_actions.Rmd
+├── _03_beyond_pppp.Rmd
+├── _04_rmarkdown.Rmd
+├── _05_csas.Rmd
+├── DESCRIPTION
+├── .git
+├── .github
+├── .gitignore
+```
+
+--
+
+## `git` is what is shared!
+
+
+---
+# How does `r gt()` work?
+
 
 https://ndpsoftware.com/git-cheatsheet.html#loc=workspace;
 
