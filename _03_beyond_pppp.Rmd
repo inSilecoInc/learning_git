@@ -16,19 +16,5 @@ output:
 source("_setup.R")
 ```
 
-
 ---
-
-class: inverse, center, middle
-
-# `r nf()` Rationalize
-
-![:custom_hr]()
-
-## Why use `r rp()` for spatial data? (`r ck()`~15min)
-
-
-???
-
-If after the workshop what follows makes sense and you feel it is kind of true, it would a success. 
-
+# Comming soon (28/03/2022)
