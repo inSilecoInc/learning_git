@@ -193,26 +193,39 @@ $ tree -a -L 1
 ---
 #  **snapshots**?
 
-
----
-#  **snapshots**?
+.center[![:scale 100%](img/part1/sp_1.png)]
 
 
 ---
 #  **snapshots**?
 
-
----
-#  **snapshots**?
+.center[![:scale 100%](img/part1/sp_2.png)]
 
 
 ---
 #  **snapshots**?
 
+.center[![:scale 100%](img/part1/sp_3.png)]
 
 ---
 #  **snapshots**?
 
+.center[![:scale 100%](img/part1/sp_4.png)]
+
+---
+#  **snapshots**?
+
+.center[![:scale 100%](img/part1/sp_5.png)]
+
+---
+#  **snapshots**?
+
+.center[![:scale 100%](img/part1/sp_6.png)]
+
+---
+#  **snapshots**?
+
+.center[![:scale 100%](img/part1/sp_7.png)]
 
 
 
@@ -225,7 +238,7 @@ $ tree -a -L 1
 
 --
 
-### 2. edit your files (`git init`)
+### 2. edit your files
 
 --
 
@@ -256,11 +269,18 @@ $ tree -a -L 1
 ---
 # How does `r gt()` work?
 
-<!-- edit but use snapshots picture again -->
+.center[![:scale 100%](img/part1/sp_3.png)]
 
 ---
 # How does `r gt()` work?
 
+.center[![:scale 100%](img/part1/sp_8.png)]
+
+
+---
+# How does `r gt()` work?
+
+.center[![:scale 100%](img/part1/sp_9.png)]
 
 
 ---

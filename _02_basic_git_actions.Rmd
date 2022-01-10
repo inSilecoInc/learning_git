@@ -57,6 +57,7 @@ https://danielkummer.github.io/git-flow-cheatsheet/
 
 
 ---
+# Using several remotes
 
 ```sh
 git remote -vv
@@ -66,4 +67,6 @@ mirror2	git@raspberrypi.local:/srv/git/demogit.git (fetch)
 mirror2	git@raspberrypi.local:/srv/git/demogit.git (push)
 origin	git@github.com:inSilecoInc/demogit.git (fetch)
 origin	git@github.com:inSilecoInc/demogit.git (push)
+```
+
 ---
