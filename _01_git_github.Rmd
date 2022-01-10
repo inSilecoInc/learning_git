@@ -63,6 +63,7 @@ class: inverse, center, middle
 ![:custom_hr]()
 
 ## The big picture!
+<<<<<<< HEAD
 
 
 
@@ -75,6 +76,8 @@ class: inverse, center, middle
 ![:custom_hr]()
 
 ##  `r nf()` `r gt()`, `r gh()`, `r gl()`, etc.
+=======
+>>>>>>> a8f5553 (:pencil: github and gilab)
 
 
 
@@ -141,7 +144,7 @@ class: inverse, center, middle
 .center[![:scale 50%](img/part1/vcs.png)]
 
 <br>
-- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2)
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
 
 
 ---
@@ -150,7 +153,7 @@ class: inverse, center, middle
 
 .center[![:scale 80%](img/part1/cvcs.png)]
 
-- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2)
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
 
 ---
 # Distributed Version Control Systems (DVCS)
@@ -158,7 +161,7 @@ class: inverse, center, middle
 
 .center[![:scale 40%](img/part1/dvcs.png)]
 
-- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2)
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
 
 
 ---
@@ -194,8 +197,12 @@ $ tree -a -L 1
 ---
 # How does `r gt()` work?
 
+## What does `r emj("file_folder")` `.git`  include?
 
-https://ndpsoftware.com/git-cheatsheet.html#loc=workspace;
+### `.git` stores **snapshots** not differences 
+
+### **snapshots** of the file system of your project
+
 
 
 ---
