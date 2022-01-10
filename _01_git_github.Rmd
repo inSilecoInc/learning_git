@@ -12,10 +12,45 @@ output:
 ---
 
 
-```{r include = FALSE, purl = FALSE}
-source("_setup.R")
-```
 
+
+---
+#  In this part, we will...
+
+--
+
+### ... learn what are `r gt()`, `r gh()` and `r gl()`;
+
+--
+
+### ... get a basic understanding of how `r gt()` works.
+
+
+
+---
+# Key resources 
+
+.center[![:scale 30%](https://git-scm.com/images/progit2.png)]
+
+- `r lk()` S. Chacon & B. Straub (2014), Pro Git https://git-scm.com/book/en/v2
+- `r gh()` https://github.com/progit/progit2 
+- `r bk()` https://github.com/progit/progit2/releases/tag/2.1.336
+
+
+---
+# Key resources 
+
+.center[![:scale 90%](img/part1/happygit.png)]
+
+- `r lk()` J. Bryan (2022), Happy git with R https://happygitwithr.com/
+
+---
+# Key resources 
+
+.center[![:scale 30%](img/part1/so_cover.jpeg)]
+
+- `r lk()` https://tra38.gitbooks.io/essential-copying-and-pasting-from-stack-overflow/content/
+- `r so()` https://stackoverflow.com/
 
 
 
@@ -27,135 +62,416 @@ class: inverse, center, middle
 
 ![:custom_hr]()
 
-##  `r nf()` `r gt()`, `r gh()`, `r gl()`, etc.
-
-
----
-# Key resource 
-
-
-.center[![:scale 40%](https://git-scm.com/images/progit2.png)]
+## The big picture!
 
 
 
 
 ---
-# `r gt()`
+# Genesis
 
+
+### 2005 Linux Kernel developers needed a new tool to replace [BitKeeper](https://en.wikipedia.org/wiki/BitKeeper)
+
+<br>
+
+### Linus Torvald and colleagues start developing of a new tool call `r gt()`
+
+<br>
+
+### 2009 `r ar()` [Junio C. Hanamo (@gitster)](https://github.com/gitster) became the lead developer
+
+---
+# Genesis
+
+.center[![](img/part1/linux.png)]
+
+- `r lk()` https://github.com/torvalds/linux
+
+---
+# Genesis
+
+.center[![](img/part1/git.png)]
+
+- `r lk()` https://github.com/git/git
+
+
+---
+# Genesis
+
+### Why does `r gt()` actually mean?
+
+.center[![](img/part1/name.png)]
+
+- `r lk()` https://git.wiki.kernel.org/index.php/Git_FAQ#Why_the_.27Git.27_name.3F
+
+
+---
+# Genesis
+
+
+### `r gt()` was designed around several goals 
+
+1. Speed
+1. Simple design
+1. Strong support for non-linear development (thousands of parallel branches)
+1. Able to handle large projects like the Linux kernel efficiently (speed and data size) 
+1. **Fully distributed**
+
+
+<br>
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2)
+
+---
+# Version Control Systems (VCS)
+
+
+.center[![:scale 50%](img/part1/vcs.png)]
+
+<br>
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
+
+
+---
+# Centralized Version Control Systems (CVCS)
+
+
+.center[![:scale 80%](img/part1/cvcs.png)]
+
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
+
+---
+# Distributed Version Control Systems (DVCS)
+
+
+.center[![:scale 40%](img/part1/dvcs.png)]
+
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
+
+
+---
+# `r gt()` is fully distributed 
+
+## Every repository includes the entire database 
+
+--
+
+## database = `r emj("file_folder")` `.git` 
+
+--
+
+```sh
+$ tree -a -L 1 
+.
+├── _01_git_github.Rmd
+├── _02_basic_git_actions.Rmd
+├── _03_beyond_pppp.Rmd
+├── _04_rmarkdown.Rmd
+├── _05_csas.Rmd
+├── DESCRIPTION
+├── .git
+├── .github
+├── .gitignore
+```
+
+--
+
+## `git` is what is shared!
+
+
+---
+# How does `r gt()` work?
+
+## What does `r emj("file_folder")` `.git`  include?
+
+### `.git` stores **snapshots** not differences 
+
+### **snapshots** of the file system of your project
+
+
+
+---
+#  **snapshots**?
+
+.center[![:scale 100%](img/part1/sp_1.png)]
+
+
+---
+#  **snapshots**?
+
+.center[![:scale 100%](img/part1/sp_2.png)]
+
+
+---
+#  **snapshots**?
+
+.center[![:scale 100%](img/part1/sp_3.png)]
+
+---
+#  **snapshots**?
+
+.center[![:scale 100%](img/part1/sp_4.png)]
+
+---
+#  **snapshots**?
+
+.center[![:scale 100%](img/part1/sp_5.png)]
+
+---
+#  **snapshots**?
+
+.center[![:scale 100%](img/part1/sp_6.png)]
+
+---
+#  **snapshots**?
+
+.center[![:scale 100%](img/part1/sp_7.png)]
+
+
+
+
+---
+# How do I create a snapshot?
+
+
+### 1. initiate the repository (`git init`)
+
+--
+
+### 2. edit your files
+
+--
+
+### 3. stage the modifications to be committed (`git add`)
+
+--
+
+### 4. create a new commit object (`git commit`)
+
+--
+
+### 5. Go back to step 2.
+
+
+---
+# Three states 
+
+
+> Git has three main states that your files can reside in: *modified*, *staged*, and *committed*.
+
+
+.center[![:scale 80%](img/part1/threestates.png)]
+
+
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
+
+
+---
+# How does `r gt()` work?
+
+.center[![:scale 100%](img/part1/sp_3.png)]
+
+---
+# How does `r gt()` work?
+
+.center[![:scale 100%](img/part1/sp_8.png)]
+
+
+---
+# How does `r gt()` work?
+
+.center[![:scale 100%](img/part1/sp_9.png)]
+
+
+---
+
+class: inverse, center, middle
+
+# `r gh()` & `r gl()`
+
+![:custom_hr]()
+
+## Share your .git database!
+
+
+
+---
+# `r gt()` is fully distributed 
+
+### 1. We can use set **remote** repositories;
+
+### 2. There is no limit to the number of remotes;
+
+### 3. `r gt()` supports various protocols (`https`, `http`, `ssh`);
+
+### 4. `r gt()` makes it easy to synchronize local and remote repositories.
+
+
+<!-- examples 3 different demogit -->
+
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols).
+
+---
+# How to use remote repository
+
+### 1. Use a `r gt()` server
+
+--
+
+### 2. Initiate a bare repository (`git init --bare --shared`)
+
+--
+
+### 3. Add the remote to your local repository  (`git remote add <name> <adr>`)
+
+--
+
+### 4. Sync your local repository and your remote one  (using `git pull` and `git push`)
+
+
+
+---
+# `r gt()` servers
+
+
+## Your own server 
+
+- e.g. a minimal ssh server (see this post)
+- [GitLab](https://gitlab.com/) 
+
+## Dedicated hosting site
+
+- [GitHub](https://github.com/)
+- [GitLab](https://gitlab.com/)
+- [Bitbucket](https://bitbucket.org/)
+
+
+---
+# GitHub `r gh()`
+
+> GitHub, Inc. is a provider of Internet hosting for software development and version control using Git. It offers the distributed version control and source code management (SCM) functionality of Git, plus its own features. https://en.wikipedia.org/wiki/GitHub
+
+--
+
+- Git server + database-backed website
+- + [web REST API](https://docs.github.com/en/rest)
+- + [issue tracking system](https://en.wikipedia.org/wiki/Issue_tracking_system) 
+- + [Project management features](https://github.com/features/issues)
+- + Host webpages ([GitHub Pages](https://pages.github.com/))
+- + Continuous Integration feature ([GitHub Actions](https://docs.github.com/en/actions))
+- ...
+
+--
+
+### GitHub in numbers https://octoverse.github.com/
+
+
+
+---
+# GitLab  `r gl()`
+
+
+- Git server + database-backed website
+- + [web REST API](https://docs.gitlab.com/ee/api/)
+- + Issue tracking system
+- + Project management features
+- + Host webpages ([GitLab Pages](https://docs.gitlab.com/ee/user/project/pages))
+- + Continuous Integration feature ([Gitlab CI/CD](https://docs.gitlab.com/ee/ci/))
+- ...
+
+--
+
+
+### GitLab in numbers https://about.gitlab.com/company/
+
+--
+
+### You can install your own `r gl()` server https://about.gitlab.com/install/
+
+
+
+---
+# Install `r gt()`
+
+A lot of tutorials! 
+
+- https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+- https://happygitwithr.com/install-git.html
+
+- https://github.com/git-guides/install-git
+
+
+--
 
 ```{bash}
 git --version
 ```
 
 
-<!-- ---
+---
+# Interact with `r gt()`
 
-https://rdatatoolbox.github.io/instructions.html
+### Command line 
 
-==> ask what OS do they use 
-==> ask if they are confortable with command line tools  
-==> ask if they are using Rstudio or other IDE 
+- Terminal 
+- [RStudio](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
+- with R, see [`gert`](https://CRAN.R-project.org/package=gert)
 
+### More interactively 
 
-==> git grep
+- [GitHub Desktop](https://desktop.github.com/)
+- [Git Kraken](https://www.gitkraken.com/)
+- Code editor 
+  - [Visual Studio](https://docs.microsoft.com/en-us/visualstudio/version-control/git-with-visual-studio?view=vs-2022)
 
-# Install git 
 
-les concepts 
+---
+# Get started with GitHub or GitLab 
 
 
-## command line or not..
+## GitHub `r gh()`
 
-## at first git may not be easy it is a very strong tool but need to understand how it works, not in details but in some depths
+- Sign up on https://github.com, then go to https://docs.github.com/en/get-started
 
+## GitLab `r gl()`
 
-Un important changement pour pas mal de developement 
+- Go to https://about.gitlab.com/get-started/
 
-## 
 
-https://desktop.github.com/
 
-https://www.gitkraken.com/
 
 
-`git version`
+---
+# `r lc()` demo 
 
-`git status -s`
+### Assuming you have one `r gh()` account and `r gt()` installed;
 
+### We will do it again next week.
 
-`git init`
+<!-- first local then add remote -->
 
 
-`git add`
+---
+# Resources 
 
-`git commit`
+### Books
 
+- S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2)
+- J. Bryan (2022), [Happy git with R](https://happygitwithr.com/)
 
-git + webservice is not a cloud substitue 
+### Websites
 
-avoid large file there are alternative options 
+- https://git.wiki.kernel.org/index.php/Main_Page
+- https://mirrors.edge.kernel.org/pub/software/scm/git/docs/user-manual.html
+- Github: https://docs.github.com/en
+- GitLab: https://docs.gitlab.com/ee/topics/git/#git
 
+### Cheat sheets
 
-## Build as history
+- https://ndpsoftware.com/git-cheatsheet.html#loc=workspace `r emj("fireworks")`
+- https://education.github.com/git-cheat-sheet-education.pdf
+- https://www.freecodecamp.org/news/git-cheat-sheet/
 
 
-## Work on history
 
-## Manipulate the last commit 
-
-
-## Branch 
-
-
-# GitHub
-
-https://github.blog/2021-11-16-the-2021-state-of-the-octoverse/
-
-
-https://towardsdatascience.com/githubs-path-to-128m-public-repositories-f6f656ab56b1
-
-https://github.blog/2018-11-08-100m-repos/
-
-https://www.upguard.com/blog/bitbucket-vs-github
-
-https://en.wikipedia.org/wiki/Timeline_of_GitHub
-
-https://www.git-tower.com/mac?utm_source=learn-website&utm_campaign=git-faq&utm_medium=easy-in-tower&utm_content=undo-last-commit
-
-
-https://octoverse.github.com/#lets-look-back-at-the-code-and-communities-built-on-git-hub-this-year
-
-`git checkout`
-
-
-`git checkout -b`
-
-`git switch -c`
-
-`git switch` (2.23)
-
-## 
-
-
-### Best practices 
-
-PPP 
-
-PR 
-
-
-###
-
-
-## Rewrite the history
-
-
-`git rebase`
-
-
-
-
-## Adance gh gh cli 
-
-
-https://happygitwithr.com/ -->
