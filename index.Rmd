@@ -162,7 +162,7 @@ class: inverse, center, middle
 
 ![:custom_hr]()
 
-## Basic actions
+## `r gt()` basics
 
 
 

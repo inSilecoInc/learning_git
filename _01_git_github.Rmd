@@ -23,11 +23,8 @@ output:
 
 --
 
-### ... create a first repository that uses `r gt()`;
+### ... get a basic understanding of how `r gt()` works.
 
---
-
-### ... set up a repository in `r gh()` and `r gl()`
 
 
 ---
@@ -65,7 +62,7 @@ class: inverse, center, middle
 
 ![:custom_hr]()
 
-##  `r nf()` `r gt()`, `r gh()`, `r gl()`, etc.
+## The big picture!
 
 
 
@@ -132,7 +129,7 @@ class: inverse, center, middle
 .center[![:scale 50%](img/part1/vcs.png)]
 
 <br>
-- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2)
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
 
 
 ---
@@ -141,7 +138,7 @@ class: inverse, center, middle
 
 .center[![:scale 80%](img/part1/cvcs.png)]
 
-- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2)
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
 
 ---
 # Distributed Version Control Systems (DVCS)
@@ -149,7 +146,7 @@ class: inverse, center, middle
 
 .center[![:scale 40%](img/part1/dvcs.png)]
 
-- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2)
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
 
 
 ---
@@ -185,18 +182,254 @@ $ tree -a -L 1
 ---
 # How does `r gt()` work?
 
+## What does `r emj("file_folder")` `.git`  include?
 
-https://ndpsoftware.com/git-cheatsheet.html#loc=workspace;
+### `.git` stores **snapshots** not differences 
+
+### **snapshots** of the file system of your project
+
 
 
 ---
-# `r gt()`
+#  **snapshots**?
 
+
+---
+#  **snapshots**?
+
+
+---
+#  **snapshots**?
+
+
+---
+#  **snapshots**?
+
+
+---
+#  **snapshots**?
+
+
+---
+#  **snapshots**?
+
+
+
+
+
+---
+# How do I create a snapshot?
+
+
+### 1. initiate the repository (`git init`)
+
+--
+
+### 2. edit your files (`git init`)
+
+--
+
+### 3. stage the modifications to be committed (`git add`)
+
+--
+
+### 4. create a new commit object (`git commit`)
+
+--
+
+### 5. Go back to step 2.
+
+
+---
+# Three states 
+
+
+> Git has three main states that your files can reside in: *modified*, *staged*, and *committed*.
+
+
+.center[![:scale 80%](img/part1/threestates.png)]
+
+
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
+
+
+---
+# How does `r gt()` work?
+
+<!-- edit but use snapshots picture again -->
+
+---
+# How does `r gt()` work?
+
+
+
+---
+
+class: inverse, center, middle
+
+# `r gh()` & `r gl()`
+
+![:custom_hr]()
+
+## Share your .git database!
+
+
+
+---
+# `r gt()` is fully distributed 
+
+### 1. We can use set **remote** repositories;
+
+### 2. There is no limit to the number of remotes;
+
+### 3. `r gt()` supports various protocols (`https`, `http`, `ssh`);
+
+### 4. `r gt()` makes it easy to synchronize local and remote repositories.
+
+
+<!-- examples 3 different demogit -->
+
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols).
+
+---
+# How to use remote repository
+
+### 1. Use a `r gt()` server
+
+--
+
+### 2. Initiate a bare repository (`git init --bare --shared`)
+
+--
+
+### 3. Add the remote to your local repository  (`git remote add <name> <adr>`)
+
+--
+
+### 4. Sync your local repository and your remote one  (using `git pull` and `git push`)
+
+
+
+---
+# `r gt()` servers
+
+
+## Your own server 
+
+- e.g. a minimal ssh server (see this post)
+- [GitLab](https://gitlab.com/) 
+
+## Dedicated hosting site
+
+- [GitHub](https://github.com/)
+- [GitLab](https://gitlab.com/)
+- [Bitbucket](https://bitbucket.org/)
+
+
+---
+# GitHub `r gh()`
+
+> GitHub, Inc. is a provider of Internet hosting for software development and version control using Git. It offers the distributed version control and source code management (SCM) functionality of Git, plus its own features. https://en.wikipedia.org/wiki/GitHub
+
+--
+
+- Git server + database-backed website
+- + [web REST API](https://docs.github.com/en/rest)
+- + [issue tracking system](https://en.wikipedia.org/wiki/Issue_tracking_system) 
+- + [Project management features](https://github.com/features/issues)
+- + Host webpages ([GitHub Pages](https://pages.github.com/))
+- + Continuous Integration feature ([GitHub Actions](https://docs.github.com/en/actions))
+- ...
+
+--
+
+### GitHub in numbers https://octoverse.github.com/
+
+
+
+---
+# GitLab  `r gl()`
+
+
+- Git server + database-backed website
+- + [web REST API](https://docs.gitlab.com/ee/api/)
+- + Issue tracking system
+- + Project management features
+- + Host webpages ([GitLab Pages](https://docs.gitlab.com/ee/user/project/pages))
+- + Continuous Integration feature ([Gitlab CI/CD](https://docs.gitlab.com/ee/ci/))
+- ...
+
+--
+
+
+### GitLab in numbers https://about.gitlab.com/company/
+
+--
+
+### You can install your own `r gl()` server https://about.gitlab.com/install/
+
+
+
+---
+# Install `r gt()`
+
+A lot of tutorials! 
+
+- https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+- https://happygitwithr.com/install-git.html
+
+- https://github.com/git-guides/install-git
+
+
+--
 
 ```{bash}
 git --version
 ```
 
+
+---
+# Interact with `r gt()`
+
+### Command line 
+
+- Terminal 
+- [RStudio](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
+- with R, see [`gert`](https://CRAN.R-project.org/package=gert)
+
+### More interactively 
+
+- [GitHub Desktop](https://desktop.github.com/)
+- [Git Kraken](https://www.gitkraken.com/)
+- Code editor 
+  - [Visual Studio](https://docs.microsoft.com/en-us/visualstudio/version-control/git-with-visual-studio?view=vs-2022)
+
+
+---
+# Get started with GitHub or GitLab 
+
+
+## GitHub `r gh()`
+
+- Sign up on https://github.com, then go to https://docs.github.com/en/get-started
+
+## GitLab `r gl()`
+
+- Go to https://about.gitlab.com/get-started/
+
+
+
+
+
+---
+# `r lc()` demo 
+
+### Assuming you have one `r gh()` account and `r gt()` installed;
+
+### We will do it again next week.
+
+<!-- first local then add remote -->
 
 
 ---
@@ -204,8 +437,8 @@ git --version
 
 ### Books
 
-- https://git-scm.com/
-- https://happygitwithr.com/ 
+- S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2)
+- J. Bryan (2022), [Happy git with R](https://happygitwithr.com/)
 
 ### Websites
 
@@ -214,167 +447,11 @@ git --version
 - Github: https://docs.github.com/en
 - GitLab: https://docs.gitlab.com/ee/topics/git/#git
 
-### cheat sheets
+### Cheat sheets
 
-- https://ndpsoftware.com/git-cheatsheet.html#loc=workspace
+- https://ndpsoftware.com/git-cheatsheet.html#loc=workspace `r emj("fireworks")`
 - https://education.github.com/git-cheat-sheet-education.pdf
 - https://www.freecodecamp.org/news/git-cheat-sheet/
 
 
 
-
-<!-- ---
-
-https://rdatatoolbox.github.io/instructions.html
-
-==> ask what OS do they use 
-==> ask if they are confortable with command line tools  
-==> ask if they are using Rstudio or other IDE 
-
-
-==> git grep
-
-# Install git 
-
-les concepts 
-
-
-## command line or not..
-
-## at first git may not be easy it is a very strong tool but need to understand how it works, not in details but in some depths
-
-
-Un important changement pour pas mal de developement 
-
-## 
-
-https://desktop.github.com/
-
-https://www.gitkraken.com/
-
-
-`git version`
-
-`git status -s`
-
-
-`git init`
-
-
-`git add`
-
-`git commit`
-
-
-git + webservice is not a cloud substitue 
-
-avoid large file there are alternative options 
-
-
-## Build as history
-
-
-## Work on history
-
-## Manipulate the last commit 
-
-
-## Branch 
-
-
-# GitHub
-
-https://github.blog/2021-11-16-the-2021-state-of-the-octoverse/
-
-
-https://towardsdatascience.com/githubs-path-to-128m-public-repositories-f6f656ab56b1
-
-https://github.blog/2018-11-08-100m-repos/
-
-https://www.upguard.com/blog/bitbucket-vs-github
-
-https://en.wikipedia.org/wiki/Timeline_of_GitHub
-
-https://www.git-tower.com/mac?utm_source=learn-website&utm_campaign=git-faq&utm_medium=easy-in-tower&utm_content=undo-last-commit
-
-
-https://octoverse.github.com/#lets-look-back-at-the-code-and-communities-built-on-git-hub-this-year
-
-`git checkout`
-
-
-`git checkout -b`
-
-`git switch -c`
-
-`git switch` (2.23)
-
-## 
-
-
-### Best practices 
-
-PPP 
-
-PR 
-
-
-###
-
-
-## Rewrite the history
-
-
-`git rebase`
-
-
-
-
-## Adance gh gh cli 
-
-
-https://happygitwithr.com/ -->
-
-
-
-
-https://github.com/git-guides
-
-<!-- 
-."Capitalized, short (50 chars or less) summary
-
-More detailed explanatory text, if necessary.  Wrap it to about 72
-characters or so.  In some contexts, the first line is treated as the
-subject of an email and the rest of the text as the body.  The blank
-line separating the summary from the body is critical (unless you omit
-the body entirely); tools like rebase will confuse you if you run the
-two together.
-
-Write your commit message in the imperative: "Fix bug" and not "Fixed bug"
-or "Fixes bug."  This convention matches up with commit messages generated
-by commands like git merge and git revert.
-
-Further paragraphs come after blank lines.
-
-- Bullet points are okay, too
-
-- Typically a hyphen or asterisk is used for the bullet, followed by a
-  single space, with blank lines in between, but conventions vary here
-
-- Use a hanging indent"
-
-
-https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
-
- As a general rule, your messages should start with a single line that’s no more than about 50 characters and that describes the changeset concisely, followed by a blank lin
-  followed by a blank line, followed by a more detailed explanation. 
- 
-
-gitmoji
- 
-could be useful but takes chracters
- 
- https://git-send-email.io/#step-1
- 
- https://docs.ropensci.org/gert/
-  -->
