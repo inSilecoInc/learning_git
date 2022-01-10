@@ -63,7 +63,6 @@ class: inverse, center, middle
 ![:custom_hr]()
 
 ## The big picture!
-<<<<<<< HEAD
 
 
 
@@ -76,8 +75,6 @@ class: inverse, center, middle
 ![:custom_hr]()
 
 ##  `r nf()` `r gt()`, `r gh()`, `r gl()`, etc.
-=======
->>>>>>> a8f5553 (:pencil: github and gilab)
 
 
 
@@ -327,18 +324,15 @@ $ tree -a -L 1
 ### **snapshots** of the file system of your project
 
 
-
----
-#  **snapshots**?
+.center[![:scale 100%](img/part1/sp_1.png)]
 
 .center[![:scale 100%](img/part1/sp_1.png)]
 
-
----
-#  **snapshots**?
+.center[![:scale 100%](img/part1/sp_2.png)]
 
 .center[![:scale 100%](img/part1/sp_2.png)]
 
+.center[![:scale 100%](img/part1/sp_3.png)]
 
 ---
 #  **snapshots**?
