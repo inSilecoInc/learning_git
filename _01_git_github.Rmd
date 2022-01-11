@@ -28,24 +28,24 @@ output:
 
 
 ---
-# Key resources 
+# Key resources
 
 .center[![:scale 30%](https://git-scm.com/images/progit2.png)]
 
 - `r lk()` S. Chacon & B. Straub (2014), Pro Git https://git-scm.com/book/en/v2
-- `r gh()` https://github.com/progit/progit2 
+- `r gh()` https://github.com/progit/progit2
 - `r bk()` https://github.com/progit/progit2/releases/tag/2.1.336
 
 
 ---
-# Key resources 
+# Key resources
 
 .center[![:scale 90%](img/part1/happygit.png)]
 
 - `r lk()` J. Bryan (2022), Happy git with R https://happygitwithr.com/
 
 ---
-# Key resources 
+# Key resources
 
 .center[![:scale 30%](img/part1/so_cover.jpeg)]
 
@@ -75,7 +75,7 @@ class: inverse, center, middle
 
 <br>
 
-### Linus Torvald and colleagues start developing of a new tool call `r gt()`
+### Linus Torvald and colleagues start developing a new tool called `r gt()`
 
 <br>
 
@@ -110,12 +110,12 @@ class: inverse, center, middle
 # Genesis
 
 
-### `r gt()` was designed around several goals 
+### `r gt()` was designed around several goals
 
 1. Speed
 1. Simple design
 1. Strong support for non-linear development (thousands of parallel branches)
-1. Able to handle large projects like the Linux kernel efficiently (speed and data size) 
+1. Able to handle large projects like the Linux kernel efficiently (speed and data size)
 1. **Fully distributed**
 
 
@@ -150,18 +150,18 @@ class: inverse, center, middle
 
 
 ---
-# `r gt()` is fully distributed 
+# `r gt()` is fully distributed
 
-## Every repository includes the entire database 
+## Every repository includes the entire database
 
 --
 
-## database = `r emj("file_folder")` `.git` 
+## database = `r emj("file_folder")` `.git`
 
 --
 
 ```sh
-$ tree -a -L 1 
+$ tree -a -L 1
 .
 ├── _01_git_github.Rmd
 ├── _02_basic_git_actions.Rmd
@@ -184,7 +184,7 @@ $ tree -a -L 1
 
 ## What does `r emj("file_folder")` `.git`  include?
 
-### `.git` stores **snapshots** not differences 
+### `.git` stores **snapshots** not differences
 
 ### **snapshots** of the file system of your project
 
@@ -254,7 +254,7 @@ $ tree -a -L 1
 
 
 ---
-# Three states 
+# Three states
 
 
 > Git has three main states that your files can reside in: *modified*, *staged*, and *committed*.
@@ -296,7 +296,7 @@ class: inverse, center, middle
 
 
 ---
-# `r gt()` is fully distributed 
+# `r gt()` is fully distributed
 
 ### 1. We can use set **remote** repositories;
 
@@ -334,10 +334,10 @@ class: inverse, center, middle
 # `r gt()` servers
 
 
-## Your own server 
+## Your own server
 
 - e.g. a minimal ssh server (see this post)
-- [GitLab](https://gitlab.com/) 
+- [GitLab](https://gitlab.com/)
 
 ## Dedicated hosting site
 
@@ -354,8 +354,8 @@ class: inverse, center, middle
 --
 
 - Git server + database-backed website
-- + [web REST API](https://docs.github.com/en/rest)
-- + [issue tracking system](https://en.wikipedia.org/wiki/Issue_tracking_system) 
+- + [Web REST API](https://docs.github.com/en/rest)
+- + [Issue tracking system](https://en.wikipedia.org/wiki/Issue_tracking_system)
 - + [Project management features](https://github.com/features/issues)
 - + Host webpages ([GitHub Pages](https://pages.github.com/))
 - + Continuous Integration feature ([GitHub Actions](https://docs.github.com/en/actions))
@@ -372,7 +372,7 @@ class: inverse, center, middle
 
 
 - Git server + database-backed website
-- + [web REST API](https://docs.gitlab.com/ee/api/)
+- + [Web REST API](https://docs.gitlab.com/ee/api/)
 - + Issue tracking system
 - + Project management features
 - + Host webpages ([GitLab Pages](https://docs.gitlab.com/ee/user/project/pages))
@@ -393,7 +393,7 @@ class: inverse, center, middle
 ---
 # Install `r gt()`
 
-A lot of tutorials! 
+A lot of tutorials!
 
 - https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
@@ -412,22 +412,22 @@ git --version
 ---
 # Interact with `r gt()`
 
-### Command line 
+### Command line
 
-- Terminal 
+- Terminal
 - [RStudio](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
 - with R, see [`gert`](https://CRAN.R-project.org/package=gert)
 
-### More interactively 
+### More interactively
 
 - [GitHub Desktop](https://desktop.github.com/)
 - [Git Kraken](https://www.gitkraken.com/)
-- Code editor 
+- Code editor
   - [Visual Studio](https://docs.microsoft.com/en-us/visualstudio/version-control/git-with-visual-studio?view=vs-2022)
 
 
 ---
-# Get started with GitHub or GitLab 
+# Get started with GitHub or GitLab
 
 
 ## GitHub `r gh()`
@@ -443,7 +443,7 @@ git --version
 
 
 ---
-# `r lc()` demo 
+# `r lc()` demo
 
 ### Assuming you have one `r gh()` account and `r gt()` installed;
 
@@ -453,7 +453,7 @@ git --version
 
 
 ---
-# Resources 
+# Resources
 
 ### Books
 
@@ -472,6 +472,3 @@ git --version
 - https://ndpsoftware.com/git-cheatsheet.html#loc=workspace `r emj("fireworks")`
 - https://education.github.com/git-cheat-sheet-education.pdf
 - https://www.freecodecamp.org/news/git-cheat-sheet/
-
-
-
