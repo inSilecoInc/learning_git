@@ -1,5 +1,5 @@
 ---
-title: "Work more collaboratively in R"
+title: "Collaborate more"
 author: "inSileco Team"
 date: 2021-12-20
 output:
@@ -33,7 +33,10 @@ class: title-slide, middle
 
 ## .font100[Work more collaboratively in `r rp()`]
 
-<br><br>
+## .font100[with `r gt()` & `r gh()`]
+
+
+<br>
 
 .instructors[
   .font160[`r rp()` Learning & Development community]
@@ -43,14 +46,14 @@ class: title-slide, middle
   `r format(Sys.time(), '%B %d, %Y')`
   <br>
   .font200[
-  [`r gh()`](https://github.com/inSilecoInc)
-  [`r db()`](link_to_data)
-  [`r rfa("file-pdf")`](link_to_pdf_version)
+  [`r gh()`](https://github.com/inSilecoInc/learning_git)
+  <!-- [`r db()`](link_to_data) -->
+  <!-- [`r rfa("file-pdf")`](link_to_pdf_version) -->
   ]
 ]
 
 <br>
-<img src="img/logoW.png" width="140px"></img>
+<img src="img/logoW.png" width="120px"></img>
 
 <!-- Modify accordingly -->
 ![deploy workshop](https://github.com/inSilecoInc/workshop_raster/workflows/deploy%20workshop/badge.svg)
@@ -63,7 +66,7 @@ class: title-slide, middle
 
 class: inverse, center, middle
 
-# `r nf()` Outline
+# `r nf()` Context
 
 ![:custom_hr]()
 
@@ -72,37 +75,69 @@ class: inverse, center, middle
 ---
 # Working collaboratively
 
-- we have to
-- complementarity
-- more fun
+## Why?
 
-- depending on task more or less complicated
-- tools help with this
+- only way to achieve our goals
 
-<!-- maybe add prob -->
+- complementarity (skills, experience, etc)
+
+- efficiency
+
+--
+
+## How?
+
+- meetings (of all kind)
+
+- sharing documents (of all kind)
+
+--
+
+  - **sharing code** (say `r rp()` code or a RMD document)
 
 
 
 ---
-# Working collaboratively
+# Sharing code
 
-- working with R and generate R Markdown
-- good tools is GitHub and Git
-- Git control versioning
-- developer of linux kernel
-- Web services such as GitHub lots of services make even better
+
+### Developers have been doing this for decades now
+
+--
+
+### They have created great tools for this
+
+--
+
+### `r gt()` is (probably) the most popular
+
+--
+
+### `r gh()` is the largest host for `r gt()` repositories
+
 
 
 ---
-# Learning objectifs
+# Learning objectives
 
-- Here we'll leran about git and github
-- use case Rmarkdown document (R + markdown) / csasdown
-- help guide people working together more efficiently
 
-- better understand git
-- better understand github
-- apply this to work on a document
+### Learn about `r gt()`  and `r gh()`
+
+--
+
+### Understand how `r gt()` works
+
+--
+
+### Be able to use `r gt()`  and `r gh()` to collaborate
+
+--
+
+### Use [<img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://rmarkdown.rstudio.com/) to create documents and expose them on `r gh()`
+
+--
+
+### Collaborate efficiently on a CSAS document using [csasdown `r rp()` package](https://github.com/pbs-assess/csasdown)
 
 
 
@@ -131,7 +166,7 @@ class: inverse, center, middle
 
 ![:custom_hr]()
 
-## Basic actions
+## `r gt()` basics
 
 
 
