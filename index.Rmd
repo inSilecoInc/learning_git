@@ -77,11 +77,11 @@ class: inverse, center, middle
 
 ## Why?
 
-- only way to achieve our goals 
+- only way to achieve our goals
 
 - complementarity (skills, experience, etc)
 
-- efficiency 
+- efficiency
 
 --
 
@@ -118,10 +118,10 @@ class: inverse, center, middle
 
 
 ---
-# Learning objectifs
+# Learning objectives
 
 
-### Learn about `r gt()`  and `r gh()` 
+### Learn about `r gt()`  and `r gh()`
 
 --
 
@@ -129,7 +129,11 @@ class: inverse, center, middle
 
 --
 
-### Be able to use `r gt()`  and `r gh()` collaborate 
+### Be able to use `r gt()`  and `r gh()` to collaborate
+
+--
+
+### Use [<img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://rmarkdown.rstudio.com/) to create documents and expose them on `r gh()`
 
 --
 
