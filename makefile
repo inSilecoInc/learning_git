@@ -1,4 +1,5 @@
 html: 
+	rm -rf proj1
 	Rscript -e 'rmarkdown::render("index.Rmd", "all")'
 
 pdf: 

@@ -12,9 +12,97 @@ output:
 ---
 
 
-```{r include = FALSE, purl = FALSE}
-source("_setup.R")
-```
+---
+# Coming soon (28/03/2022)
+
+
 
 ---
-# Comming soon (28/03/2022)
+# Inspect commits
+
+```sh
+git show 618b684
+commit 618b68425a3183a69b7472c3cda177f26acef3f4 (HEAD)
+Author: Kevin Cazelles <kevin.cazelles@insileco.io>
+Date:   Sun Jan 9 23:55:29 2022 -0500
+
+    add our README
+
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000..1f18e72
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,2 @@
++# Our great project
++This is a great project
+```
+
+
+---
+
+class: inverse, center, middle
+
+# Branching
+
+![:custom_hr]()
+
+
+
+---
+
+class: inverse, center, middle
+
+# Pull & Push
+
+![:custom_hr]()
+
+
+
+---
+
+class: inverse, center, middle
+
+# Clone & Fork 
+
+![:custom_hr]()
+
+
+
+---
+# Using several remotes
+
+```sh
+$ git remote -vv
+mirror	git@gitlab.com:KevCaz/demogit.git (fetch)
+mirror	git@gitlab.com:KevCaz/demogit.git (push)
+mirror2	git@raspberrypi.local:/srv/git/demogit.git (fetch)
+mirror2	git@raspberrypi.local:/srv/git/demogit.git (push)
+origin	git@github.com:inSilecoInc/demogit.git (fetch)
+origin	git@github.com:inSilecoInc/demogit.git (push)
+```
+
+
+
+
+
+
+
+---
+
+class: inverse, center, middle
+
+# Workflos
+
+![:custom_hr]()
+
+
+
+
+
+---
+# Workflows
+
+- https://github.com/github/gitignore
+- https://nvie.com/posts/a-successful-git-branching-model/
+- https://danielkummer.github.io/git-flow-cheatsheet/
