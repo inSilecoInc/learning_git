@@ -45,8 +45,9 @@ class: title-slide, middle
   <br><br>
   `r format(Sys.time(), '%B %d, %Y')`
   <br>
-  .font200[
+  .font120[
   [`r gh()`](https://github.com/inSilecoInc/learning_git)
+  info@insileco.io
   <!-- [`r db()`](link_to_data) -->
   <!-- [`r rfa("file-pdf")`](link_to_pdf_version) -->
   ]
@@ -77,19 +78,13 @@ class: inverse, center, middle
 
 ## Why?
 
-<<<<<<< HEAD
+
 - only way to achieve our goals
 
 - complementarity (skills, experience, etc)
 
 - efficiency
-=======
-- only way to achieve our goals 
 
-- complementarity (skills, experience, etc)
-
-- efficiency 
->>>>>>> 3e4f6f9 (introduce part 1)
 
 --
 
@@ -174,7 +169,7 @@ class: inverse, center, middle
 
 ![:custom_hr]()
 
-## `r gt()` basics
+## `r gt()` basics (21/01/2022)
 
 
 

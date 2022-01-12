@@ -53,7 +53,6 @@ https://www.git-tower.com/mac?utm_source=learn-website&utm_campaign=git-faq&utm_
 
 
 - https://learngitbranching.js.org/
-- https://www.sourcetreeapp.com/
 https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage
 
 avoid large file there are alternative options 
@@ -61,7 +60,6 @@ https://git-lfs.github.com/
 
 - https://git-lfs.github.com/
 - https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github
-- https://kevcaz.insileco.io/notes/git/git_server_ssh/
 
 ## Adance gh gh cli 
 
