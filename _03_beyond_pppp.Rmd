@@ -86,8 +86,6 @@ origin	git@github.com:inSilecoInc/demogit.git (push)
 
 
 
-
-
 ---
 
 class: inverse, center, middle
