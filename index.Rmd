@@ -41,13 +41,13 @@ class: title-slide, middle
 .instructors[
   .font160[`r rp()` Learning & Development community]
   <br><br><br><br>
-  .authors120[David Beauchesne, Kevin Cazelles & Steve Vissault]
+  .authors140[David Beauchesne, Kevin Cazelles & Steve Vissault]
   <br><br>
   `r format(Sys.time(), '%B %d, %Y')`
   <br>
-  .font120[
+  .font140[
   [`r gh()`](https://github.com/inSilecoInc/learning_git)
-  info@insileco.io
+  
   <!-- [`r db()`](link_to_data) -->
   <!-- [`r rfa("file-pdf")`](link_to_pdf_version) -->
   ]
@@ -55,11 +55,15 @@ class: title-slide, middle
 
 <br>
 <img src="img/logoW.png" width="120px"></img>
+.instructors[info@insileco.io]
 
-<!-- Modify accordingly -->
-![deploy workshop](https://github.com/inSilecoInc/workshop_raster/workflows/deploy%20workshop/badge.svg)
+<br>
 
-.instructors[Content under [`r rfa("creative-commons")` `r rfa("creative-commons-by")`](https://creativecommons.org/licenses/by/4.0/) unless otherwise specified.]
+.instructors[
+
+[![pages-build-deployment](https://github.com/inSilecoInc/learning_git/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/inSilecoInc/learning_git/actions/workflows/pages/pages-build-deployment)
+
+Content under [`r rfa("creative-commons")` `r rfa("creative-commons-by")`](https://creativecommons.org/licenses/by/4.0/) unless otherwise specified.]
 
 
 
@@ -103,20 +107,25 @@ class: inverse, center, middle
 ---
 # Sharing code
 
+--
 
-### Developers have been doing this for decades now
+### - It's about keeping track of different versions of the code
 
 --
 
-### They have created great tools for this
+### - Developers have been doing this for decades now
 
 --
 
-### `r gt()` is (probably) the most popular
+### - They have created great tools for this
 
 --
 
-### `r gh()` is the largest host for `r gt()` repositories
+### - `r gt()` is (probably) the most popular
+
+--
+
+### - `r gh()` is the largest host for `r gt()` repositories
 
 
 

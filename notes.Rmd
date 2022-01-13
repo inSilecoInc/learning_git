@@ -103,3 +103,16 @@ could be useful but takes chracters
  
  https://docs.ropensci.org/gert/
   -->
+
+
+  ---
+  # Three states
+
+
+  > Git has three main states that your files can reside in: *modified*, *staged*, and *committed*.
+
+
+  .center[![:scale 80%](img/part1/threestates.png)]
+
+
+  - `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
