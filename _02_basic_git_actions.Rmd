@@ -37,16 +37,16 @@ git --version
 
 class: inverse, center, middle
 
-# Working with your local `r gt()` repository
+
+
+
+
+# Your local `r gt()` repo
 
 ![:custom_hr]()
 
+## Set your local `r gt()` repository up.
 
-
----
-# Start tracking your files
-
-.center[![](img/part2/sp_5.png)]
 
 
 
@@ -60,13 +60,13 @@ $ git init
 Initialized empty Git repository in /path/to/proj1/.git/
 ```
 
+--
+
 - `r nf()` [Cygwin](https://www.cygwin.com/)
 - `r nf()` [Windows 10 users you can install a bash shell](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/)
 - Use [R Studio](https://www.rstudio.com/)
 
 
-???
-would be good to ask directly so they can chat about it
 
 ---
 # Initiate your repository: `git init`
@@ -108,13 +108,10 @@ No commits yet
 
 nothing to commit (create/copy files and use "git add" to track)
 
-$ git status -s
-  
 ```
 
 --
 
-- `r nf()` ` git status -s` =  `git status --short`
 - `r nf()` `man git status`, `git status --help`,  `git status -h`
 
 
@@ -138,6 +135,7 @@ class: inverse, center, middle
 
 - `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
 
+- https://ndpsoftware.com/git-cheatsheet.html#loc=workspace 
 
 
 ---
@@ -168,6 +166,8 @@ $ git status -s
 ?? README.md
 ```
 
+- `r nf()` ` git status -s` =  `git status --short`
+
 
 ---
 # Track a file: `git add`
@@ -176,6 +176,25 @@ $ git status -s
 
 ```sh
 $ git add README.md
+```
+
+--
+
+.center[![:scale 70%](img/part2/basic_wlw.png)]
+
+
+## README.md `r ar()` Staging area
+
+--
+
+
+### README.md `untracked` `r ar()` README.md `staged`
+
+---
+# Track a file: `git add`
+
+
+```sh
 $ git status 
 On branch main
 
@@ -186,26 +205,45 @@ Changes to be committed:
 	new file:   README.md
 ```
 
+--
+
 ```sh
 $ git status -s
 A  README.md
 ```
+
+
 
 ---
 # What happened? 
 
 - `README.md` has been added to the staging area (a.k.a. "the index");
 
-- The file `README.md` as it is, is now a *blob* in `.git`;
+- The file `README.md` is now a *blob* in `.git`;
 
-- To ensure integrity, `r gt()` has computed a [SHA-1](https://en.wikipedia.org/wiki/SHA-1) for files staged;
+- To ensure integrity, `r gt()` has computed a [SHA-1](https://en.wikipedia.org/wiki/SHA-1) for it;
+
+--
 
 ```sh
 git ls-tree -r HEAD
 100644 blob 1f18e72276e6dda33cca0065b1f8dd377c72c8c6	README.md
 ```
 
-- No commits yet, so there is no proper check out/version of the file system. 
+---
+# How `r gt()` works
+
+.center[![:scale 92%](img/part2/ct_1.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 92%](img/part2/ct_2.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 92%](img/part2/ct_3.png)]
 
 
 ---
@@ -213,7 +251,22 @@ git ls-tree -r HEAD
 
 ```sh
 $ echo "This is a great project" >> README.md  
+```
 
+.center[![:scale 70%](img/part2/basic_wlw.png)]
+
+--
+
+### 1. In staging area: "+ #Our great project" ready to be committed
+
+### 2. Workspace: README.md is modified "+ This is a great project"
+
+
+---
+# Do a second edit and check again
+
+
+```sh
 $ git status  
 On branch main
 
@@ -227,23 +280,18 @@ Changes not staged for commit:
  (use "git add <file>..." to update what will be committed)
  (use "git restore <file>..." to discard changes in working directory)
  modified:   README.md
-
-$ git status -s
-AM README.md
 ```
 
----
-# Add changes and check again
-
-```sh
-$ git add README.md
-
-$ git status -s
-A  README.md
-```
 
 ---
 # Create a first commit: `git commit`
+
+
+```sh
+$ git add README.md
+```
+
+--
 
 ```sh
 $ git commit -m "add our README"
@@ -274,15 +322,6 @@ nothing to commit, working tree clean
 
 
 
----
-# How `r gt()` works
-
-.center[![:scale 92%](img/part2/ct_1.png)]
-
----
-# How `r gt()` works
-
-.center[![:scale 92%](img/part2/ct_2.png)]
 
 ---
 # How `r gt()` works
@@ -339,13 +378,11 @@ git_commit("add our README")
 
 ```sh
 $ echo "seq_nrow <- function(x) seq_len(NROW(x))" > seq_nrow.R
+$ git add seq_nrow.R
 $ git commit -m "introduce new R fun seq_nrow()"
 [main dd28a77] add seq_nrow()
  1 file changed, 1 insertion(+)
  create mode 100644 seq_nrow.R
-$ git log --oneline
-dd28a77 (HEAD -> main) add seq_nrow()
-618b684 add our README
 ```
 
 
@@ -400,6 +437,20 @@ $ git commit -m "improve documentation"
 
 
 
+----
+# How to create a good commit 
+
+### It depends! 
+
+--
+
+### Good habits 
+
+- a digest able piece of code 
+- 
+
+
+
 ---
 
 class: inverse, center, middle
@@ -408,15 +459,33 @@ class: inverse, center, middle
 
 ![:custom_hr]()
 
+log and checkout/switch
+
 
 ---
 # Check the history `git log`
 
 ## Use `git log`! (see [Pro Git](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History))
 
-```{bash gitlog, echo = -1}
-cd proj1
-git log
+```sh
+$ git log 
+commit 58d536349c4f4abbb6ad2d783014b41946cb3f65 (HEAD -> main)
+Author: Kevin Cazelles <kevin.cazelles@insileco.io>
+Date:   Mon Jan 10 18:54:13 2022 -0500
+ 
+    improve documentation
+ 
+commit dd28a77aa49a02497e3bafac12c09797f000bcb1
+Author: Kevin Cazelles <kevin.cazelles@insileco.io>
+Date:   Mon Jan 10 14:47:13 2022 -0500
+ 
+    add seq_nrow()
+ 
+commit 618b68425a3183a69b7472c3cda177f26acef3f4
+Author: Kevin Cazelles <kevin.cazelles@insileco.io>
+Date:   Sun Jan 9 23:55:29 2022 -0500
+ 
+    add our README
 ```
 
 ---
@@ -425,14 +494,19 @@ git log
 ## `git log` has a lot of options
 
 
-```{bash gitlog2, echo = -1}
-cd proj1
-git log --oneline
+```sh
+$ git log --oneline
+58d5363 (HEAD -> main) improve documentation
+dd28a77 add seq_nrow()
+618b684 add our README
 ```
+--
 
-```{bash gitlog3, echo = -1}
-cd proj1
-git log --pretty=format:"%h - %an, %ar : %s"
+```sh
+$ git log --pretty=format:"%h - %an, %ar : %s"
+58d5363 - Kevin Cazelles, 3 days ago : improve documentation
+dd28a77 - Kevin Cazelles, 3 days ago : add seq_nrow()
+618b684 - Kevin Cazelles, 4 days ago : add our README
 ```
 
 
@@ -440,7 +514,7 @@ git log --pretty=format:"%h - %an, %ar : %s"
 # Navigate your history: `git switch`
 
 ```sh
-$ git log --one-line
+$ git log --oneline
 58d5363 (HEAD -> main) improve documentation
 dd28a77 add seq_nrow()
 618b684 add our README
@@ -496,29 +570,54 @@ nothing to commit, working tree clean
 ```
 
 
+---
+# Navigate your history: `git switch`
+
+```sh
+git switch -
+```
+
+--
+
+```sh
+git switch -d 618b684 
+```
+
+### `git checkout` does a lot! v2.23 introduces `git switch` and `git restore` to have aliases of subsets of what it does (see e.g. [this link](https://tanzu.vmware.com/developer/blog/git-switch-and-restore-an-improved-user-experience/))
+
 
 
 ---
-# What happened
+# What happened?
 
+- git and pull out the snapshot of 
+
+- Now the HEAD is detached if you commit and but there is not relationship 
+with fdu 
+
+
+
+---
+# The commit tree and the HEAD
 
 ---
 # Detached HEAD state 
 
+XXXX
+
+
+### But you can branch!
+
+
+### You can branch! 
 
 
 
 
 ---
-# `r lc()` demo 
+# Branching 
 
-- `git init`
-- `git add`
-- `git commit`
-- `git status`
-- `git restore`
-- `git rm --staged` /  `git rm --cached`
-- `git switch`
+
 
 
 - https://ndpsoftware.com/git-cheatsheet.html#loc=workspace;
@@ -579,20 +678,3 @@ class: inverse, center, middle
 
 
 
-
-
-
-
----
-# Will see
-
-
-```{R rm_proj1, eval = FALSE}
-setwd("../")
-list.files()
-unlink("proj1", recursive = TRUE)
-```
-
-```{bash, echo = FALSE}
-cd ..
-```
