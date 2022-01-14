@@ -454,7 +454,7 @@ git --version
 ---
 # Interact with `r gt()`
 
-### Command lines
+### **Command lines**
 
 - **Terminal**
 - [RStudio](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
