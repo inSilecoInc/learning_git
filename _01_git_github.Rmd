@@ -346,7 +346,7 @@ class: inverse, center, middle
 
 --
 
-### 4. Sync your local repository and your remote one  (using `git pull` and `git push`).
+### 4. Sync your local repository and your remote one (using `git pull` and `git push`).
 
 <br>
 
@@ -454,7 +454,7 @@ git --version
 ---
 # Interact with `r gt()`
 
-### Command lines
+### **Command lines**
 
 - **Terminal**
 - [RStudio](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
@@ -521,7 +521,7 @@ class: inverse, center, middle
 
 --
 
-### stores snapshots of a files called commits that are stored in the `.git` folder.
+### stores snapshots of files called commits that are stored in the `.git` folder.
 
 --
 
