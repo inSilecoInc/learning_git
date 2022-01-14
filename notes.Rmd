@@ -15,14 +15,7 @@ Un important changement pour pas mal de developement
 
 ## 
 
-https://desktop.github.com/
 
-https://www.gitkraken.com/
-
-
-git + webservice is not a cloud substitue 
-
-avoid large file there are alternative options 
 
 
 ## Build as history
@@ -47,14 +40,7 @@ https://en.wikipedia.org/wiki/Timeline_of_GitHub
 https://www.git-tower.com/mac?utm_source=learn-website&utm_campaign=git-faq&utm_medium=easy-in-tower&utm_content=undo-last-commit
 
 
-`git checkout`
 
-
-`git checkout -b`
-
-`git switch -c`
-
-`git switch` (2.23)
 
 ### Best practices 
 
@@ -63,10 +49,17 @@ https://www.git-tower.com/mac?utm_source=learn-website&utm_campaign=git-faq&utm_
 ## Rewrite the history
 
 
-`git rebase`
+`git rebase -i`
 
 
+- https://learngitbranching.js.org/
+https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage
 
+avoid large file there are alternative options 
+https://git-lfs.github.com/
+
+- https://git-lfs.github.com/
+- https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github
 
 ## Adance gh gh cli 
 
@@ -110,3 +103,16 @@ could be useful but takes chracters
  
  https://docs.ropensci.org/gert/
   -->
+
+
+  ---
+  # Three states
+
+
+  > Git has three main states that your files can reside in: *modified*, *staged*, and *committed*.
+
+
+  .center[![:scale 80%](img/part1/threestates.png)]
+
+
+  - `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).

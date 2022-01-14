@@ -19,11 +19,11 @@ output:
 
 --
 
-### ... learn what are `r gt()`, `r gh()` and `r gl()`;
+## learn what are `r gt()`, `r gh()` and `r gl()`;
 
 --
 
-### ... get a basic understanding of how `r gt()` works.
+## get a basic understanding of how `r gt()` works.
 
 
 
@@ -58,28 +58,39 @@ output:
 
 class: inverse, center, middle
 
-# `r gt()`
+# Genesis
 
 ![:custom_hr]()
 
-## The big picture!
-
+## The genesis of `r gt()`
 
 
 
 ---
 # Genesis
 
+### - 2005 Linux Kernel developers needed a new tool to replace [BitKeeper](https://en.wikipedia.org/wiki/BitKeeper)
 
-### 2005 Linux Kernel developers needed a new tool to replace [BitKeeper](https://en.wikipedia.org/wiki/BitKeeper)
+--
 
-<br>
+### - Linus Torvald and colleagues start developing a new tool called `r gt()`
 
-### Linus Torvald and colleagues start developing a new tool called `r gt()`
+--
 
-<br>
+### - 01/2006 version 1.0
+--
 
-### 2009 `r ar()` [Junio C. Hanamo (@gitster)](https://github.com/gitster) became the lead developer
+### -  2009 `r ar()` [Junio C. Hanamo (@gitster)](https://github.com/gitster) became the lead developer
+
+
+--
+
+### - 05/2014 version 2.0
+
+--
+
+### - 11/2021 version 2.34
+
 
 ---
 # Genesis
@@ -99,7 +110,7 @@ class: inverse, center, middle
 ---
 # Genesis
 
-### Why does `r gt()` actually mean?
+### What does `r gt()` actually mean?
 
 .center[![](img/part1/name.png)]
 
@@ -109,18 +120,34 @@ class: inverse, center, middle
 ---
 # Genesis
 
+### `r gt()` is a version control system
 
-### `r gt()` was designed around several goals
+--
+
+### `r gt()` was designed around several goals 
 
 1. Speed
 1. Simple design
 1. Strong support for non-linear development (thousands of parallel branches)
-1. Able to handle large projects like the Linux kernel efficiently (speed and data size)
+1. Able to handle large projects like the Linux kernel efficiently (speed and data size) 
 1. **Fully distributed**
 
 
 <br>
 - `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2)
+
+
+
+
+---
+
+class: inverse, center, middle
+
+# DVCS
+
+![:custom_hr]()
+
+## `r gt()` is a distributed version control system
 
 ---
 # Version Control Systems (VCS)
@@ -150,18 +177,18 @@ class: inverse, center, middle
 
 
 ---
-# `r gt()` is fully distributed
+# `r gt()` is fully distributed 
 
-## Every repository includes the entire database
+## Every repository includes the entire database 
 
 --
 
-## database = `r emj("file_folder")` `.git`
+## database = `r emj("file_folder")` `.git` 
 
 --
 
 ```sh
-$ tree -a -L 1
+$ tree -a -L 1 
 .
 ├── _01_git_github.Rmd
 ├── _02_basic_git_actions.Rmd
@@ -176,7 +203,30 @@ $ tree -a -L 1
 
 --
 
-## `git` is what is shared!
+## `.git` is what we share!
+
+
+
+
+---
+
+class: inverse, center, middle
+
+# Snapshots
+
+![:custom_hr]()
+
+## `r gt()` stores snapshots of your file system
+
+
+---
+# How does `r gt()` work?
+
+## What does `r emj("file_folder")` `.git` include?
+
+### `.git` stores **snapshots** 
+
+.center[![:scale 100%](img/part1/snap.png)]
 
 
 ---
@@ -184,23 +234,21 @@ $ tree -a -L 1
 
 ## What does `r emj("file_folder")` `.git`  include?
 
-### `.git` stores **snapshots** not differences
+### `.git` stores **snapshots** not deltas!
 
-### **snapshots** of the file system of your project
+
+.center[![:scale 100%](img/part1/delta.png)]
 
 
 
 ---
 #  **snapshots**?
-
 .center[![:scale 100%](img/part1/sp_1.png)]
-
 
 ---
 #  **snapshots**?
 
 .center[![:scale 100%](img/part1/sp_2.png)]
-
 
 ---
 #  **snapshots**?
@@ -231,39 +279,27 @@ $ tree -a -L 1
 
 
 ---
-# How do I create a snapshot?
+# How do I create snapshots?
 
 
-### 1. initiate the repository (`git init`)
-
---
-
-### 2. edit your files
+### 1. Initiate the repository (`git init`)
 
 --
 
-### 3. stage the modifications to be committed (`git add`)
+### 2. Edit your files
 
 --
 
-### 4. create a new commit object (`git commit`)
+### 3. Stage the modifications to be committed (`git add`)
+
+--
+
+### 4. Create a new commit object (`git commit`)
 
 --
 
 ### 5. Go back to step 2.
 
-
----
-# Three states
-
-
-> Git has three main states that your files can reside in: *modified*, *staged*, and *committed*.
-
-
-.center[![:scale 80%](img/part1/threestates.png)]
-
-
-- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
 
 
 ---
@@ -287,46 +323,34 @@ $ tree -a -L 1
 
 class: inverse, center, middle
 
-# `r gh()` & `r gl()`
+# Share your .git database
 
 ![:custom_hr]()
 
-## Share your .git database!
+## `r gh()` & `r gl()`
 
 
 
 ---
-# `r gt()` is fully distributed
+# Setting and using a remote repository
 
-### 1. We can use set **remote** repositories;
+### 1. Go to a server;
 
-### 2. There is no limit to the number of remotes;
+--
 
-### 3. `r gt()` supports various protocols (`https`, `http`, `ssh`);
+### 2. Initiate a bare repository (`git init --bare --shared`);
 
-### 4. `r gt()` makes it easy to synchronize local and remote repositories.
+--
 
+### 3. Add the remote to your local repository (`git remote add <name> <adr>`);
 
-<!-- examples 3 different demogit -->
+--
+
+### 4. Sync your local repository and your remote one  (using `git pull` and `git push`).
+
+<br>
 
 - `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols).
-
----
-# How to use remote repository
-
-### 1. Use a `r gt()` server
-
---
-
-### 2. Initiate a bare repository (`git init --bare --shared`)
-
---
-
-### 3. Add the remote to your local repository  (`git remote add <name> <adr>`)
-
---
-
-### 4. Sync your local repository and your remote one  (using `git pull` and `git push`)
 
 
 
@@ -336,15 +360,22 @@ class: inverse, center, middle
 
 ## Your own server
 
-- e.g. a minimal ssh server (see this post)
+- e.g. a minimal ssh server (see [this post](https://kevcaz.insileco.io/notes/git/git_server_ssh/))
+
+--
+
+## Your own fully-featured server
+
 - [GitLab](https://gitlab.com/)
 
-## Dedicated hosting site
+--
+
+## Dedicated hosting server
 
 - [GitHub](https://github.com/)
 - [GitLab](https://gitlab.com/)
 - [Bitbucket](https://bitbucket.org/)
-
+- ...
 
 ---
 # GitHub `r gh()`
@@ -354,12 +385,12 @@ class: inverse, center, middle
 --
 
 - Git server + database-backed website
-- + [Web REST API](https://docs.github.com/en/rest)
-- + [Issue tracking system](https://en.wikipedia.org/wiki/Issue_tracking_system)
-- + [Project management features](https://github.com/features/issues)
-- + Host webpages ([GitHub Pages](https://pages.github.com/))
-- + Continuous Integration feature ([GitHub Actions](https://docs.github.com/en/actions))
-- ...
+- `r rfa("plus")` [Web REST API](https://docs.github.com/en/rest)
+- `r rfa("plus")` [Issue tracking system](https://en.wikipedia.org/wiki/Issue_tracking_system)
+- `r rfa("plus")` [Project management features](https://github.com/features/issues)
+- `r rfa("plus")` Host webpages ([GitHub Pages](https://pages.github.com/))
+- `r rfa("plus")` Continuous Integration ([GitHub Actions](https://docs.github.com/en/actions))
+- `r rfa("plus")` ...
 
 --
 
@@ -372,12 +403,12 @@ class: inverse, center, middle
 
 
 - Git server + database-backed website
-- + [Web REST API](https://docs.gitlab.com/ee/api/)
-- + Issue tracking system
-- + Project management features
-- + Host webpages ([GitLab Pages](https://docs.gitlab.com/ee/user/project/pages))
-- + Continuous Integration feature ([Gitlab CI/CD](https://docs.gitlab.com/ee/ci/))
-- ...
+- `r rfa("plus")` [Web REST API](https://docs.gitlab.com/ee/api/)
+- `r rfa("plus")` Issue tracking system
+- `r rfa("plus")` Project management features
+- `r rfa("plus")` Host webpages ([GitLab Pages](https://docs.gitlab.com/ee/user/project/pages))
+- `r rfa("plus")` Continuous Integration ([Gitlab CI/CD](https://docs.gitlab.com/ee/ci/))
+- `r rfa("plus")` ...
 
 --
 
@@ -387,6 +418,17 @@ class: inverse, center, middle
 --
 
 ### You can install your own `r gl()` server https://about.gitlab.com/install/
+
+
+
+
+---
+
+class: inverse, center, middle
+
+# Use .git!
+
+![:custom_hr]()
 
 
 
@@ -412,18 +454,22 @@ git --version
 ---
 # Interact with `r gt()`
 
-### Command line
+### Command lines
 
-- Terminal
+- **Terminal**
 - [RStudio](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
 - with R, see [`gert`](https://CRAN.R-project.org/package=gert)
 
+--
+
 ### More interactively
 
+- [Sourcetree](https://www.sourcetreeapp.com/)
 - [GitHub Desktop](https://desktop.github.com/)
 - [Git Kraken](https://www.gitkraken.com/)
-- Code editor
+- Code editors
   - [Visual Studio](https://docs.microsoft.com/en-us/visualstudio/version-control/git-with-visual-studio?view=vs-2022)
+  - ...
 
 
 ---
@@ -451,6 +497,36 @@ git --version
 
 <!-- first local then add remote -->
 
+???
+terminal install
+github open 
+Terminal Rstudio open 
+
+
+
+
+---
+
+class: inverse, center, middle
+
+# tl;dr
+
+![:custom_hr]()
+
+
+---
+# `r gt()`...
+
+### is a distributed version control system.
+
+--
+
+### stores snapshots of a files called commits that are stored in the `.git` folder.
+
+--
+
+### makes collaboration easy by allowing sharing and synchronizing `.git` folder between local and remote repositories.
+
 
 ---
 # Resources
@@ -464,6 +540,7 @@ git --version
 
 - https://git.wiki.kernel.org/index.php/Main_Page
 - https://mirrors.edge.kernel.org/pub/software/scm/git/docs/user-manual.html
+- https://learngitbranching.js.org/
 - Github: https://docs.github.com/en
 - GitLab: https://docs.gitlab.com/ee/topics/git/#git
 

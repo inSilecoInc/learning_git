@@ -1,5 +1,5 @@
 ---
-title: "BasiGit operations"
+title: "Git Basics"
 output:
   xaringan::moon_reader:
     css: [default, rd.css, rd-font.css, "hygge"]
@@ -12,61 +12,669 @@ output:
 ---
 
 
-```{r include = FALSE, purl = FALSE}
-source("_setup.R")
-```
-
 
 ---
 
-class: inverse, center, middle
-
-# `r nf()` Rationalize
-
-![:custom_hr]()
-
-## Why use `r rp()` for spatial data? (`r ck()`~15min)
+# Prerequisite
 
 
-???
-
-If after the workshop what follows makes sense and you feel it is kind of true, it would a success. 
-
-
-
----
-
-# `r gt()`
+## `r gt()` installed
 
 
 ```{bash}
 git --version
 ```
 
+--
 
-https://ndpsoftware.com/git-cheatsheet.html#loc=workspace;
+## Access to a `r gt()` server 
+
+- **`r gh()` account**
+- `r gl()` account 
 
 
-https://github.com/github/gitignore
+---
+
+class: inverse, center, middle
 
 
-https://nvie.com/posts/a-successful-git-branching-model/
 
-https://danielkummer.github.io/git-flow-cheatsheet/
+
+
+# Your local `r gt()` repo
+
+![:custom_hr]()
+
+## Set your local `r gt()` repository up.
+
 
 
 
 ---
-# Using several remotes
+# Initiate your repository: `git init`
+
+```sh 
+$ mkdir proj1
+$ cd proj1
+$ git init 
+Initialized empty Git repository in /path/to/proj1/.git/
+```
+
+--
+
+- `r nf()` [Cygwin](https://www.cygwin.com/)
+- `r nf()` [Windows 10 users you can install a bash shell](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/)
+- Use [R Studio](https://www.rstudio.com/)
+
+
+
+---
+# Initiate your repository: `git init`
+
+## What has just happened?
+
+### The database `.git` has been created 
 
 ```sh
-git remote -vv
-mirror	git@gitlab.com:KevCaz/demogit.git (fetch)
-mirror	git@gitlab.com:KevCaz/demogit.git (push)
-mirror2	git@raspberrypi.local:/srv/git/demogit.git (fetch)
-mirror2	git@raspberrypi.local:/srv/git/demogit.git (push)
-origin	git@github.com:inSilecoInc/demogit.git (fetch)
-origin	git@github.com:inSilecoInc/demogit.git (push)
+$ tree .git
+.git
+├── config
+├── description
+├── HEAD
+├── hooks
+│  └── README.sample
+├── info
+│  └── exclude
+├── objects
+│  ├── info
+│  └── pack
+└── refs
+   ├── heads
+   └── tags
 ```
 
 ---
+# Inspect your repository: `git status`
+
+## Use `git status` !
+
+--
+
+```sh
+$ git status
+On branch main
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+```
+
+--
+
+- `r nf()` `man git status`, `git status --help`,  `git status -h`
+
+
+
+
+---
+
+class: inverse, center, middle
+
+# Basic workflow
+
+![:custom_hr]()
+
+
+
+
+---
+# Basic workflow 
+
+.center[![:scale 100%](img/part2/basic_wlw.png)]
+
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
+
+- https://ndpsoftware.com/git-cheatsheet.html#loc=workspace 
+
+
+---
+# Edit a file and inspect 
+
+```sh
+$ echo "# Our great project" > README.md  
+```
+
+```sh
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+```
+
+--
+
+```sh
+$ git status -s
+?? README.md
+```
+
+- `r nf()` ` git status -s` =  `git status --short`
+
+
+---
+# Track a file: `git add`
+
+- See https://github.com/git-guides/git-add
+
+```sh
+$ git add README.md
+```
+
+--
+
+.center[![:scale 70%](img/part2/basic_wlw.png)]
+
+
+## README.md `r ar()` Staging area
+
+--
+
+
+### README.md `untracked` `r ar()` README.md `staged`
+
+---
+# Track a file: `git add`
+
+
+```sh
+$ git status 
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   README.md
+```
+
+--
+
+```sh
+$ git status -s
+A  README.md
+```
+
+
+
+---
+# What happened? 
+
+- `README.md` has been added to the staging area (a.k.a. "the index");
+
+- The file `README.md` is now a *blob* in `.git`;
+
+- To ensure integrity, `r gt()` has computed a [SHA-1](https://en.wikipedia.org/wiki/SHA-1) for it;
+
+--
+
+```sh
+git ls-tree -r HEAD
+100644 blob 1f18e72276e6dda33cca0065b1f8dd377c72c8c6	README.md
+```
+
+---
+# How `r gt()` works
+
+.center[![:scale 92%](img/part2/ct_1.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 92%](img/part2/ct_2.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 92%](img/part2/ct_3.png)]
+
+
+---
+# Do a second edit and check again
+
+```sh
+$ echo "This is a great project" >> README.md  
+```
+
+.center[![:scale 70%](img/part2/basic_wlw.png)]
+
+--
+
+### 1. In staging area: "+ #Our great project" ready to be committed
+
+### 2. Workspace: README.md is modified "+ This is a great project"
+
+
+---
+# Do a second edit and check again
+
+
+```sh
+$ git status  
+On branch main
+
+No commits yet
+
+Changes to be committed:
+ (use "git rm --cached <file>..." to unstage)
+ new file:   README.md
+
+Changes not staged for commit:
+ (use "git add <file>..." to update what will be committed)
+ (use "git restore <file>..." to discard changes in working directory)
+ modified:   README.md
+```
+
+
+---
+# Create a first commit: `git commit`
+
+
+```sh
+$ git add README.md
+```
+
+--
+
+```sh
+$ git commit -m "add our README"
+[main (root-commit) 618b684] add our README
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+```
+
+--
+
+```sh
+$ git status 
+On branch main
+nothing to commit, working tree clean
+```
+
+
+---
+# What happened? 
+
+- `README.md` has been added to the staging area (a.k.a. "the index");
+
+- The file `README.md` as it is, is now a *blob* in `.git`;
+
+- To ensure integrity, `r gt()` has computed a [SHA-1](https://en.wikipedia.org/wiki/SHA-1) for files staged;
+
+- No commits yet, so there is no proper check out/version of the file system. 
+
+
+
+
+---
+# How `r gt()` works
+
+.center[![:scale 92%](img/part2/ct_3.png)]
+
+---
+# How `r gt()` works
+.center[![:scale 92%](img/part2/ct_4.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 92%](img/part2/ct_5.png)]
+
+
+
+
+
+---
+# Initiate, stage & commit with `r rp()`
+
+- Use package [`gert`](https://CRAN.R-project.org/package=gert)
+
+```{R init}
+dir.create("proj1")
+setwd("proj1")
+library(gert)
+git_init() 
+writeLines("# Our great project\n This is a great project", "README.md") 
+git_add("README.md")
+git_status()
+git_commit("add our README")
+```
+
+---
+# Initiate your repository with `r rp()`
+
+## With `gert`
+
+- `git init` `r ar()` `git_init()`
+- `git add` `r ar()` `git_status()`
+- `git commit` `r ar()` `git_commit()`
+
+
+## Use `r gt()` from `r rp()`
+
+- `system()` and `system2()` to pass any command
+
+
+
+---
+# One more commit 
+
+```sh
+$ echo "seq_nrow <- function(x) seq_len(NROW(x))" > seq_nrow.R
+$ git add seq_nrow.R
+$ git commit -m "introduce new R fun seq_nrow()"
+[main dd28a77] add seq_nrow()
+ 1 file changed, 1 insertion(+)
+ create mode 100644 seq_nrow.R
+```
+
+
+
+---
+# How `r gt()` works
+
+.center[![:scale 92%](img/part2/ct_5.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 92%](img/part2/ct_6.png)]
+
+
+---
+# How `r gt()` works
+
+.center[![:scale 92%](img/part2/ct_7.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 92%](img/part2/ct_8.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 92%](img/part2/ct_9a.png)]
+
+
+---
+# How `r gt()` works
+
+.center[![:scale 92%](img/part2/ct_9b.png)]
+
+
+
+
+---
+# One more commit 
+
+```sh
+$ echo "Cool seq_nrow() function" >> README.md
+$ git status -s 
+M README.md
+$ git add README.md
+$ git commit -m "improve documentation"
+[main 58d5363] improve documentation
+ 1 file changed, 1 insertion(+)
+```
+
+
+
+----
+# How to create a good commit 
+
+### It depends! 
+
+--
+
+### Good habits 
+
+- a digest able piece of code 
+- 
+
+
+
+---
+
+class: inverse, center, middle
+
+# Navigate your history
+
+![:custom_hr]()
+
+log and checkout/switch
+
+
+---
+# Check the history `git log`
+
+## Use `git log`! (see [Pro Git](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History))
+
+```sh
+$ git log 
+commit 58d536349c4f4abbb6ad2d783014b41946cb3f65 (HEAD -> main)
+Author: Kevin Cazelles <kevin.cazelles@insileco.io>
+Date:   Mon Jan 10 18:54:13 2022 -0500
+ 
+    improve documentation
+ 
+commit dd28a77aa49a02497e3bafac12c09797f000bcb1
+Author: Kevin Cazelles <kevin.cazelles@insileco.io>
+Date:   Mon Jan 10 14:47:13 2022 -0500
+ 
+    add seq_nrow()
+ 
+commit 618b68425a3183a69b7472c3cda177f26acef3f4
+Author: Kevin Cazelles <kevin.cazelles@insileco.io>
+Date:   Sun Jan 9 23:55:29 2022 -0500
+ 
+    add our README
+```
+
+---
+# Check the history `git log`
+
+## `git log` has a lot of options
+
+
+```sh
+$ git log --oneline
+58d5363 (HEAD -> main) improve documentation
+dd28a77 add seq_nrow()
+618b684 add our README
+```
+--
+
+```sh
+$ git log --pretty=format:"%h - %an, %ar : %s"
+58d5363 - Kevin Cazelles, 3 days ago : improve documentation
+dd28a77 - Kevin Cazelles, 3 days ago : add seq_nrow()
+618b684 - Kevin Cazelles, 4 days ago : add our README
+```
+
+
+---
+# Navigate your history: `git switch`
+
+```sh
+$ git log --oneline
+58d5363 (HEAD -> main) improve documentation
+dd28a77 add seq_nrow()
+618b684 add our README
+```
+
+```sh
+$ tree 
+.
+├── projectid.csv
+├── README.md
+└── time.csv
+```
+
+---
+# Navigate your history: `git switch`
+
+```sh
+git checkout 618b684
+Note: switching to '618b684'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 618b684 add our README
+```
+
+---
+# Navigate your history: `git switch`
+
+
+```sh
+$ tree 
+.
+└── README.md
+```
+
+```sh
+$ git status
+HEAD detached from 618b684
+nothing to commit, working tree clean
+```
+
+
+---
+# Navigate your history: `git switch`
+
+```sh
+git switch -
+```
+
+--
+
+```sh
+git switch -d 618b684 
+```
+
+### `git checkout` does a lot! v2.23 introduces `git switch` and `git restore` to have aliases of subsets of what it does (see e.g. [this link](https://tanzu.vmware.com/developer/blog/git-switch-and-restore-an-improved-user-experience/))
+
+
+
+---
+# What happened?
+
+- git and pull out the snapshot of 
+
+- Now the HEAD is detached if you commit and but there is not relationship 
+with fdu 
+
+
+
+---
+# The commit tree and the HEAD
+
+---
+# Detached HEAD state 
+
+XXXX
+
+
+### But you can branch!
+
+
+### You can branch! 
+
+
+
+
+---
+# Branching 
+
+
+
+
+- https://ndpsoftware.com/git-cheatsheet.html#loc=workspace;
+
+
+
+
+
+
+
+
+
+---
+
+class: inverse, center, middle
+
+# Setting up your remote repository
+
+![:custom_hr]()
+
+## `r gh()`
+
+
+---
+# Get a GitHub Token 
+
+
+### Since August 2021 required a personal access token (PAT)
+
+### [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+
+---
+# Create a repository 
+
+### [Create a repo](https://docs.github.com/en/get-started/quickstart/create-a-repo)
+
+
+---
+# Add your local repository 
+
+
+
+---
+# Managing credentials
+
+## Store your PAT
+
+- https://cran.r-project.org/web/packages/credentials/vignettes/intro.html
+- https://usethis.r-lib.org/articles/git-credentials.html
+- https://git-scm.com/docs/git-credential-store
+
+
+## Use SSH 
+
+- https://phoenixnap.com/kb/generate-ssh-key-windows-10
+
+
+
+
+
