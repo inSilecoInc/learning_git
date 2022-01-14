@@ -346,7 +346,7 @@ class: inverse, center, middle
 
 --
 
-### 4. Sync your local repository and your remote one  (using `git pull` and `git push`).
+### 4. Sync your local repository and your remote one (using `git pull` and `git push`).
 
 <br>
 
@@ -521,7 +521,7 @@ class: inverse, center, middle
 
 --
 
-### stores snapshots of a files called commits that are stored in the `.git` folder.
+### stores snapshots of files called commits that are stored in the `.git` folder.
 
 --
 
