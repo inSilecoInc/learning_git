@@ -9,7 +9,8 @@ Description: A template for our workshop presentations.
 Imports:
   iseWorkshops,
   rmarkdown,
-  csasdown
+  csasdown,
+  gert
 Remotes:
   inSilecoInc/iseWorkshops,
   pbs-assess/csasdown

@@ -182,6 +182,11 @@ class: inverse, center, middle
 
 
 
+```{R part 2, child = "_02_basic_git_actions.Rmd"}
+```
+
+
+
 ---
 
 class: inverse, center, middle
@@ -192,6 +197,9 @@ class: inverse, center, middle
 
 ## Beyond the "pull, push and pray" paradigm
 
+
+```{R part 3, child = "_03_beyond_pppp.Rmd"}
+```
 
 ---
 
@@ -204,6 +212,8 @@ class: inverse, center, middle
 ## R Markdown
 
 
+```{R part 4, child = "_04_rmarkdown.Rmd"}
+```
 
 ---
 
@@ -216,3 +226,5 @@ class: inverse, center, middle
 ## `bookdown` & `csasdown`
 
 
+```{R part 5, child = "_05_csas.Rmd"}
+```
