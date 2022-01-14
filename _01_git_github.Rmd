@@ -73,7 +73,7 @@ class: inverse, center, middle
 
 --
 
-### - Linus Torvald and colleagues start developing of a new tool call `r gt()`
+### - Linus Torvald and colleagues start developing a new tool called `r gt()`
 
 --
 
@@ -110,7 +110,7 @@ class: inverse, center, middle
 ---
 # Genesis
 
-### Why does `r gt()` actually mean?
+### What does `r gt()` actually mean?
 
 .center[![](img/part1/name.png)]
 
