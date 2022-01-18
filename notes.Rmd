@@ -94,8 +94,6 @@ https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
  As a general rule, your messages should start with a single line that’s no more than about 50 characters and that describes the changeset concisely, followed by a blank lin
   followed by a blank line, followed by a more detailed explanation. 
  
-
-gitmoji
  
 could be useful but takes chracters
  

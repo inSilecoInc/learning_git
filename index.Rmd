@@ -165,8 +165,6 @@ class: inverse, center, middle
 
 
 
-```{R part 1, child = "_01_git_github.Rmd"}
-```
 
 
 
@@ -179,6 +177,9 @@ class: inverse, center, middle
 ![:custom_hr]()
 
 ## `r gt()` basics (21/01/2022)
+
+```{R part 1, child = "_02_basic_git_actions.Rmd"}
+```
 
 
 
