@@ -9,6 +9,9 @@
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    sodipodi:docname="commits.svg"
+   inkscape:export-filename="/home/kevcaz/Projects/inSileco/learning_git/img/part2/commits.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,12 +27,12 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="2.2243302"
-     inkscape:cx="327.28954"
-     inkscape:cy="364.82893"
+     inkscape:cx="298.9664"
+     inkscape:cy="361.45713"
      inkscape:window-width="3840"
-     inkscape:window-height="2081"
+     inkscape:window-height="2084"
      inkscape:window-x="0"
-     inkscape:window-y="42"
+     inkscape:window-y="39"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      showguides="true"
@@ -1837,13 +1840,13 @@
          y="82.452431">f1 = README.md</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:9.18498px;line-height:1.25;font-family:sans-serif;fill:#cccccc;fill-opacity:0.788235;stroke:none;stroke-width:0.229625"
+       style="font-style:normal;font-weight:normal;font-size:9.18498px;line-height:1.25;font-family:sans-serif;fill:#b3b3b3;fill-opacity:0.788235;stroke:none;stroke-width:0.229625"
        x="15.258134"
        y="86.056412"
        id="text4253-4-8-9-9-0-0-5"><tspan
          sodipodi:role="line"
          id="tspan4251-1-4-6-1-7-9-0"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#cccccc;fill-opacity:0.788235;stroke-width:0.229625"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#b3b3b3;fill-opacity:0.788235;stroke-width:0.229625"
          x="15.258134"
          y="86.056412">f2 = seq_nrow.R</tspan></text>
     <text
@@ -1856,7 +1859,7 @@
          id="tspan4251-0-0-6-7"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Mono for Powerline';-inkscape-font-specification:'Fira Mono for Powerline, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000080;stroke-width:0.264583"
          x="8.8653469"
-         y="104.47958">git add seq_nrow.md</tspan><tspan
+         y="104.47958">git add seq_nrow.R</tspan><tspan
          sodipodi:role="line"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29167px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
          x="8.8653469"

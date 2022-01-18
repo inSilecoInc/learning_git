@@ -77,20 +77,20 @@ Initialized empty Git repository in /path/to/proj1/.git/
 
 ```sh
 $ tree .git
-.git
-├── config
-├── description
-├── HEAD
-├── hooks
-│  └── README.sample
-├── info
-│  └── exclude
-├── objects
-│  ├── info
-│  └── pack
-└── refs
-   ├── heads
-   └── tags
+#> .git
+#> ├── config
+#> ├── description
+#> ├── HEAD
+#> ├── hooks
+#> │  └── README.sample
+#> ├── info
+#> │  └── exclude
+#> ├── objects
+#> │  ├── info
+#> │  └── pack
+#> └── refs
+#>    ├── heads
+#>    └── tags
 ```
 
 ---
@@ -102,12 +102,11 @@ $ tree .git
 
 ```sh
 $ git status
-On branch main
+#> On branch main
 
-No commits yet
+#> No commits yet
 
-nothing to commit (create/copy files and use "git add" to track)
-
+#> nothing to commit (create/copy files and use "git add" to track)
 ```
 
 --
@@ -147,23 +146,22 @@ $ echo "# Our great project" > README.md
 
 ```sh
 $ git status
-On branch main
+#> On branch main
 
-No commits yet
+#> No commits yet
 
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-	README.md
+#> Untracked files:
+#>   (use "git add <file>..." to include in what will be committed)
+#> 	README.md
 
-nothing added to commit but untracked files present (use "git add" to track)
-
+#>  nothing added to commit but untracked files present (use "git add" to track)
 ```
 
 --
 
 ```sh
 $ git status -s
-?? README.md
+#> ?? README.md
 ```
 
 - `r nf()` ` git status -s` =  `git status --short`
@@ -196,20 +194,20 @@ $ git add README.md
 
 ```sh
 $ git status 
-On branch main
-
-No commits yet
-
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-	new file:   README.md
+#> On branch main
+#>
+#> No commits yet
+#>
+#> Changes to be committed:
+#>   (use "git rm --cached <file>..." to unstage)
+#> 	new file:   README.md
 ```
 
 --
 
 ```sh
 $ git status -s
-A  README.md
+#> A  README.md
 ```
 
 
@@ -227,7 +225,7 @@ A  README.md
 
 ```sh
 git ls-tree -r HEAD
-100644 blob 1f18e72276e6dda33cca0065b1f8dd377c72c8c6	README.md
+#> 100644 blob 1f18e72276e6dda33cca0065b1f8dd377c72c8c6	README.md
 ```
 
 ---
@@ -268,18 +266,18 @@ $ echo "This is a great project" >> README.md
 
 ```sh
 $ git status  
-On branch main
-
-No commits yet
-
-Changes to be committed:
- (use "git rm --cached <file>..." to unstage)
- new file:   README.md
-
-Changes not staged for commit:
- (use "git add <file>..." to update what will be committed)
- (use "git restore <file>..." to discard changes in working directory)
- modified:   README.md
+#> On branch main
+#>
+#> No commits yet
+#>
+#> Changes to be committed:
+#>  (use "git rm --cached <file>..." to unstage)
+#>  new file:   README.md
+#> 
+#> Changes not staged for commit:
+#>  (use "git add <file>..." to update what will be committed)
+#>  (use "git restore <file>..." to discard changes in working directory)
+#>  modified:   README.md
 ```
 
 
@@ -295,17 +293,17 @@ $ git add README.md
 
 ```sh
 $ git commit -m "add our README"
-[main (root-commit) 618b684] add our README
- 1 file changed, 2 insertions(+)
- create mode 100644 README.md
+#> [main (root-commit) 618b684] add our README
+#>  1 file changed, 2 insertions(+)
+#>  create mode 100644 README.md
 ```
 
 --
 
 ```sh
 $ git status 
-On branch main
-nothing to commit, working tree clean
+#> On branch main
+#> nothing to commit, working tree clean
 ```
 
 
@@ -346,7 +344,8 @@ nothing to commit, working tree clean
 
 - Use package [`gert`](https://CRAN.R-project.org/package=gert)
 
-```{R init}
+```{R init, eval = FALSE}
+if (!file.exists("proj1")) dir.create("proj1")
 dir.create("proj1")
 setwd("proj1")
 library(gert)
@@ -380,9 +379,9 @@ git_commit("add our README")
 $ echo "seq_nrow <- function(x) seq_len(NROW(x))" > seq_nrow.R
 $ git add seq_nrow.R
 $ git commit -m "introduce new R fun seq_nrow()"
-[main dd28a77] add seq_nrow()
- 1 file changed, 1 insertion(+)
- create mode 100644 seq_nrow.R
+#> [main dd28a77] add seq_nrow()
+#>  1 file changed, 1 insertion(+)
+#>  create mode 100644 seq_nrow.R
 ```
 
 
@@ -396,7 +395,6 @@ $ git commit -m "introduce new R fun seq_nrow()"
 # How `r gt()` works
 
 .center[![:scale 92%](img/part2/ct_6.png)]
-
 
 ---
 # How `r gt()` works
@@ -428,28 +426,49 @@ $ git commit -m "introduce new R fun seq_nrow()"
 ```sh
 $ echo "Cool seq_nrow() function" >> README.md
 $ git status -s 
-M README.md
+#> M README.md
 $ git add README.md
 $ git commit -m "improve documentation"
-[main 58d5363] improve documentation
- 1 file changed, 1 insertion(+)
+#> [main 58d5363] improve documentation
+#>  1 file changed, 1 insertion(+)
 ```
 
 
+---
+# How to create a good commit?
 
-----
-# How to create a good commit 
+### Hard to say! 
 
-### It depends! 
+--
+
+### Some rules of thumb!
+
+- 1 commit one goal 
+- 1 commit = a digestible amount of code (no minimal amount of code)
+
+
+---
+# How to write a good commit?
+
+--
+
+### It may depend on the project! 
 
 --
 
 ### Good habits 
 
-- a digest able piece of code 
-- 
+- https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+- https://cbea.ms/git-commit/
+  - Separate subject from body with a blank line
+  - Limit the subject line to 50 characters
+  - Capitalize the subject line
+  - Do not end the subject line with a period
+  - Use the imperative mood in the subject line
+  - Wrap the body at 72 characters
+  - Use the body to explain what and why vs. how
 
-
+- https://gitmoji.dev/
 
 ---
 
@@ -469,23 +488,23 @@ log and checkout/switch
 
 ```sh
 $ git log 
-commit 58d536349c4f4abbb6ad2d783014b41946cb3f65 (HEAD -> main)
-Author: Kevin Cazelles <kevin.cazelles@insileco.io>
-Date:   Mon Jan 10 18:54:13 2022 -0500
- 
-    improve documentation
- 
-commit dd28a77aa49a02497e3bafac12c09797f000bcb1
-Author: Kevin Cazelles <kevin.cazelles@insileco.io>
-Date:   Mon Jan 10 14:47:13 2022 -0500
- 
-    add seq_nrow()
- 
-commit 618b68425a3183a69b7472c3cda177f26acef3f4
-Author: Kevin Cazelles <kevin.cazelles@insileco.io>
-Date:   Sun Jan 9 23:55:29 2022 -0500
- 
-    add our README
+#> commit 58d536349c4f4abbb6ad2d783014b41946cb3f65 (HEAD -> main)
+#> Author: Kevin Cazelles <kevin.cazelles@insileco.io>
+#> Date:   Mon Jan 10 18:54:13 2022 -0500
+#>  
+#>     improve documentation
+#>  
+#> commit dd28a77aa49a02497e3bafac12c09797f000bcb1
+#> Author: Kevin Cazelles <kevin.cazelles@insileco.io>
+#> Date:   Mon Jan 10 14:47:13 2022 -0500
+#>  
+#>     add seq_nrow()
+#>  
+#> commit 618b68425a3183a69b7472c3cda177f26acef3f4
+#> Author: Kevin Cazelles <kevin.cazelles@insileco.io>
+#> Date:   Sun Jan 9 23:55:29 2022 -0500
+#>  
+#>     add our README
 ```
 
 ---
@@ -496,17 +515,17 @@ Date:   Sun Jan 9 23:55:29 2022 -0500
 
 ```sh
 $ git log --oneline
-58d5363 (HEAD -> main) improve documentation
-dd28a77 add seq_nrow()
-618b684 add our README
+#> 58d5363 (HEAD -> main) improve documentation
+#> dd28a77 add seq_nrow()
+#> 618b684 add our README
 ```
 --
 
 ```sh
 $ git log --pretty=format:"%h - %an, %ar : %s"
-58d5363 - Kevin Cazelles, 3 days ago : improve documentation
-dd28a77 - Kevin Cazelles, 3 days ago : add seq_nrow()
-618b684 - Kevin Cazelles, 4 days ago : add our README
+#> 58d5363 - Kevin Cazelles, 3 days ago : improve documentation
+#> dd28a77 - Kevin Cazelles, 3 days ago : add seq_nrow()
+#> 618b684 - Kevin Cazelles, 4 days ago : add our README
 ```
 
 
@@ -515,42 +534,42 @@ dd28a77 - Kevin Cazelles, 3 days ago : add seq_nrow()
 
 ```sh
 $ git log --oneline
-58d5363 (HEAD -> main) improve documentation
-dd28a77 add seq_nrow()
-618b684 add our README
+#> 58d5363 (HEAD -> main) improve documentation
+#> dd28a77 add seq_nrow()
+#> 618b684 add our README
 ```
 
 ```sh
 $ tree 
-.
-├── projectid.csv
-├── README.md
-└── time.csv
+#> .
+#> ├── projectid.csv
+#> ├── README.md
+#> └── time.csv
 ```
 
 ---
 # Navigate your history: `git switch`
 
 ```sh
-git checkout 618b684
-Note: switching to '618b684'.
-
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by switching back to a branch.
-
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -c with the switch command. Example:
-
-  git switch -c <new-branch-name>
-
-Or undo this operation with:
-
-  git switch -
-
-Turn off this advice by setting config variable advice.detachedHead to false
-
-HEAD is now at 618b684 add our README
+$ git checkout 618b684
+#> Note: switching to '618b684'.
+#> 
+#> You are in 'detached HEAD' state. You can look around, make experimental
+#> changes and commit them, and you can discard any commits you make in this
+#> state without impacting any branches by switching back to a branch.
+#> 
+#> If you want to create a new branch to retain commits you create, you may
+#> do so (now or later) by using -c with the switch command. Example:
+#> 
+#>   git switch -c <new-branch-name>
+#> 
+#> Or undo this operation with:
+#> 
+#>   git switch -
+#> 
+#> Turn off this advice by setting config variable advice.detachedHead to false
+#> 
+#> HEAD is now at 618b684 add our README
 ```
 
 ---
@@ -559,14 +578,14 @@ HEAD is now at 618b684 add our README
 
 ```sh
 $ tree 
-.
-└── README.md
+#> .
+#> └── README.md
 ```
 
 ```sh
 $ git status
-HEAD detached from 618b684
-nothing to commit, working tree clean
+#> HEAD detached from 618b684
+#> nothing to commit, working tree clean
 ```
 
 
@@ -590,33 +609,58 @@ git switch -d 618b684
 ---
 # What happened?
 
-- git and pull out the snapshot of 
+- `r gt()` has pulled out the snapshot from the `.git`
 
-- Now the HEAD is detached if you commit and but there is not relationship 
-with fdu 
+- Now the HEAD is now detached: 
+  - you can still commit
+  - if you do, you are encouraged to branch to root your work to the main branch 
 
+???
+good transition
 
 
 ---
-# The commit tree and the HEAD
+# How `r gt()` works
 
----
-# Detached HEAD state 
-
-XXXX
-
-
-### But you can branch!
-
-
-### You can branch! 
+<!-- image detached head -->
 
 
 
 
 ---
-# Branching 
+class: inverse, center, middle
 
+# Branching
+
+![:custom_hr]()
+
+## `r gt()` killer feature! 
+
+
+???
+Any question so far
+
+
+---
+# Needed for collaboration
+
+
+---
+# Divergent history 
+
+
+
+---
+# Merging
+
+
+
+---
+# Merging strategies 
+
+
+---
+# Rebasing 
 
 
 
@@ -639,6 +683,9 @@ class: inverse, center, middle
 ![:custom_hr]()
 
 ## `r gh()`
+
+??? 
+Good buffer, may do it or not! If not just say that it will be good if already set!
 
 
 ---
