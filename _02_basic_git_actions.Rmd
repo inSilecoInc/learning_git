@@ -292,8 +292,8 @@ $ git add README.md
 --
 
 ```sh
-$ git commit -m "add our README"
-#> [main (root-commit) 618b684] add our README
+$ git commit -m "Add our README"
+#> [main (root-commit) 618b684] Add our README
 #>  1 file changed, 2 insertions(+)
 #>  create mode 100644 README.md
 ```
@@ -353,7 +353,7 @@ git_init()
 writeLines("# Our great project\n This is a great project", "README.md") 
 git_add("README.md")
 git_status()
-git_commit("add our README")
+git_commit("Add our README")
 ```
 
 ---
@@ -378,12 +378,14 @@ git_commit("add our README")
 ```sh
 $ echo "seq_nrow <- function(x) seq_len(NROW(x))" > seq_nrow.R
 $ git add seq_nrow.R
-$ git commit -m "introduce new R fun seq_nrow()"
-#> [main dd28a77] add seq_nrow()
+$ git commit -m "Add seq_nrow()"
+#> [main dd28a77] Add seq_nrow()
 #>  1 file changed, 1 insertion(+)
 #>  create mode 100644 seq_nrow.R
 ```
 
+???
+more than one file at the time.
 
 
 ---
@@ -428,10 +430,14 @@ $ echo "Cool seq_nrow() function" >> README.md
 $ git status -s 
 #> M README.md
 $ git add README.md
-$ git commit -m "improve documentation"
-#> [main 58d5363] improve documentation
+$ git commit -m "Improve the documentation"
+#> [main 58d5363] Improve the documentation
 #>  1 file changed, 1 insertion(+)
 ```
+
+???
+do this one with commit without -m
+and explain that you can use an editor
 
 
 ---
@@ -443,12 +449,12 @@ $ git commit -m "improve documentation"
 
 ### Some rules of thumb!
 
-- 1 commit one goal 
+- 1 commit = one goal 
 - 1 commit = a digestible amount of code (no minimal amount of code)
 
 
 ---
-# How to write a good commit?
+# How to write a good commit message?
 
 --
 
@@ -470,6 +476,10 @@ $ git commit -m "improve documentation"
 
 - https://gitmoji.dev/
 
+???
+may be one more commit with body
+
+
 ---
 
 class: inverse, center, middle
@@ -488,24 +498,27 @@ log and checkout/switch
 
 ```sh
 $ git log 
-#> commit 58d536349c4f4abbb6ad2d783014b41946cb3f65 (HEAD -> main)
+#> commit 8c43aea1ba20ddaccd3c469b7928f532d88275fc (HEAD -> main)
 #> Author: Kevin Cazelles <kevin.cazelles@insileco.io>
-#> Date:   Mon Jan 10 18:54:13 2022 -0500
+#> Date:   Tue Jan 18 21:07:36 2022 -0500
 #>  
-#>     improve documentation
+#>     Improve the documentation
 #>  
-#> commit dd28a77aa49a02497e3bafac12c09797f000bcb1
+#> commit 7ab0cfb54a54bd732991a4998be0c36d84021452
 #> Author: Kevin Cazelles <kevin.cazelles@insileco.io>
-#> Date:   Mon Jan 10 14:47:13 2022 -0500
+#> Date:   Tue Jan 18 21:06:57 2022 -0500
 #>  
-#>     add seq_nrow()
+#>     Add seq_nrow()
 #>  
-#> commit 618b68425a3183a69b7472c3cda177f26acef3f4
+#> commit cbb5a9e2aafb7ad16a8e5dc8f682718946d83292
 #> Author: Kevin Cazelles <kevin.cazelles@insileco.io>
-#> Date:   Sun Jan 9 23:55:29 2022 -0500
+#> Date:   Tue Jan 18 21:06:30 2022 -0500
 #>  
-#>     add our README
+#>     Add our README
 ```
+
+???
+a lot of options
 
 ---
 # Check the history `git log`
@@ -515,44 +528,44 @@ $ git log
 
 ```sh
 $ git log --oneline
-#> 58d5363 (HEAD -> main) improve documentation
-#> dd28a77 add seq_nrow()
-#> 618b684 add our README
+#> 8c43aea (HEAD -> main) Improve the documentation
+#> 7ab0cfb Add seq_nrow()
+#> cbb5a9e Add our README
 ```
 --
 
 ```sh
 $ git log --pretty=format:"%h - %an, %ar : %s"
-#> 58d5363 - Kevin Cazelles, 3 days ago : improve documentation
-#> dd28a77 - Kevin Cazelles, 3 days ago : add seq_nrow()
-#> 618b684 - Kevin Cazelles, 4 days ago : add our README
+#> 8c43aea - Kevin Cazelles, 3 minutes ago : Improve the documentation
+#> 7ab0cfb - Kevin Cazelles, 4 minutes ago : Add seq_nrow()
+#> cbb5a9e - Kevin Cazelles, 4 minutes ago : Add our README
 ```
 
+- see [Pro Git](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
 
 ---
 # Navigate your history: `git switch`
 
 ```sh
 $ git log --oneline
-#> 58d5363 (HEAD -> main) improve documentation
-#> dd28a77 add seq_nrow()
-#> 618b684 add our README
+#> 8c43aea (HEAD -> main) Improve the documentation
+#> 7ab0cfb Add seq_nrow()
+#> cbb5a9e Add our README
 ```
 
 ```sh
 $ tree 
 #> .
-#> ├── projectid.csv
 #> ├── README.md
-#> └── time.csv
+#> └── seq_nrow.R
 ```
 
 ---
 # Navigate your history: `git switch`
 
 ```sh
-$ git checkout 618b684
-#> Note: switching to '618b684'.
+$ git checkout cbb5a9e
+#> Note: switching to 'cbb5a9e'.
 #> 
 #> You are in 'detached HEAD' state. You can look around, make experimental
 #> changes and commit them, and you can discard any commits you make in this
@@ -569,7 +582,7 @@ $ git checkout 618b684
 #> 
 #> Turn off this advice by setting config variable advice.detachedHead to false
 #> 
-#> HEAD is now at 618b684 add our README
+#> HEAD is now at cbb5a9e Add our README
 ```
 
 ---
@@ -584,7 +597,7 @@ $ tree
 
 ```sh
 $ git status
-#> HEAD detached from 618b684
+#> HEAD detached at cbb5a9e
 #> nothing to commit, working tree clean
 ```
 
@@ -599,11 +612,21 @@ git switch -
 --
 
 ```sh
-git switch -d 618b684 
+git switch -d cbb5a9e 
 ```
 
 ### `git checkout` does a lot! v2.23 introduces `git switch` and `git restore` to have aliases of subsets of what it does (see e.g. [this link](https://tanzu.vmware.com/developer/blog/git-switch-and-restore-an-improved-user-experience/))
 
+
+---
+# What happened?
+
+.center[![:scale 100%](img/part2/sp_4.png)]
+
+---
+# What happened?
+
+.center[![:scale 100%](img/part2/sp_6.png)]
 
 
 ---
@@ -612,17 +635,16 @@ git switch -d 618b684
 - `r gt()` has pulled out the snapshot from the `.git`
 
 - Now the HEAD is now detached: 
-  - you can still commit
-  - if you do, you are encouraged to branch to root your work to the main branch 
+  - you can still commit but it won't replace the commits you've done
+  - branch will be on a different commit history
+  - so far it won't have any impact and won't really be part of your work
+  - if want to include it in your "regular" history, you can branch
 
 ???
 good transition
 
 
----
-# How `r gt()` works
 
-<!-- image detached head -->
 
 
 
@@ -642,37 +664,239 @@ Any question so far
 
 
 ---
-# Needed for collaboration
+# Branching
+
+## Branch, branch and branch! 
+
+--
+
+## Use `git branch` a lot!
+
+--
+
+### Branching allows you to create divergent history ...
+
+--
+
+### ... which is exactly what you need for collaboration
 
 
 ---
-# Divergent history 
+# Branching
 
+```sh
+$ git branch topicA
+$ git switch topicA
+#> Switched to branch 'topicA'
+```
+
+-- 
+
+or in one line 
+
+```sh
+$ git switch -c topicA
+#> Switched to branch 'topicA'
+```
+
+---
+# Branching
+
+```sh
+$ git status
+#> On branch topicA
+#> nothing to commit, working tree clean
+```
+
+```sh
+$ git log --oneline
+#> cb1eba0 (HEAD -> topicA, main) Improve the documentation
+#> 630c33e Add seq_nrow()
+#> 0f2ea9b Add our README
+```
+
+---
+# A commit on the new branch 
+
+```sh
+$ git log --oneline
+#> 97832ed (HEAD -> topicA) Add seq_ncol()
+#> cb1eba0 (main) Improve the documentation
+#> 630c33e Add seq_nrow()
+#> 0f2ea9b Add our README
+```
+
+---
+# What happened?
 
 
 ---
 # Merging
 
+```sh
+$ git switch main 
+$ git merge topicA 
+#> Updating 64ee016..aadf541
+#> Fast-forward
+#>  seq_ncol.R | 1 +
+#>  1 file changed, 1 insertion(+)
+#>  create mode 100644 seq_ncol.R
+```
+
+---
+# What happened?
+
+```sh
+$ git log --oneline --graph --all
+#> * 90e7c57 (HEAD -> topicB) Improve documentation
+#> | * 97832ed (topicA, main) Add seq_ncol()
+#> | * cb1eba0 Improve the documentation
+#> |/  
+#> * 630c33e Add seq_nrow()
+#> * 0f2ea9b Add our README
+```
+
+---
+# Merging 
+
+```sh
+$ git switch -d HEAD~2
+$ git switch -c topicB
+$ echo "one more line" >> README.md
+$ git add README.md
+$ git commit -m "Improve documentation"
+$ git switch main
+$ git merge topicB
+```
+
+---
+# Merging 
+
+```sh
+$ git merge topicB
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+---
+# Merging 
+
+while merging
+
+```sh
+$ git merge --abort
+```
+
+while merging
+
+```sh
+$ git merge add README.md
+```
+
+
+```sh
+$ git merge -Xours topicB
+#> Auto-merging README.md
+#> Merge made by the 'ort' strategy.
+$ git merge topicB -Xtheirs
+```
+
+???
+'ort' used to 'recursive' and t is faster and defaut
+https://www.spinics.net/lists/git/msg401416.html
+"Ostensibly Recursive's Twin"
 
 
 ---
-# Merging strategies 
+# Merging 
+
+```sh
+$ git log --oneline --graph
+#> *   d7956c8 (HEAD -> main) Merge branch 'topicB'
+#> |\  
+#> | * 90e7c57 (topicB) Improve documentation
+#> * | 97832ed (topicA) Add seq_ncol()
+#> * | cb1eba0 Improve the documentation
+#> |/  
+#> * 630c33e Add seq_nrow()
+#> * 0f2ea9b Add our README
+```
+
+---
+# Let's rewind
+
+## Careful
+
+```sh
+$ git reset --hard HEAD~1
+```
+
+### Now we use `git rebase` instead of `git merge`
 
 
 ---
 # Rebasing 
 
 
+```sh
+$ git log --oneline --graph
+97832ed (HEAD -> topicB, topicA, main) Add seq_ncol()
+cb1eba0 Improve the documentation
+630c33e Add seq_nrow()
+0f2ea9b Add our README
+```
 
-- https://ndpsoftware.com/git-cheatsheet.html#loc=workspace;
+```sh
+$ git rebase main 
+#> Auto-merging README.md
+#> CONFLICT (content): Merge conflict in README.md
+#> error: could not apply d8b6335... Improve documentation
+#> hint: Resolve all conflicts manually, mark them as resolved with
+#> hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+#> hint: You can instead skip this commit: run "git rebase --skip".
+#> hint: To abort and get back to the state before "git rebase", run "git rebase -- abort".
+#> Could not apply d8b6335... Improve documentation
+```
 
 
+---
+# Rebasing
+
+```sh
+git add README.md 
+```
+
+```sh
+git rebase --continue
+[detached HEAD ad7d26b] Improve documentation
+1 file changed, 2 insertions(+)
+Successfully rebased and updated refs/heads/topicB
+```
+
+---
+# Rebasing
+
+```sh
+git log --oneline --graph --all
+* ad7d26b (HEAD -> topicB) Improve documentation
+* 13a0b23 (topicA, main) Add seq_ncol()
+* 07bedb8 Improve the documentation
+* 851b17b Add seq_nrow()
+* 7f65943 Add our README
+```
+
+---
+# What happened?
+
+### Git act as if change were made after 
+
+### a new commit will be created on top of main
+
+### conflicts will arise is not possible to easily do so
 
 
-
-
-
-
+<!-- Questions?? -->
 
 ---
 
@@ -721,6 +945,13 @@ Good buffer, may do it or not! If not just say that it will be good if already s
 
 - https://phoenixnap.com/kb/generate-ssh-key-windows-10
 
+
+- https://ndpsoftware.com/git-cheatsheet.html#loc=workspace;
+
+
+
+--- 
+# Remote branches
 
 
 

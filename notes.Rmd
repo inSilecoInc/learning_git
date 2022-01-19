@@ -1,48 +1,37 @@
-https://rdatatoolbox.github.io/instructions.html
+mkdir proj1
+cd proj1
+git init
+echo "# Our great project" > README.md
+echo "This is a great project" >> README.md 
+git add README.md 
+git commit -m "Add our README"
+echo "seq_nrow <- function(x) seq_len(NROW(x))" > seq_nrow.R
+git add seq_nrow.R
+git commit -m "Add seq_nrow()"
+echo "Cool seq_nrow() function" >> README.md
+git add README.md
+git commit -m "Improve the documentation"
 
-==> ask what OS do they use 
-==> ask if they are confortable with command line tools  
-==> ask if they are using Rstudio or other IDE 
+git switch -c topicA
+echo "seq_ncol <- function(x) seq_len(NCOL(x))" > seq_ncol.R
+git add seq_ncol.R
+git commit -m "Add seq_ncol()"
+git switch main 
+git merge topicA
 
+git switch -d HEAD~2
+git switch -c topicB
+echo "one more line" >> README.md
+git add README.md
+git commit -m "Improve documentation"
+git switch main
+git merge topicB
+git merge -Xours topicB 
 
-
-## command line or not..
-
-## at first git may not be easy it is a very strong tool but need to understand how it works, not in details but in some depths
-
-
-Un important changement pour pas mal de developement 
-
-## 
-
-
-
-
-## Build as history
-
-## Manipulate the last commit 
-
-## Work on history
-
-
-# GitHub
-
-https://github.blog/2021-11-16-the-2021-state-of-the-octoverse/
-
-https://towardsdatascience.com/githubs-path-to-128m-public-repositories-f6f656ab56b1
-
-https://github.blog/2018-11-08-100m-repos/
-
-https://www.upguard.com/blog/bitbucket-vs-github
-
-https://en.wikipedia.org/wiki/Timeline_of_GitHub
-
-https://www.git-tower.com/mac?utm_source=learn-website&utm_campaign=git-faq&utm_medium=easy-in-tower&utm_content=undo-last-commit
-
-
-
-
-### Best practices 
+git reset --hard HEAD~1
+git merge topic --abort
+git switch topicB
+git rebase main 
 
 
 
