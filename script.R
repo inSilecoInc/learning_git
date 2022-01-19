@@ -25,6 +25,6 @@ xaringanExtra::use_scribble()
 ## writeLines("# Our great project\n This is a great project", "README.md")
 ## git_add("README.md")
 ## git_status()
-## git_commit("add our README")
+## git_commit("Add our README")
 
 
