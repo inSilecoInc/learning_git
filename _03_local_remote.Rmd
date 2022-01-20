@@ -1,0 +1,197 @@
+---
+title: "Git & GitHub"
+output:
+  xaringan::moon_reader:
+    css: [default, rd.css, rd-font.css, "hygge"]
+    lib_dir: assets
+    seal: false
+    nature:
+      highlightStyle: dracula
+      countIncrementalSlides: false
+      beforeInit: "macros.js"
+---
+
+
+---
+# Coming soon (28/03/2022)
+
+
+
+
+---
+# Prerequisite
+
+
+## `r gt()` installed
+
+
+```{bash}
+git --version
+```
+
+--
+
+## Access to a `r gt()` server 
+
+- **`r gh()` account**
+- `r gl()` account 
+
+
+---
+# Prerequisite: a terminal `r lc()`
+
+### All users
+
+- [R Studio](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE)
+
+--
+
+### Windows 
+
+- [Cygwin](https://www.cygwin.com/) / [Windows 10 bash shell](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/)
+
+--
+
+### Perso
+
+- I work on [Debian](https://www.debian.org/) / my Desktop environment is [Gnome](https://www.gnome.org/)
+- I use [gnome-terminal](https://help.gnome.org/users/gnome-terminal/stable/) with [Z shell](https://en.wikipedia.org/wiki/Z_shell) and a configuration framework named [prezto](https://github.com/sorin-ionescu/prezto) 
+
+
+
+
+---
+
+class: inverse, center, middle
+
+# Setting up your remote repository
+
+![:custom_hr]()
+
+## `r gh()`
+
+??? 
+Good buffer, may do it or not! If not just say that it will be good if already set!
+
+
+---
+# Get a GitHub Token 
+
+
+### Since August 2021 required a personal access token (PAT)
+
+### [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+
+---
+# Create a repository 
+
+### [Create a repo](https://docs.github.com/en/get-started/quickstart/create-a-repo)
+
+
+---
+# Add your local repository 
+
+
+
+---
+# Managing credentials
+
+## Store your PAT
+
+- https://cran.r-project.org/web/packages/credentials/vignettes/intro.html
+- https://usethis.r-lib.org/articles/git-credentials.html
+- https://git-scm.com/docs/git-credential-store
+
+
+## Use SSH 
+
+- https://phoenixnap.com/kb/generate-ssh-key-windows-10
+
+
+- https://ndpsoftware.com/git-cheatsheet.html#loc=workspace;
+
+
+
+--- 
+# Remote branches
+
+
+
+
+
+
+
+---
+
+class: inverse, center, middle
+
+# Pull & Push
+
+![:custom_hr]()
+
+
+
+---
+
+class: inverse, center, middle
+
+# Clone & Fork 
+
+![:custom_hr]()
+
+
+
+---
+# Using several remotes
+
+```sh
+$ git remote -vv
+mirror	git@gitlab.com:KevCaz/demogit.git (fetch)
+mirror	git@gitlab.com:KevCaz/demogit.git (push)
+mirror2	git@raspberrypi.local:/srv/git/demogit.git (fetch)
+mirror2	git@raspberrypi.local:/srv/git/demogit.git (push)
+origin	git@github.com:inSilecoInc/demogit.git (fetch)
+origin	git@github.com:inSilecoInc/demogit.git (push)
+```
+
+
+---
+# Inspect commits
+
+```sh
+git show 618b684
+#> commit 618b68425a3183a69b7472c3cda177f26acef3f4 (HEAD)
+#> Author: Kevin Cazelles <kevin.cazelles@insileco.io>
+#> Date:   Sun Jan 9 23:55:29 2022 -0500
+#> 
+#>     add our README
+#> 
+#> diff --git a/README.md b/README.md
+#> new file mode 100644
+#> index 0000000..1f18e72
+#> --- /dev/null
+#> +++ b/README.md
+#> @@ -0,0 +1,2 @@
+#> +# Our great project
+#> +This is a great project
+```
+
+
+---
+
+class: inverse, center, middle
+
+# Collaborative workflows
+
+![:custom_hr]()
+
+
+
+
+
+---
+# Collaborative workflows
+
+- https://github.com/github/gitignore
+- https://nvie.com/posts/a-successful-git-branching-model/
+- https://danielkummer.github.io/git-flow-cheatsheet/

@@ -195,10 +195,10 @@ class: inverse, center, middle
 
 ![:custom_hr]()
 
-## Beyond the "pull, push and pray" paradigm
+## Local and remote
 
 
-```{R part 3, child = "_03_beyond_pppp.Rmd"}
+```{R part 3, child = "_03_local_remote.Rmd"}
 ```
 
 ---

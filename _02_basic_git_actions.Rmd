@@ -15,7 +15,7 @@ output:
 
 ---
 
-# Prerequisite
+# Prerequisite: `r gt()`
 
 
 ## `r gt()` installed
@@ -25,12 +25,28 @@ output:
 git --version
 ```
 
+
+---
+# Prerequisite: a terminal `r lc()`
+
+### All users
+
+- [R Studio](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE)
+
 --
 
-## Access to a `r gt()` server 
+### Windows 
 
-- **`r gh()` account**
-- `r gl()` account 
+- [Cygwin](https://www.cygwin.com/) / [Windows 10 bash shell](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/)
+
+--
+
+### Perso
+
+- I work on [Debian](https://www.debian.org/) / my Desktop environment is [Gnome](https://www.gnome.org/)
+- I use [gnome-terminal](https://help.gnome.org/users/gnome-terminal/stable/) with [Z shell](https://en.wikipedia.org/wiki/Z_shell) and a configuration framework named [prezto](https://github.com/sorin-ionescu/prezto) 
+
+
 
 
 ---
@@ -55,12 +71,6 @@ $ cd proj1
 $ git init 
 Initialized empty Git repository in /path/to/proj1/.git/
 ```
-
---
-
-- `r nf()` [Cygwin](https://www.cygwin.com/)
-- `r nf()` [Windows 10 users you can install a bash shell](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/)
-- Use [R Studio](https://www.rstudio.com/)
 
 
 
@@ -89,10 +99,12 @@ $ tree .git
 #>    └── tags
 ```
 
+
+
 ---
 # Inspect your repository: `git status`
 
-## Use `git status` !
+## Use `git status`!
 
 --
 
@@ -107,7 +119,19 @@ $ git status
 
 --
 
+```sh
+$ git status -s
+```
+
+--
+
 - `r nf()` `man git status`, `git status --help`,  `git status -h`
+
+
+---
+# `r lc()` Let's do this 
+
+## Initiate a repo and check it.
 
 
 
@@ -121,20 +145,29 @@ class: inverse, center, middle
 ![:custom_hr]()
 
 
-
-
 ---
 # Basic workflow 
 
-.center[![:scale 100%](img/part2/basic_wlw.png)]
+### 1. Initiate the repository (`git init`)
 
-- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
+--
 
-- https://ndpsoftware.com/git-cheatsheet.html#loc=workspace 
+### 2. Edit your files
 
+--
+
+### 3. Stage the modifications to be committed (`git add`)
+
+--
+
+### 4. Create a new commit object (`git commit`)
+
+--
+
+### 5. Go back to step 2.
 
 ---
-# Edit a file and inspect 
+# Edit a file and check the repo
 
 ```sh
 $ echo "# Our great project" > README.md  
@@ -174,8 +207,7 @@ $ git add README.md
 
 --
 
-.center[![:scale 70%](img/part2/basic_wlw.png)]
-
+<br>
 
 ## README.md `r ar()` Staging area
 
@@ -205,7 +237,6 @@ $ git status
 $ git status -s
 #> A  README.md
 ```
-
 
 
 ---
@@ -241,23 +272,21 @@ git ls-tree -r HEAD
 
 
 ---
-# Do a second edit and check again
+# Edit and check again
 
 ```sh
 $ echo "This is a great project" >> README.md  
 ```
 
-.center[![:scale 70%](img/part2/basic_wlw.png)]
-
 --
 
-### 1. In staging area: "+ #Our great project" ready to be committed
+### 1. In staging area: **"#Our great project"** ready to be committed
 
-### 2. Workspace: README.md is modified "+ This is a great project"
+### 2. Workspace: README.md is modified **"+ This is a great project"**
 
 
 ---
-# Do a second edit and check again
+# Edit and check again
 
 
 ```sh
@@ -275,6 +304,13 @@ $ git status
 #>  (use "git restore <file>..." to discard changes in working directory)
 #>  modified:   README.md
 ```
+
+---
+# `r lc()` Let's do this 
+
+## Edit and check a file.
+
+
 
 
 ---
@@ -304,20 +340,6 @@ $ git status
 
 
 ---
-# What happened? 
-
-- `README.md` has been added to the staging area (a.k.a. "the index");
-
-- The file `README.md` as it is, is now a *blob* in `.git`;
-
-- To ensure integrity, `r gt()` has computed a [SHA-1](https://en.wikipedia.org/wiki/SHA-1) for files staged;
-
-- No commits yet, so there is no proper check out/version of the file system. 
-
-
-
-
----
 # How `r gt()` works
 
 .center[![:scale 92%](img/part2/ct_3.png)]
@@ -332,6 +354,11 @@ $ git status
 .center[![:scale 92%](img/part2/ct_5.png)]
 
 
+
+---
+# `r lc()` Let's do this 
+
+## Create a commit.
 
 
 
@@ -384,10 +411,6 @@ $ git commit -m "Add seq_nrow()"
 more than one file at the time.
 
 
----
-# How `r gt()` works
-
-.center[![:scale 92%](img/part2/ct_5.png)]
 
 ---
 # How `r gt()` works
@@ -437,6 +460,14 @@ and explain that you can use an editor
 
 
 ---
+# `r lc()` Let's do this 
+
+## Create a commit.
+
+## Do not use `-m` for the second one and add a body. 
+
+
+---
 # How to create a good commit?
 
 ### Hard to say! 
@@ -474,6 +505,21 @@ and explain that you can use an editor
 
 ???
 may be one more commit with body
+
+
+
+---
+# Basic workflow 
+
+.center[![:scale 100%](img/part2/basic_wlw.png)]
+
+- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
+
+- https://ndpsoftware.com/git-cheatsheet.html#loc=workspace 
+
+
+
+
 
 
 ---
@@ -607,11 +653,40 @@ git switch -
 
 --
 
+### `git checkout` does a lot! v2.23 introduces `git switch` and `git restore` to have aliases of subsets of what it does (see e.g. [this link](https://tanzu.vmware.com/developer/blog/git-switch-and-restore-an-improved-user-experience/))
+
+--
+
 ```sh
 git switch -d cbb5a9e 
 ```
 
-### `git checkout` does a lot! v2.23 introduces `git switch` and `git restore` to have aliases of subsets of what it does (see e.g. [this link](https://tanzu.vmware.com/developer/blog/git-switch-and-restore-an-improved-user-experience/))
+
+---
+# Navigate your history: `git switch`
+
+
+```sh
+$ git checkout cbb5a9e
+```
+
+or (and **preferred**)
+
+```sh
+$ git switch -d cbb5a9e
+```
+
+or 
+
+```sh
+$ git checkout HEAD~2
+```
+
+or 
+
+```sh
+$ git switch -d HEAD~2
+```
 
 
 ---
@@ -626,18 +701,25 @@ git switch -d cbb5a9e
 
 
 ---
+# `r lc()` Let's do this 
+
+## Navigate our history.
+
+
+---
 # What happened?
 
-- `r gt()` has pulled out the snapshot from the `.git`
+- `r gt()` has pulled out the snapshot from `.git`.
 
 - Now the HEAD is now detached: 
-  - you can still commit but it won't replace the commits you've done
-  - branch will be on a different commit history
-  - so far it won't have any impact and won't really be part of your work
-  - if want to include it in your "regular" history, you can branch
+  - you can still commit but it won't replace the commits you've done;
+  - branch will be on a different commit history;
+  - so far it won't have any impact and won't really be part of your work;
+  - if want to include it in your "regular" history, you can branch.
 
 ???
 good transition
+
 
 
 
@@ -676,7 +758,7 @@ Any question so far
 
 --
 
-### ... which is exactly what you need for collaboration
+### ... which is exactly what you need for collaboration.
 
 
 ---
@@ -837,89 +919,7 @@ $ git merge topicA
 
 
 ---
-# What happened?
-
-```sh
-$ git log --oneline --graph --all
-#> * 90e7c57 (HEAD -> topicB) Improve documentation
-#> | * 97832ed (topicA, main) Add seq_ncol()
-#> | * cb1eba0 Improve the documentation
-#> |/  
-#> * 630c33e Add seq_nrow()
-#> * 0f2ea9b Add our README
-```
-
-
----
-# Merging 
-
-```sh
-$ git switch -d HEAD~2
-$ git switch -c topicB
-$ echo "one more line" >> README.md
-$ git add README.md
-$ git commit -m "Improve documentation"
-$ git switch main
-$ git merge topicB
-```
-
----
-# Merging 
-
-```sh
-$ git merge topicB
-Auto-merging README.md
-CONFLICT (content): Merge conflict in README.md
-Automatic merge failed; fix conflicts and then commit the result.
-```
-
----
-# Merging 
-
-while merging
-
-```sh
-$ git merge --abort
-```
-
-while merging
-
-```sh
-$ git merge add README.md
-```
-
-
-```sh
-$ git merge -Xours topicB
-#> Auto-merging README.md
-#> Merge made by the 'ort' strategy.
-$ git merge topicB -Xtheirs
-```
-
-???
-'ort' used to 'recursive' and t is faster and defaut
-https://www.spinics.net/lists/git/msg401416.html
-"Ostensibly Recursive's Twin"
-
-
----
-# Merging 
-
-```sh
-$ git log --oneline --graph
-#> *   d7956c8 (HEAD -> main) Merge branch 'topicB'
-#> |\  
-#> | * 90e7c57 (topicB) Improve documentation
-#> * | 97832ed (topicA) Add seq_ncol()
-#> * | cb1eba0 Improve the documentation
-#> |/  
-#> * 630c33e Add seq_nrow()
-#> * 0f2ea9b Add our README
-```
-
-
----
-# How `r gt()` works 
+# Not always as simple! 
 
 .center[![:scale 90%](img/part2/br2_1.png)]
 
@@ -932,6 +932,96 @@ $ git log --oneline --graph
 # How `r gt()` works - merge
 
 .center[![:scale 90%](img/part2/br2_3.png)]
+
+
+
+
+---
+# Merge commit
+
+```sh
+$ git switch -d HEAD~2
+$ git switch -c topicB
+$ echo "one more line" >> README.md
+$ git add README.md
+$ git commit -m "Improve documentation"
+$ git switch main
+$ git merge topicB
+```
+
+---
+# Merge commit
+
+```sh
+$ git merge topicB
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+---
+# Interactive merging 
+
+
+### While merging...
+
+
+```sh
+$ git merge --abort
+```
+
+to stop merging.
+
+
+```sh
+$ git merge add README.md
+```
+
+to add file for whivh conflict has been resolved.
+
+```sh
+$ git merge --continue
+```
+
+to continue the current in-progress merge
+
+
+---
+# Accept all of `ours` or `theirs` (changes)
+
+
+```sh
+$ git merge -Xours topicB
+```
+
+```sh
+$ git merge -Xtheirs topicB
+```
+
+E.g
+
+```sh
+$ git merge -Xours topicB
+#> Auto-merging README.md
+#> Merge made by the 'ort' strategy.
+```
+
+???
+'ort' used to 'recursive' and t is faster and defaut
+https://www.spinics.net/lists/git/msg401416.html
+"Ostensibly Recursive's Twin"
+
+
+---
+# Merging strategies 
+
+### `r lk()` https://git-scm.com/docs/merge-strategies
+
+
+---
+# `r lc()` Let's do this 
+
+## Merge a branch. 
 
 
 
@@ -948,11 +1038,33 @@ $ git reset --hard HEAD~1
 
 
 ---
+# How `r gt()` works 
+
+.center[![:scale 90%](img/part2/reb_1.png)]
+
+---
+# How `r gt()` works - rebase
+
+.center[![:scale 90%](img/part2/reb_2.png)]
+
+---
+# How `r gt()` works - rebase
+
+.center[![:scale 90%](img/part2/reb_3.png)]
+
+---
+# How `r gt()` works - merge
+
+.center[![:scale 90%](img/part2/reb_4.png)]
+
+
+
+---
 # Rebasing 
 
 
 ```sh
-$ git log --oneline --graph
+$ git log --oneline
 97832ed (HEAD -> topicB, topicA, main) Add seq_ncol()
 cb1eba0 Improve the documentation
 630c33e Add seq_nrow()
@@ -999,93 +1111,90 @@ $ git log --oneline --graph --all
 ```
 
 ---
-# What happened?
+# `r lc()` Let's do this 
 
-### Git act as if change were made after 
-
-### a new commit will be created on top of main
-
-### conflicts will arise is not possible to easily do so
+## Rebase a branch. 
 
 
 
----
-# How `r gt()` works 
-
-.center[![:scale 90%](img/part2/reb_1.png)]
-
----
-# How `r gt()` works - rebase
-
-.center[![:scale 90%](img/part2/reb_2.png)]
-
----
-# How `r gt()` works - rebase
-
-.center[![:scale 90%](img/part2/reb_3.png)]
-
----
-# How `r gt()` works - merge
-
-.center[![:scale 90%](img/part2/reb_4.png)]
 
 
 
 ---
-
 class: inverse, center, middle
 
-# Setting up your remote repository
+# Amend and stash
 
 ![:custom_hr]()
 
-## `r gh()`
 
-??? 
-Good buffer, may do it or not! If not just say that it will be good if already set!
+---
+# Amend
+
+## Oops! I forget to add something to the last commit.
+
+
+```sh
+$ echo "one more line" >> README.md
+```
+
+
+```sh
+$ git add README.md
+```
+
+--
+
+```sh
+$ git commit --amend
+```
+
+--
+
+## `r tr()` Rewrites the last commit!
 
 
 ---
-# Get a GitHub Token 
+# Stash
 
+### Stash some of your work 
 
-### Since August 2021 required a personal access token (PAT)
+```sh
+$ git stash
+```
 
-### [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+--
+
+### Put it back
+
+```sh
+$ git stash pop
+```
+
+--
+
+### Delete what was stashed  
+
+```sh
+$ git stash drop
+```
+
+--
+
+### Oops! that should be done in a different branch 
+
+```sh
+$ git stash branch topicC
+```
+
+--
+
+- `r lk()` [stash tricks](https://www.freecodecamp.org/news/useful-tricks-you-might-not-know-about-git-stash-e8a9490f0a1a/)
+
 
 ---
-# Create a repository 
+# `r lc()` Let's do this 
 
-### [Create a repo](https://docs.github.com/en/get-started/quickstart/create-a-repo)
+## Amend and stash
 
-
----
-# Add your local repository 
-
-
-
----
-# Managing credentials
-
-## Store your PAT
-
-- https://cran.r-project.org/web/packages/credentials/vignettes/intro.html
-- https://usethis.r-lib.org/articles/git-credentials.html
-- https://git-scm.com/docs/git-credential-store
-
-
-## Use SSH 
-
-- https://phoenixnap.com/kb/generate-ssh-key-windows-10
-
-
-- https://ndpsoftware.com/git-cheatsheet.html#loc=workspace;
-
-
-
---- 
-# Remote branches
-
-
-
-
+- https://ndpsoftware.com/git-cheatsheet.html#loc=workspace 

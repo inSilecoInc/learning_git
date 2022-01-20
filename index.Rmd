@@ -46,8 +46,7 @@ class: title-slide, middle
   `r format(Sys.time(), '%B %d, %Y')`
   <br>
   .font140[
-  [`r gh()`](https://github.com/inSilecoInc/learning_git)
-  
+  [www.insileco.io/learning_git](https://www.insileco.io/learning_git/#1) [`r gh()`](https://github.com/inSilecoInc/learning_git)
   <!-- [`r db()`](link_to_data) -->
   <!-- [`r rfa("file-pdf")`](link_to_pdf_version) -->
   ]
@@ -191,7 +190,7 @@ class: inverse, center, middle
 
 ![:custom_hr]()
 
-## Beyond the "pull, push and pray" paradigm
+## Local and remote 
 
 
 ---
