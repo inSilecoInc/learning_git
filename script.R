@@ -18,7 +18,6 @@ xaringanExtra::use_scribble()
 
 ## ----init, eval = FALSE-------------------------------------------------------
 ## if (!file.exists("proj1")) dir.create("proj1")
-## dir.create("proj1")
 ## setwd("proj1")
 ## library(gert)
 ## git_init()
