@@ -43,8 +43,7 @@ jobs:
       
       - name: Build presentation
         run: |-
-          Rscript -e "icons::download_fontawesome()"
-          Rscript -e "rmarkdown::render('index.Rmd', 'all')"
+          Rscript build_pres.R
                 
       - name: Build data and script 
         run: |-
