@@ -937,7 +937,8 @@ $ git merge topicA
 
 .center[![:scale 90%](img/part2/br_6.png)]
 
-
+???
+now let's use references (refs) for pointers and objects for objets
 
 ---
 # Not always as simple! 
@@ -1159,6 +1160,9 @@ $ git add .gitignore
 $ git commit -m "Add .gitignore"
 ```
 You no longer have to worry about `.oauth`
+
+- `r gt()` https://github.com/github/gitignore
+
 
 ---
 # Amend a commit
