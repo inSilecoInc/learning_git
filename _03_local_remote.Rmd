@@ -48,27 +48,6 @@ git --version
 - `r gl()` account 
 
 
----
-# Prerequisite: a terminal `r lc()`
-
-### All users
-
-- [R Studio](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE)
-
---
-
-### Windows 
-
-- [Cygwin](https://www.cygwin.com/) / [Windows 10 bash shell](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/)
-
---
-
-### Perso
-
-- I work on [Debian](https://www.debian.org/) / my Desktop environment is [Gnome](https://www.gnome.org/)
-- I use [gnome-terminal](https://help.gnome.org/users/gnome-terminal/stable/) with [Z shell](https://en.wikipedia.org/wiki/Z_shell) and a configuration framework named [prezto](https://github.com/sorin-ionescu/prezto) 
-
-
 
 
 ---
@@ -81,79 +60,104 @@ class: inverse, center, middle
 
 ## `r gh()`
 
-??? 
-Good buffer, may do it or not! If not just say that it will be good if already set!
+
+---
+# Create a repository on `r gh()`
+
+### `r lk()` https://docs.github.com/en/get-started/quickstart/create-a-repo
+
+--
+
+### [Pro Git](https://git-scm.com/book/en/v2/GitHub-Account-Setup-and-Configuration)
+
+--
+
+### `r lc()` Let's do this
 
 
 ---
-# Get a GitHub Token 
+# Three ways to access a `r gh()` repo
 
+### Https
 
-### Since August 2021 required a personal access token (PAT)
-
-### [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
-
----
-# Create a repository 
-
-### [Create a repo](https://docs.github.com/en/get-started/quickstart/create-a-repo)
-
-
----
-# Add your local repository 
-
-
-
----
-# Managing credentials
-
-## Store your PAT
-
+- `r nf()` Since August 2021 a personal access token (PAT) is required
+- [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 - https://cran.r-project.org/web/packages/credentials/vignettes/intro.html
 - https://usethis.r-lib.org/articles/git-credentials.html
 - https://git-scm.com/docs/git-credential-store
 
+--
 
-## Use SSH 
+### SSH (preferred)
 
 - https://phoenixnap.com/kb/generate-ssh-key-windows-10
-
-
 - https://ndpsoftware.com/git-cheatsheet.html#loc=workspace;
 
+--
 
-
---- 
-# Remote branches
-
-
-
-
+### [GitHub CLI](https://cli.github.com/)
 
 
 
 ---
+# Add remote repo to your local repo
 
-class: inverse, center, middle
+## Https 
 
-# Pull & Push
+```sh
+$ git remote add origin https://github.com/inSilecoInc/proj1.git
+```
+--
 
-![:custom_hr]()
+## SSH
+
+```sh
+$ git remote add origin git@github.com:inSilecoInc/proj1.git
+```
+
+- Now `r gt()` is aware of the existence of a remote repository 
+- NB: a remote repository is just another repo
+
+
+---
+# Track the remote branch 
+
+```sh
+$ git push -u origin main
+```
+
+(same as `$ git push --set-upstream origin main`)
+
+
+---
+# What happened?
+
+TODO
 
 
 
 ---
+### `r lc()` Let's do this
 
-class: inverse, center, middle
+## Add a remote.
 
-# Clone & Fork 
 
-![:custom_hr]()
 
+---
+# Clone and fork?
+
+### `r lc()` Let's do this
+
+???
+delete add re-initiate proj1 with a readme and a gitignore for clone
 
 
 ---
 # Using several remotes
+
+### I set up 3 remotes for one of our repo 
+
+https://github.com/inSilecoInc/demogit
 
 ```sh
 $ git remote -vv
@@ -167,23 +171,93 @@ origin	git@github.com:inSilecoInc/demogit.git (push)
 
 
 
+---
+
+class: inverse, center, middle
+
+# Fetch, pull & push
+
+![:custom_hr]()
+
+---
+# Fetch, pull & push
+
+> git-fetch - Download objects and refs from another repository
+
+> git-pull - Fetch from and integrate with another repository or a local
+       branch
+
+> git-push - Update remote refs along with associated objects
+
+
+---
+# Fetch
+
+### Download missing refs and object 
+
+```sh
+$ git fetch
+```
+
+--
+
+```sh
+$ git fetch origin
+```
+
+--
+
+```sh
+$ git fetch --all
+```
+
+### You don't have a copy of the local remote 
+
+--
+
+### Having a local repo and a remote repo is simply about having a more complex history
+
+
+
+---
+# Pull 
+
+## Fetch then merge tracked branch
+
+
+---
+# Push 
+
+## Update remote branch
+
+
+
+
 
 ---
 
 class: inverse, center, middle
 
-# Collaborative workflows
+# Remote branches
 
 ![:custom_hr]()
 
+## `r gh()`
 
 
 ---
-# Collaborative workflows
+# Create a local branch 
 
-- https://github.com/github/gitignore
-- https://nvie.com/posts/a-successful-git-branching-model/
-- https://danielkummer.github.io/git-flow-cheatsheet/
+
+---
+# Track it on the remote repo 
+
+
+---
+# Cheat sheet
+
+- `r lk()` https://ndpsoftware.com/git-cheatsheet.html#loc=workspace
+
 
 
 
@@ -199,32 +273,41 @@ class: inverse, center, middle
 
 
 ---
-# Inspect commits
+# Collaborative workflows
 
-```sh
-git show 618b684
-#> commit 618b68425a3183a69b7472c3cda177f26acef3f4 (HEAD)
-#> Author: Kevin Cazelles <kevin.cazelles@insileco.io>
-#> Date:   Sun Jan 9 23:55:29 2022 -0500
-#> 
-#>     add our README
-#> 
-#> diff --git a/README.md b/README.md
-#> new file mode 100644
-#> index 0000000..1f18e72
-#> --- /dev/null
-#> +++ b/README.md
-#> @@ -0,0 +1,2 @@
-#> +# Our great project
-#> +This is a great project
-```
+- `lk()` https://nvie.com/posts/a-successful-git-branching-model/
+- `lk()` https://danielkummer.github.io/git-flow-cheatsheet/
 
 
 ---
-# Reset commit 
+# Configuration: `git config`
 
-- `git show`
-- `git reset`
-- `git diff`
-- `git rebase -i`
-- `git `
+- `lk()` https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
+
+
+```sh
+$ git config --global user.email "kevin.cazelles@gmail.com"
+```
+
+```sh
+$ git config --local core.editor emacs
+```
+
+--
+
+- `lk()` https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
+
+```sh
+$ git config --global alias.co checkout
+```
+- then `git co` = `git checkout`
+- shell aliased
+
+
+---
+# Some commands you might use at some point
+
+- `git diff`: check difference between commits (and more)
+- `git show`: inspect a commit 
+- `git rebase -i`: rewrite history interactively
+- `git reset`: undo commits
