@@ -1,5 +1,5 @@
 ---
-title: "Git & GitHub, an overview"
+title: "Overview"
 output:
   xaringan::moon_reader:
     css: [default, rd.css, rd-font.css, "hygge"]
@@ -10,6 +10,22 @@ output:
       countIncrementalSlides: false
       beforeInit: "macros.js"
 ---
+
+
+# Overview
+
+```{r setup_01, include = FALSE}
+source("_setup.R")
+# knitr::clean_cache(TRUE)
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #37abc8\"></i>",
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+xaringanExtra::use_scribble()
+```
 
 
 

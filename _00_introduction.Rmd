@@ -1,0 +1,105 @@
+---
+title: "Introduction"
+output:
+  xaringan::moon_reader:
+    css: [default, rd.css, rd-font.css, "hygge"]
+    lib_dir: assets
+    seal: false
+    nature:
+      highlightStyle: dracula
+      countIncrementalSlides: false
+      beforeInit: "macros.js"
+---
+
+# Introduction
+
+```{r setup_00, include = FALSE}
+source("_setup.R")
+# knitr::clean_cache(TRUE)
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #37abc8\"></i>",
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+xaringanExtra::use_scribble()
+```
+
+
+
+---
+# Working collaboratively
+
+## Why?
+
+
+- only way to achieve our goals
+
+- complementarity (skills, experience, etc)
+
+- efficiency
+
+
+--
+
+## How?
+
+- meetings (of all kind)
+
+- sharing documents (of all kind)
+
+--
+
+  - **sharing code** (say `r rp()` code or a RMD document)
+
+
+
+---
+# Sharing code
+
+--
+
+### - It's about keeping track of different versions of the code
+
+--
+
+### - Developers have been doing this for decades now
+
+--
+
+### - They have created great tools for this
+
+--
+
+### - `r gt()` is (probably) the most popular
+
+--
+
+### - `r gh()` is the largest host for `r gt()` repositories
+
+
+
+---
+# Learning objectives
+
+
+### Learn about `r gt()`  and `r gh()`
+
+--
+
+### Understand how `r gt()` works
+
+--
+
+### Be able to use `r gt()`  and `r gh()` to collaborate
+
+--
+
+### Use [<img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://rmarkdown.rstudio.com/) to create documents and expose them on `r gh()`
+
+--
+
+### Collaborate efficiently on a CSAS document using [csasdown `r rp()` package](https://github.com/pbs-assess/csasdown)
+
+
