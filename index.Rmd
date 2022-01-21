@@ -190,7 +190,7 @@ class: inverse, center, middle
 
 ![:custom_hr]()
 
-## Local and remote 
+## Local and remote
 
 
 ---

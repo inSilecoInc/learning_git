@@ -69,7 +69,7 @@ class: inverse, center, middle
 $ mkdir proj1
 $ cd proj1
 $ git init 
-Initialized empty Git repository in /path/to/proj1/.git/
+#> Initialized empty Git repository in /path/to/proj1/.git/
 ```
 
 
@@ -117,11 +117,6 @@ $ git status
 #> nothing to commit (create/copy files and use "git add" to track)
 ```
 
---
-
-```sh
-$ git status -s
-```
 
 --
 
@@ -305,6 +300,11 @@ $ git status
 #>  modified:   README.md
 ```
 
+```sh
+$ git status -s
+AM README.md
+```
+
 ---
 # `r lc()` Let's do this 
 
@@ -447,7 +447,7 @@ more than one file at the time.
 ```sh
 $ echo "Cool seq_nrow() function" >> README.md
 $ git status -s 
-#> M README.md
+#>  M README.md
 $ git add README.md
 $ git commit -m "Improve the documentation"
 #> [main 58d5363] Improve the documentation
@@ -462,7 +462,7 @@ and explain that you can use an editor
 ---
 # `r lc()` Let's do this 
 
-## Create a commit.
+## Create two more commits.
 
 ## Do not use `-m` for the second one and add a body. 
 
@@ -511,9 +511,6 @@ may be one more commit with body
 ---
 # Basic workflow 
 
-.center[![:scale 100%](img/part2/basic_wlw.png)]
-
-- `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
 
 - https://ndpsoftware.com/git-cheatsheet.html#loc=workspace 
 
@@ -586,7 +583,7 @@ $ git log --pretty=format:"%h - %an, %ar : %s"
 - see [Pro Git](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
 
 ---
-# Navigate your history: `git switch`
+# Navigate your history
 
 ```sh
 $ git log --oneline
@@ -603,7 +600,7 @@ $ tree
 ```
 
 ---
-# Navigate your history: `git switch`
+# Navigate your history: `git checkout`
 
 ```sh
 $ git checkout cbb5a9e
@@ -628,7 +625,7 @@ $ git checkout cbb5a9e
 ```
 
 ---
-# Navigate your history: `git switch`
+# Navigate your history
 
 
 ```sh
@@ -653,13 +650,14 @@ git switch -
 
 --
 
-### `git checkout` does a lot! v2.23 introduces `git switch` and `git restore` to have aliases of subsets of what it does (see e.g. [this link](https://tanzu.vmware.com/developer/blog/git-switch-and-restore-an-improved-user-experience/))
+<br>
+
+## `git switch` or `git checkout`?
 
 --
 
-```sh
-git switch -d cbb5a9e 
-```
+### `git checkout` does a lot! v2.23 introduces `git switch` and `git restore` to have aliases of subsets of what it does (see e.g. [this link](https://tanzu.vmware.com/developer/blog/git-switch-and-restore-an-improved-user-experience/))
+
 
 
 ---
@@ -688,6 +686,7 @@ or
 $ git switch -d HEAD~2
 ```
 
+- https://stackoverflow.com/questions/2221658/whats-the-difference-between-head-and-head-in-git
 
 ---
 # What happened?
@@ -708,6 +707,12 @@ $ git switch -d HEAD~2
 
 ---
 # What happened?
+
+```sh
+git switch -d cbb5a9e 
+```
+
+--
 
 - `r gt()` has pulled out the snapshot from `.git`.
 
@@ -821,15 +826,15 @@ $ git log --oneline
 ---
 # What happened?
 
-### A new pointer, `topicA`, has been created
+### A new pointer, `topicA`, has been created.
 
 --
 
-### The `HEAD` now points to `topicA`
+### The `HEAD` now points to `topicA`.
 
 --
 
-### A new commit has been created, its parent is the last commit on `main`
+### A new commit has been created, its parent is the last commit on `main`.
 
 
 
@@ -912,7 +917,7 @@ $ git merge topicA
 
 
 ---
-# How `r gt()` works - fast forward
+# How `r gt()` works - merge (fast forward)
 
 .center[![:scale 90%](img/part2/br_6.png)]
 
@@ -945,6 +950,11 @@ $ git switch -c topicB
 $ echo "one more line" >> README.md
 $ git add README.md
 $ git commit -m "Improve documentation"
+```
+
+--
+
+```sh
 $ git switch main
 $ git merge topicB
 ```
@@ -958,6 +968,8 @@ Auto-merging README.md
 CONFLICT (content): Merge conflict in README.md
 Automatic merge failed; fix conflicts and then commit the result.
 ```
+
+## Interactive merge
 
 ---
 # Interactive merging 
@@ -984,6 +996,12 @@ $ git merge --continue
 ```
 
 to continue the current in-progress merge
+
+
+---
+# `r lc()` Let's do this 
+
+## Merge a branch. 
 
 
 ---
@@ -1018,23 +1036,14 @@ https://www.spinics.net/lists/git/msg401416.html
 ### `r lk()` https://git-scm.com/docs/merge-strategies
 
 
----
-# `r lc()` Let's do this 
 
-## Merge a branch. 
 
 
 
 ---
-# Let's rewind
+# Rebasing 
 
-## Careful
-
-```sh
-$ git reset --hard HEAD~1
-```
-
-### Now we use `git rebase` instead of `git merge`
+### Let's rewind and use `git rebase` instead of `git merge`
 
 
 ---
@@ -1053,7 +1062,7 @@ $ git reset --hard HEAD~1
 .center[![:scale 90%](img/part2/reb_3.png)]
 
 ---
-# How `r gt()` works - merge
+# How `r gt()` works - merge (fast forward)
 
 .center[![:scale 90%](img/part2/reb_4.png)]
 
@@ -1062,14 +1071,6 @@ $ git reset --hard HEAD~1
 ---
 # Rebasing 
 
-
-```sh
-$ git log --oneline
-97832ed (HEAD -> topicB, topicA, main) Add seq_ncol()
-cb1eba0 Improve the documentation
-630c33e Add seq_nrow()
-0f2ea9b Add our README
-```
 
 ```sh
 $ git rebase main 
@@ -1083,32 +1084,8 @@ $ git rebase main
 #> Could not apply d8b6335... Improve documentation
 ```
 
+### Interactive mode
 
----
-# Rebasing
-
-```sh
-$ git add README.md 
-```
-
-```sh
-$ git rebase --continue
-[detached HEAD ad7d26b] Improve documentation
-1 file changed, 2 insertions(+)
-Successfully rebased and updated refs/heads/topicB
-```
-
----
-# Rebasing
-
-```sh
-$ git log --oneline --graph --all
-* ad7d26b (HEAD -> topicB) Improve documentation
-* 13a0b23 (topicA, main) Add seq_ncol()
-* 07bedb8 Improve the documentation
-* 851b17b Add seq_nrow()
-* 7f65943 Add our README
-```
 
 ---
 # `r lc()` Let's do this 
@@ -1129,17 +1106,24 @@ class: inverse, center, middle
 
 
 ---
-# Amend
+# Amend a commit
 
-## Oops! I forget to add something to the last commit.
+```sh
+$ git log --oneline
+#> 97832ed (HEAD -> topicA) Add seq_ncol()
+#> cb1eba0 (main) Improve the documentation
+#> 630c33e Add seq_nrow()
+#> 0f2ea9b Add our README
+```
 
+## Oops! I forget to add something to the last commit!
+
+
+---
+# Amend a commit
 
 ```sh
 $ echo "one more line" >> README.md
-```
-
-
-```sh
 $ git add README.md
 ```
 
@@ -1155,9 +1139,41 @@ $ git commit --amend
 
 
 ---
+# Amend a commit
+
+### Used to be
+
+```sh
+$ git log --oneline
+#> 97832ed (HEAD -> topicA) Add seq_ncol()
+#> cb1eba0 (main) Improve the documentation
+#> 630c33e Add seq_nrow()
+#> 0f2ea9b Add our README
+```
+
+--
+
+### Now 
+
+```sh
+$ git log --oneline
+#> 07af32e (HEAD -> topicA) Add seq_ncol()
+#> cb1eba0 (main) Improve the documentation
+#> 630c33e Add seq_nrow()
+#> 0f2ea9b Add our README
+```
+
+--
+
+
+---
 # Stash
 
-### Stash some of your work 
+### An extra area where you can stash your last work
+
+--
+
+### Stash some of your modifications (workspace/staging area)
 
 ```sh
 $ git stash
@@ -1179,7 +1195,9 @@ $ git stash pop
 $ git stash drop
 ```
 
---
+---
+# Stash
+
 
 ### Oops! that should be done in a different branch 
 
@@ -1190,6 +1208,7 @@ $ git stash branch topicC
 --
 
 - `r lk()` [stash tricks](https://www.freecodecamp.org/news/useful-tricks-you-might-not-know-about-git-stash-e8a9490f0a1a/)
+
 
 
 ---

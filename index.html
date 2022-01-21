@@ -44,7 +44,7 @@ class: title-slide, middle
   &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
   .authors140[David Beauchesne, Kevin Cazelles &amp; Steve Vissault]
   &lt;br&gt;&lt;br&gt;
-  January 20, 2022
+  January 21, 2022
   &lt;br&gt;
   .font140[
   [www.insileco.io/learning_git](https://www.insileco.io/learning_git/#1) [&lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:currentColor;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt;](https://github.com/inSilecoInc/learning_git)
@@ -252,7 +252,7 @@ class: inverse, center, middle
 $ mkdir proj1
 $ cd proj1
 $ git init 
-Initialized empty Git repository in /path/to/proj1/.git/
+#&gt; Initialized empty Git repository in /path/to/proj1/.git/
 ```
 
 
@@ -300,11 +300,6 @@ $ git status
 #&gt; nothing to commit (create/copy files and use "git add" to track)
 ```
 
---
-
-```sh
-$ git status -s
-```
 
 --
 
@@ -488,6 +483,11 @@ $ git status
 #&gt;  modified:   README.md
 ```
 
+```sh
+$ git status -s
+AM README.md
+```
+
 ---
 # &lt;svg viewBox="0 0 640 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:currentColor;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"&gt;&lt;/path&gt;&lt;/svg&gt; Let's do this 
 
@@ -631,7 +631,7 @@ more than one file at the time.
 ```sh
 $ echo "Cool seq_nrow() function" &gt;&gt; README.md
 $ git status -s 
-#&gt; M README.md
+#&gt;  M README.md
 $ git add README.md
 $ git commit -m "Improve the documentation"
 #&gt; [main 58d5363] Improve the documentation
@@ -646,7 +646,7 @@ and explain that you can use an editor
 ---
 # &lt;svg viewBox="0 0 640 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:currentColor;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"&gt;&lt;/path&gt;&lt;/svg&gt; Let's do this 
 
-## Create a commit.
+## Create two more commits.
 
 ## Do not use `-m` for the second one and add a body. 
 
@@ -695,9 +695,6 @@ may be one more commit with body
 ---
 # Basic workflow 
 
-.center[![:scale 100%](img/part2/basic_wlw.png)]
-
-- &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:currentColor;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; S. Chacon &amp; B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
 
 - https://ndpsoftware.com/git-cheatsheet.html#loc=workspace 
 
@@ -770,7 +767,7 @@ $ git log --pretty=format:"%h - %an, %ar : %s"
 - see [Pro Git](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
 
 ---
-# Navigate your history: `git switch`
+# Navigate your history
 
 ```sh
 $ git log --oneline
@@ -787,7 +784,7 @@ $ tree
 ```
 
 ---
-# Navigate your history: `git switch`
+# Navigate your history: `git checkout`
 
 ```sh
 $ git checkout cbb5a9e
@@ -812,7 +809,7 @@ $ git checkout cbb5a9e
 ```
 
 ---
-# Navigate your history: `git switch`
+# Navigate your history
 
 
 ```sh
@@ -837,13 +834,14 @@ git switch -
 
 --
 
-### `git checkout` does a lot! v2.23 introduces `git switch` and `git restore` to have aliases of subsets of what it does (see e.g. [this link](https://tanzu.vmware.com/developer/blog/git-switch-and-restore-an-improved-user-experience/))
+&lt;br&gt;
+
+## `git switch` or `git checkout`?
 
 --
 
-```sh
-git switch -d cbb5a9e 
-```
+### `git checkout` does a lot! v2.23 introduces `git switch` and `git restore` to have aliases of subsets of what it does (see e.g. [this link](https://tanzu.vmware.com/developer/blog/git-switch-and-restore-an-improved-user-experience/))
+
 
 
 ---
@@ -872,6 +870,7 @@ or
 $ git switch -d HEAD~2
 ```
 
+- https://stackoverflow.com/questions/2221658/whats-the-difference-between-head-and-head-in-git
 
 ---
 # What happened?
@@ -892,6 +891,12 @@ $ git switch -d HEAD~2
 
 ---
 # What happened?
+
+```sh
+git switch -d cbb5a9e 
+```
+
+--
 
 - &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:currentColor;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M216.29 158.39H137C97 147.9 6.51 150.63 6.51 233.18c0 30.09 15 51.23 35 61-25.1 23-37 33.85-37 49.21 0 11 4.47 21.14 17.89 26.81C8.13 383.61 0 393.35 0 411.65c0 32.11 28.05 50.82 101.63 50.82 70.75 0 111.79-26.42 111.79-73.18 0-58.66-45.16-56.5-151.63-63l13.43-21.55c27.27 7.58 118.7 10 118.7-67.89 0-18.7-7.73-31.71-15-41.07l37.41-2.84zm-63.42 241.9c0 32.06-104.89 32.1-104.89 2.43 0-8.14 5.27-15 10.57-21.54 77.71 5.3 94.32 3.37 94.32 19.11zm-50.81-134.58c-52.8 0-50.46-71.16 1.2-71.16 49.54 0 50.82 71.16-1.2 71.16zm133.3 100.51v-32.1c26.75-3.66 27.24-2 27.24-11V203.61c0-8.5-2.05-7.38-27.24-16.26l4.47-32.92H324v168.71c0 6.51.4 7.32 6.51 8.14l20.73 2.84v32.1zm52.45-244.31c-23.17 0-36.59-13.43-36.59-36.61s13.42-35.77 36.59-35.77c23.58 0 37 12.62 37 35.77s-13.42 36.61-37 36.61zM512 350.46c-17.49 8.53-43.1 16.26-66.28 16.26-48.38 0-66.67-19.5-66.67-65.46V194.75c0-5.42 1.05-4.06-31.71-4.06V154.5c35.78-4.07 50-22 54.47-66.27h38.63c0 65.83-1.34 61.81 3.26 61.81H501v40.65h-60.56v97.15c0 6.92-4.92 51.41 60.57 26.84z"&gt;&lt;/path&gt;&lt;/svg&gt; has pulled out the snapshot from `.git`.
 
@@ -1005,15 +1010,15 @@ $ git log --oneline
 ---
 # What happened?
 
-### A new pointer, `topicA`, has been created
+### A new pointer, `topicA`, has been created.
 
 --
 
-### The `HEAD` now points to `topicA`
+### The `HEAD` now points to `topicA`.
 
 --
 
-### A new commit has been created, its parent is the last commit on `main`
+### A new commit has been created, its parent is the last commit on `main`.
 
 
 
@@ -1096,7 +1101,7 @@ $ git merge topicA
 
 
 ---
-# How &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:currentColor;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M216.29 158.39H137C97 147.9 6.51 150.63 6.51 233.18c0 30.09 15 51.23 35 61-25.1 23-37 33.85-37 49.21 0 11 4.47 21.14 17.89 26.81C8.13 383.61 0 393.35 0 411.65c0 32.11 28.05 50.82 101.63 50.82 70.75 0 111.79-26.42 111.79-73.18 0-58.66-45.16-56.5-151.63-63l13.43-21.55c27.27 7.58 118.7 10 118.7-67.89 0-18.7-7.73-31.71-15-41.07l37.41-2.84zm-63.42 241.9c0 32.06-104.89 32.1-104.89 2.43 0-8.14 5.27-15 10.57-21.54 77.71 5.3 94.32 3.37 94.32 19.11zm-50.81-134.58c-52.8 0-50.46-71.16 1.2-71.16 49.54 0 50.82 71.16-1.2 71.16zm133.3 100.51v-32.1c26.75-3.66 27.24-2 27.24-11V203.61c0-8.5-2.05-7.38-27.24-16.26l4.47-32.92H324v168.71c0 6.51.4 7.32 6.51 8.14l20.73 2.84v32.1zm52.45-244.31c-23.17 0-36.59-13.43-36.59-36.61s13.42-35.77 36.59-35.77c23.58 0 37 12.62 37 35.77s-13.42 36.61-37 36.61zM512 350.46c-17.49 8.53-43.1 16.26-66.28 16.26-48.38 0-66.67-19.5-66.67-65.46V194.75c0-5.42 1.05-4.06-31.71-4.06V154.5c35.78-4.07 50-22 54.47-66.27h38.63c0 65.83-1.34 61.81 3.26 61.81H501v40.65h-60.56v97.15c0 6.92-4.92 51.41 60.57 26.84z"&gt;&lt;/path&gt;&lt;/svg&gt; works - fast forward
+# How &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:currentColor;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M216.29 158.39H137C97 147.9 6.51 150.63 6.51 233.18c0 30.09 15 51.23 35 61-25.1 23-37 33.85-37 49.21 0 11 4.47 21.14 17.89 26.81C8.13 383.61 0 393.35 0 411.65c0 32.11 28.05 50.82 101.63 50.82 70.75 0 111.79-26.42 111.79-73.18 0-58.66-45.16-56.5-151.63-63l13.43-21.55c27.27 7.58 118.7 10 118.7-67.89 0-18.7-7.73-31.71-15-41.07l37.41-2.84zm-63.42 241.9c0 32.06-104.89 32.1-104.89 2.43 0-8.14 5.27-15 10.57-21.54 77.71 5.3 94.32 3.37 94.32 19.11zm-50.81-134.58c-52.8 0-50.46-71.16 1.2-71.16 49.54 0 50.82 71.16-1.2 71.16zm133.3 100.51v-32.1c26.75-3.66 27.24-2 27.24-11V203.61c0-8.5-2.05-7.38-27.24-16.26l4.47-32.92H324v168.71c0 6.51.4 7.32 6.51 8.14l20.73 2.84v32.1zm52.45-244.31c-23.17 0-36.59-13.43-36.59-36.61s13.42-35.77 36.59-35.77c23.58 0 37 12.62 37 35.77s-13.42 36.61-37 36.61zM512 350.46c-17.49 8.53-43.1 16.26-66.28 16.26-48.38 0-66.67-19.5-66.67-65.46V194.75c0-5.42 1.05-4.06-31.71-4.06V154.5c35.78-4.07 50-22 54.47-66.27h38.63c0 65.83-1.34 61.81 3.26 61.81H501v40.65h-60.56v97.15c0 6.92-4.92 51.41 60.57 26.84z"&gt;&lt;/path&gt;&lt;/svg&gt; works - merge (fast forward)
 
 .center[![:scale 90%](img/part2/br_6.png)]
 
@@ -1129,6 +1134,11 @@ $ git switch -c topicB
 $ echo "one more line" &gt;&gt; README.md
 $ git add README.md
 $ git commit -m "Improve documentation"
+```
+
+--
+
+```sh
 $ git switch main
 $ git merge topicB
 ```
@@ -1142,6 +1152,8 @@ Auto-merging README.md
 CONFLICT (content): Merge conflict in README.md
 Automatic merge failed; fix conflicts and then commit the result.
 ```
+
+## Interactive merge
 
 ---
 # Interactive merging 
@@ -1168,6 +1180,12 @@ $ git merge --continue
 ```
 
 to continue the current in-progress merge
+
+
+---
+# &lt;svg viewBox="0 0 640 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:currentColor;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"&gt;&lt;/path&gt;&lt;/svg&gt; Let's do this 
+
+## Merge a branch. 
 
 
 ---
@@ -1202,23 +1220,14 @@ https://www.spinics.net/lists/git/msg401416.html
 ### &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:currentColor;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; https://git-scm.com/docs/merge-strategies
 
 
----
-# &lt;svg viewBox="0 0 640 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:currentColor;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"&gt;&lt;/path&gt;&lt;/svg&gt; Let's do this 
 
-## Merge a branch. 
 
 
 
 ---
-# Let's rewind
+# Rebasing 
 
-## Careful
-
-```sh
-$ git reset --hard HEAD~1
-```
-
-### Now we use `git rebase` instead of `git merge`
+### Let's rewind and use `git rebase` instead of `git merge`
 
 
 ---
@@ -1237,7 +1246,7 @@ $ git reset --hard HEAD~1
 .center[![:scale 90%](img/part2/reb_3.png)]
 
 ---
-# How &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:currentColor;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M216.29 158.39H137C97 147.9 6.51 150.63 6.51 233.18c0 30.09 15 51.23 35 61-25.1 23-37 33.85-37 49.21 0 11 4.47 21.14 17.89 26.81C8.13 383.61 0 393.35 0 411.65c0 32.11 28.05 50.82 101.63 50.82 70.75 0 111.79-26.42 111.79-73.18 0-58.66-45.16-56.5-151.63-63l13.43-21.55c27.27 7.58 118.7 10 118.7-67.89 0-18.7-7.73-31.71-15-41.07l37.41-2.84zm-63.42 241.9c0 32.06-104.89 32.1-104.89 2.43 0-8.14 5.27-15 10.57-21.54 77.71 5.3 94.32 3.37 94.32 19.11zm-50.81-134.58c-52.8 0-50.46-71.16 1.2-71.16 49.54 0 50.82 71.16-1.2 71.16zm133.3 100.51v-32.1c26.75-3.66 27.24-2 27.24-11V203.61c0-8.5-2.05-7.38-27.24-16.26l4.47-32.92H324v168.71c0 6.51.4 7.32 6.51 8.14l20.73 2.84v32.1zm52.45-244.31c-23.17 0-36.59-13.43-36.59-36.61s13.42-35.77 36.59-35.77c23.58 0 37 12.62 37 35.77s-13.42 36.61-37 36.61zM512 350.46c-17.49 8.53-43.1 16.26-66.28 16.26-48.38 0-66.67-19.5-66.67-65.46V194.75c0-5.42 1.05-4.06-31.71-4.06V154.5c35.78-4.07 50-22 54.47-66.27h38.63c0 65.83-1.34 61.81 3.26 61.81H501v40.65h-60.56v97.15c0 6.92-4.92 51.41 60.57 26.84z"&gt;&lt;/path&gt;&lt;/svg&gt; works - merge
+# How &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:currentColor;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M216.29 158.39H137C97 147.9 6.51 150.63 6.51 233.18c0 30.09 15 51.23 35 61-25.1 23-37 33.85-37 49.21 0 11 4.47 21.14 17.89 26.81C8.13 383.61 0 393.35 0 411.65c0 32.11 28.05 50.82 101.63 50.82 70.75 0 111.79-26.42 111.79-73.18 0-58.66-45.16-56.5-151.63-63l13.43-21.55c27.27 7.58 118.7 10 118.7-67.89 0-18.7-7.73-31.71-15-41.07l37.41-2.84zm-63.42 241.9c0 32.06-104.89 32.1-104.89 2.43 0-8.14 5.27-15 10.57-21.54 77.71 5.3 94.32 3.37 94.32 19.11zm-50.81-134.58c-52.8 0-50.46-71.16 1.2-71.16 49.54 0 50.82 71.16-1.2 71.16zm133.3 100.51v-32.1c26.75-3.66 27.24-2 27.24-11V203.61c0-8.5-2.05-7.38-27.24-16.26l4.47-32.92H324v168.71c0 6.51.4 7.32 6.51 8.14l20.73 2.84v32.1zm52.45-244.31c-23.17 0-36.59-13.43-36.59-36.61s13.42-35.77 36.59-35.77c23.58 0 37 12.62 37 35.77s-13.42 36.61-37 36.61zM512 350.46c-17.49 8.53-43.1 16.26-66.28 16.26-48.38 0-66.67-19.5-66.67-65.46V194.75c0-5.42 1.05-4.06-31.71-4.06V154.5c35.78-4.07 50-22 54.47-66.27h38.63c0 65.83-1.34 61.81 3.26 61.81H501v40.65h-60.56v97.15c0 6.92-4.92 51.41 60.57 26.84z"&gt;&lt;/path&gt;&lt;/svg&gt; works - merge (fast forward)
 
 .center[![:scale 90%](img/part2/reb_4.png)]
 
@@ -1246,14 +1255,6 @@ $ git reset --hard HEAD~1
 ---
 # Rebasing 
 
-
-```sh
-$ git log --oneline
-97832ed (HEAD -&gt; topicB, topicA, main) Add seq_ncol()
-cb1eba0 Improve the documentation
-630c33e Add seq_nrow()
-0f2ea9b Add our README
-```
 
 ```sh
 $ git rebase main 
@@ -1267,32 +1268,8 @@ $ git rebase main
 #&gt; Could not apply d8b6335... Improve documentation
 ```
 
+### Interactive mode
 
----
-# Rebasing
-
-```sh
-$ git add README.md 
-```
-
-```sh
-$ git rebase --continue
-[detached HEAD ad7d26b] Improve documentation
-1 file changed, 2 insertions(+)
-Successfully rebased and updated refs/heads/topicB
-```
-
----
-# Rebasing
-
-```sh
-$ git log --oneline --graph --all
-* ad7d26b (HEAD -&gt; topicB) Improve documentation
-* 13a0b23 (topicA, main) Add seq_ncol()
-* 07bedb8 Improve the documentation
-* 851b17b Add seq_nrow()
-* 7f65943 Add our README
-```
 
 ---
 # &lt;svg viewBox="0 0 640 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:currentColor;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"&gt;&lt;/path&gt;&lt;/svg&gt; Let's do this 
@@ -1313,17 +1290,24 @@ class: inverse, center, middle
 
 
 ---
-# Amend
+# Amend a commit
 
-## Oops! I forget to add something to the last commit.
+```sh
+$ git log --oneline
+#&gt; 97832ed (HEAD -&gt; topicA) Add seq_ncol()
+#&gt; cb1eba0 (main) Improve the documentation
+#&gt; 630c33e Add seq_nrow()
+#&gt; 0f2ea9b Add our README
+```
 
+## Oops! I forget to add something to the last commit!
+
+
+---
+# Amend a commit
 
 ```sh
 $ echo "one more line" &gt;&gt; README.md
-```
-
-
-```sh
 $ git add README.md
 ```
 
@@ -1339,9 +1323,41 @@ $ git commit --amend
 
 
 ---
+# Amend a commit
+
+### Used to be
+
+```sh
+$ git log --oneline
+#&gt; 97832ed (HEAD -&gt; topicA) Add seq_ncol()
+#&gt; cb1eba0 (main) Improve the documentation
+#&gt; 630c33e Add seq_nrow()
+#&gt; 0f2ea9b Add our README
+```
+
+--
+
+### Now 
+
+```sh
+$ git log --oneline
+#&gt; 07af32e (HEAD -&gt; topicA) Add seq_ncol()
+#&gt; cb1eba0 (main) Improve the documentation
+#&gt; 630c33e Add seq_nrow()
+#&gt; 0f2ea9b Add our README
+```
+
+--
+
+
+---
 # Stash
 
-### Stash some of your work 
+### An extra area where you can stash your last work
+
+--
+
+### Stash some of your modifications (workspace/staging area)
 
 ```sh
 $ git stash
@@ -1363,7 +1379,9 @@ $ git stash pop
 $ git stash drop
 ```
 
---
+---
+# Stash
+
 
 ### Oops! that should be done in a different branch 
 
@@ -1374,6 +1392,7 @@ $ git stash branch topicC
 --
 
 - &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:currentColor;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; [stash tricks](https://www.freecodecamp.org/news/useful-tricks-you-might-not-know-about-git-stash-e8a9490f0a1a/)
+
 
 
 ---
@@ -1393,7 +1412,7 @@ class: inverse, center, middle
 
 ![:custom_hr]()
 
-## Local and remote 
+## Local and remote
 
 
 ---
