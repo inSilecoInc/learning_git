@@ -1,0 +1,88 @@
+---
+title: "Module 1"
+output:
+  xaringan::moon_reader:
+    css: [default, rd.css, rd-font.css, "hygge"]
+    lib_dir: assets
+    seal: false
+    nature:
+      highlightStyle: dracula
+      countIncrementalSlides: false
+      beforeInit: "macros.js"
+---
+
+
+# Let's practice - Module 1 
+
+```{r setup_zz1, include = FALSE}
+source("_setup.R")
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #37abc8\"></i>",
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+xaringanExtra::use_scribble()
+```
+
+
+---
+# Work on your local repository
+
+
+1. Initiate a `r gt()` repo.
+
+--
+2. Creates the two first commits
+
+  - You can use one of your project;
+  - You can create a R project on RStudio.
+  
+--
+3. Do a third commit on a local branch. 
+
+--
+4. Merge this branch.
+
+--
+5. Try solving a conflict.
+
+--
+6. Try to rebase.
+
+<!-- may have to create  -->
+
+
+---
+# Set up your `r gh()` repo
+
+1. Create a repo on your `r gh()` account.
+
+--
+2. Add the remote repository to your local repository.
+
+--
+3. Do a first push.
+
+--
+4. Invite a colleague to your repository, let her/him push to your remote repo.
+
+--
+5. Pull her/him changes.
+
+
+
+---
+# Fork a repository
+
+1. Fork a repo https://github.com/dfo-mar-odis.
+
+--
+2. Clone the repo you've just forked.
+
+--
+3. Add the original repo as another remote called `upstream`.
+
+--
+4. Create a pull request.
