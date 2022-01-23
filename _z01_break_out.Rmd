@@ -40,15 +40,19 @@ xaringanExtra::use_scribble()
   - You can create a R project on RStudio.
   
 --
+
 3. Do a third commit on a local branch. 
 
 --
+
 4. Merge this branch.
 
 --
+
 5. Try solving a conflict.
 
 --
+
 6. Try to rebase.
 
 <!-- may have to create  -->
@@ -79,10 +83,13 @@ xaringanExtra::use_scribble()
 1. Fork a repo https://github.com/dfo-mar-odis.
 
 --
+
 2. Clone the repo you've just forked.
 
 --
+
 3. Add the original repo as another remote called `upstream`.
 
 --
+
 4. Create a pull request.
