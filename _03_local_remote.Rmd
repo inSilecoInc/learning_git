@@ -12,7 +12,6 @@ output:
 ---
 
 
----
 # Local and remote
 
 ```{r setup_03, include = FALSE}
@@ -68,41 +67,46 @@ class: inverse, center, middle
 
 --
 
-### [Pro Git](https://git-scm.com/book/en/v2/GitHub-Account-Setup-and-Configuration)
+### One entire chapter in [Pro Git](https://git-scm.com/book/en/v2/GitHub-Account-Setup-and-Configuration)
+
+<br>
 
 --
 
-### `r lc()` Let's do this
+## `r lc()` Let's do this!
 
 
 ---
 # Three ways to access a `r gh()` repo
 
-### Https
+## Https
 
-- `r nf()` Since August 2021 a personal access token (PAT) is required
-- [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+- `r nf()` Since August 2021 a [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) (PAT) is required
 - https://cran.r-project.org/web/packages/credentials/vignettes/intro.html
 - https://usethis.r-lib.org/articles/git-credentials.html
 - https://git-scm.com/docs/git-credential-store
 
 --
 
-### SSH (preferred)
+## SSH (preferred)
 
 - https://phoenixnap.com/kb/generate-ssh-key-windows-10
 - https://ndpsoftware.com/git-cheatsheet.html#loc=workspace;
 
 --
 
-### [GitHub CLI](https://cli.github.com/)
+## [GitHub CLI](https://cli.github.com/)
+
+```sh
+$ gh repo create inSilecoInc/proj1 --public
+```
 
 
 
 ---
 # Add remote repo to your local repo
 
-## Https 
+## Https
 
 ```sh
 $ git remote add origin https://github.com/inSilecoInc/proj1.git
@@ -119,55 +123,177 @@ $ git remote add origin git@github.com:inSilecoInc/proj1.git
 - NB: a remote repository is just another repo
 
 
+
 ---
-# Track the remote branch 
+# Inspect the remote repository
 
 ```sh
+$ git remote show origin
+#> * remote origin
+#>   Fetch URL: git@github.com:inSilecoInc/proj1.git
+#>   Push  URL: git@github.com:inSilecoInc/proj1.git
+#>   HEAD branch: (unknown)
+```
+
+
+---
+# Set the upstream/main branch
+
+```sh
+# make sure you are on main branch
+$ git switch main
+# fist push
 $ git push -u origin main
 ```
 
 (same as `$ git push --set-upstream origin main`)
 
+--
 
----
-# What happened?
-
-TODO
-
+### Now your local `main` branch tracks the `origin/main`
 
 
 ---
-### `r lc()` Let's do this
+# Inspect the remote repository
+
+```sh
+$ git remote show origin
+#> * remote origin
+#>   Fetch URL: git@github.com:inSilecoInc/proj1.git
+#>   Push  URL: git@github.com:inSilecoInc/proj1.git
+#>   HEAD branch: main
+#>   Remote branch:
+#>     main tracked
+#>   Local branch configured for 'git pull':
+#>     main merges with remote main
+#>   Local ref configured for 'git push':
+#>     main pushes to main (up to date)
+```
+
+---
+# Inspect the remote repository
+
+```sh
+$ git branch
+#> * main
+#>  topicA
+#>  topicB
+```
+
+--
+
+```sh
+$ git branch -a
+#> * main
+#>   topicA
+#>   topicB
+#>   remotes/origin/main
+```
+
+
+---
+# Inspect the remote repository
+
+
+```sh
+$ git branch -v
+#> * main   f878ca9 Add seq_ncol()
+#>   topicA 13a0b23 Add seq_ncol()
+#>   topicB ad7d26b Improve documentation
+```
+
+--
+
+```sh
+git branch -vv
+#> * main   f878ca9 [origin/main] Add seq_ncol()
+#>   topicA 13a0b23 Add seq_ncol()
+#>   topicB ad7d26b Improve documentation
+```
+
+--
+
+```sh
+$ git log --oneline
+#> f878ca9 (HEAD -> main, origin/main) Add seq_ncol()
+#> 07bedb8 Improve the documentation
+#> 851b17b Add seq_nrow()
+#> 7f65943 Add our README
+```
+???
+You cannot move the HEAD to a remote branch
+
+
+---
+# How `r gt()` works
+
+.center[![:scale 100%](img/part3/rem_0.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 100%](img/part3/rem_1.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 100%](img/part3/rem_2.png)]
+
+
+
+
+---
+# `r lc()` Let's do this
 
 ## Add a remote.
 
 
 
 ---
-# Clone and fork?
+# `r lc()` Let's do this
 
-### `r lc()` Let's do this
+## Clone and fork
+
+
+### 1. Clone 
+
+```sh
+$ git@github.com:inSilecoInc/demogit.git
+```
+
+- `git clone` get a copy of the remote repo (`git`);
+- set up a local branch to track the the default remote branch. 
+
+--
+
+### 2. Fork 
+
+- Copy a `r gh()` repository on one of you ` rgh()` account.
+
 
 ???
-delete add re-initiate proj1 with a readme and a gitignore for clone
+delete add re-initiate proj1 with a readme and a .gitignore for clone
+then do a fork and then a cloe
 
 
 ---
 # Using several remotes
 
-### I set up 3 remotes for one of our repo 
+### `r nf()` I set up 3 remotes for one of our repo 
 
 https://github.com/inSilecoInc/demogit
 
 ```sh
 $ git remote -vv
-mirror	git@gitlab.com:KevCaz/demogit.git (fetch)
-mirror	git@gitlab.com:KevCaz/demogit.git (push)
-mirror2	git@raspberrypi.local:/srv/git/demogit.git (fetch)
-mirror2	git@raspberrypi.local:/srv/git/demogit.git (push)
-origin	git@github.com:inSilecoInc/demogit.git (fetch)
-origin	git@github.com:inSilecoInc/demogit.git (push)
+#> mirror	git@gitlab.com:KevCaz/demogit.git (fetch)
+#> mirror	git@gitlab.com:KevCaz/demogit.git (push)
+#> mirror2	git@raspberrypi.local:/srv/git/demogit.git (fetch)
+#> mirror2	git@raspberrypi.local:/srv/git/demogit.git (push)
+#> origin	git@github.com:inSilecoInc/demogit.git (fetch)
+#> origin	git@github.com:inSilecoInc/demogit.git (push)
 ```
+
+
 
 
 
@@ -193,7 +319,7 @@ class: inverse, center, middle
 ---
 # Fetch
 
-### Download missing refs and object 
+### Download missing refs and objects
 
 ```sh
 $ git fetch
@@ -211,25 +337,95 @@ $ git fetch origin
 $ git fetch --all
 ```
 
-### You don't have a copy of the local remote 
 
---
-
-### Having a local repo and a remote repo is simply about having a more complex history
+### `nf()` Having a local repo and a remote repo is simply about tracking more branches.
 
 
 
 ---
 # Pull 
 
-## Fetch then merge tracked branch
+
+```sh
+$ git pull
+#> [...]
+```
+
+--
+
+
+## Fetch + merge
+
+--
+
+```sh
+$ git fetch
+#> [...]
+$ git merge origin/main
+#> [...]
+```
+
+
+---
+# How `r gt()` works
+
+.center[![:scale 100%](img/part3/rem_3.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 100%](img/part3/rem_4.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 100%](img/part3/rem_5.png)]
+
+
+
 
 
 ---
 # Push 
 
-## Update remote branch
 
+
+```sh
+$ git push
+```
+
+--
+
+```sh
+$ git pull
+#> [...]
+```
+
+--
+
+```sh
+$ git push <option> <repo> <branch>
+#> [...]
+```
+
+--
+
+```sh
+$ git push origin -d topicA
+#> [...]
+```
+
+
+
+---
+# How `r gt()` works
+
+.center[![:scale 100%](img/part3/rem_6.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 100%](img/part3/rem_7.png)]
 
 
 
@@ -246,12 +442,70 @@ class: inverse, center, middle
 
 
 ---
-# Create a local branch 
+# Add a new branch to the remote
 
+
+```sh
+$ git switch -c topicC
+[...]
+```
+
+--
+
+```sh
+$ git push
+#> fatal: The current branch topicC has no upstream branch.
+#> To push the current branch and set the remote as upstream, use
+#> 
+#>    git push --set-upstream origin topicC
+```
+
+--
+
+```sh
+$ git push -u origin topicC
+#> Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+#> To raspberrypi.local:/srv/git/coolio.git
+#>  * [new branch]      topicC -> topicC
+#> Branch 'topicC' set up to track remote branch 'topicC' from 'origin'.
+```
 
 ---
-# Track it on the remote repo 
+# How `r gt()` works
 
+.center[![:scale 100%](img/part3/rem_8.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 100%](img/part3/rem_9.png)]
+
+---
+# Track a remote branch  
+
+
+```sh
+$ git checkout --track origin/topicA 
+```
+
+--
+
+```sh
+$ git switch -t topicA
+#> Branch 'topicA' set up to track remote branch 'topicA' from 'origin'.
+#> Switched to a new branch 'topicA'
+```
+
+--
+
+```sh
+$ git switch topicA
+#> Branch 'topicA' set up to track remote branch 'topicA' from 'origin'.
+#> Switched to a new branch 'topicA'
+```
+
+???
+and with -c it can be renamed.
 
 ---
 # Cheat sheet
@@ -307,7 +561,9 @@ $ git config --global alias.co checkout
 ---
 # Some commands you might use at some point
 
+- `git tag`: create tags
 - `git diff`: check difference between commits (and more)
 - `git show`: inspect a commit 
 - `git rebase -i`: rewrite history interactively
 - `git reset`: undo commits
+- `git filter-branch`: remove stuff from history (see [`git-filter-repo`](https://github.com/newren/git-filter-repo))

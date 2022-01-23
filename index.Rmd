@@ -121,7 +121,7 @@ class: inverse, center, middle
 
 ## Local and remote
 
-## `r rfa("html5")` [Click here to view the slides.](_03_local_remote.Rmd)
+## `r rfa("html5")` [Click here to view the slides.](_03_local_remote.html)
 
 
 ---
