@@ -34,7 +34,7 @@ xaringanExtra::use_scribble()
 1. Initiate a `r gt()` repo.
 
 --
-2. Creates the two first commits
+2. Creates the first two commits
 
   - You can use one of your project;
   - You can create a R project on RStudio.
@@ -73,7 +73,7 @@ xaringanExtra::use_scribble()
 4. Invite a colleague to your repository, let her/him push to your remote repo.
 
 --
-5. Pull her/him changes.
+5. Pull her/his changes.
 
 
 

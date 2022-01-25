@@ -146,7 +146,7 @@ $ git switch main
 $ git push -u origin main
 ```
 
-(same as `$ git push --set-upstream origin main`)
+- `r nf()` same as `$ git push --set-upstream origin main`
 
 --
 
@@ -262,18 +262,19 @@ $ git@github.com:inSilecoInc/demogit.git
 ```
 
 - `git clone` get a copy of the remote repo (`git`);
-- set up a local branch to track the the default remote branch. 
+- set up a local branch to track the default remote branch. 
 
 --
 
 ### 2. Fork 
 
-- Copy a `r gh()` repository on one of you ` rgh()` account.
+- Copy a `r gh()` repository on one of your `r gh()` account.
 
+`r tr()` More on this [next session](_04_rmarkdown.html)!
 
 ???
 delete add re-initiate proj1 with a readme and a .gitignore for clone
-then do a fork and then a cloe
+then do a fork and then a clone
 
 
 ---
@@ -338,7 +339,7 @@ $ git fetch --all
 ```
 
 
-### `nf()` Having a local repo and a remote repo is simply about tracking more branches.
+### `r nf()` Having a local repo and a remote repo is simply about tracking more branches.
 
 
 
@@ -529,14 +530,14 @@ class: inverse, center, middle
 ---
 # Collaborative workflows
 
-- `lk()` https://nvie.com/posts/a-successful-git-branching-model/
-- `lk()` https://danielkummer.github.io/git-flow-cheatsheet/
+- `r lk()` https://nvie.com/posts/a-successful-git-branching-model/
+- `r lk()` https://danielkummer.github.io/git-flow-cheatsheet/
 
 
 ---
 # Configuration: `git config`
 
-- `lk()` https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
+- `r lk()` https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
 
 
 ```sh
@@ -549,7 +550,7 @@ $ git config --local core.editor emacs
 
 --
 
-- `lk()` https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
+- `r lk()` https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
 
 ```sh
 $ git config --global alias.co checkout
