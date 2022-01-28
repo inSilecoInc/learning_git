@@ -121,7 +121,7 @@ class: inverse, center, middle
 
 ## Local and remote
 
-## `r rfa("html5")` [Click here to view the slides.](_03_local_remote.Rmd)
+## `r rfa("html5")` [Click here to view the slides.](_03_local_remote.html)
 
 
 ---
@@ -150,3 +150,16 @@ class: inverse, center, middle
 ## Coming soon...
 
 
+---
+
+class: inverse, center, middle
+
+# `r lc()` Practice (break-out groups)
+
+![:custom_hr]()
+
+## Module 1 `r rfa("html5")` [Click here to view the slides.](_z01_break_out.html)
+
+## Module 2 `r rfa("html5")`  Coming soon...
+
+## Module 3 `r rfa("html5")` Coming soon...

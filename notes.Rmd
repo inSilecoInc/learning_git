@@ -35,6 +35,8 @@ git rebase main
 
 
 
+
+
 ## Rewrite the history
 
 
@@ -83,23 +85,35 @@ https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
  As a general rule, your messages should start with a single line that’s no more than about 50 characters and that describes the changeset concisely, followed by a blank lin
   followed by a blank line, followed by a more detailed explanation. 
  
- 
-could be useful but takes chracters
+
  
  https://git-send-email.io/#step-1
  
- https://docs.ropensci.org/gert/
   -->
 
+## Break-out 1 
 
-  ---
-  # Three states
+<!-- worth talking to C.G. beforehand -->
+<!-- shoul we create a index now? -->
+- Create a local git repository 
+- Creates two commits 
+- Create a branch 
+- Fast forward 
+- Create a situation where you have a conflict
+- Try rebasing 
 
 
-  > Git has three main states that your files can reside in: *modified*, *staged*, and *committed*.
+- 
 
+- Set up a repository up to the first push. 
 
-  .center[![:scale 80%](img/part1/threestates.png)]
+- Try to create a branch 
 
+- Then invite somebody create a branch and push it. 
 
-  - `r lk()` S. Chacon & B. Straub (2014), [Pro Git](https://git-scm.com/book/en/v2).
+- Create a pull request review a pull request 
+
+- Clone common repository add your own branch
+
+- Create a fork of demogit/or the one on  and add something then open a pull  request.
+

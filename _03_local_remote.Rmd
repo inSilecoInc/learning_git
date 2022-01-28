@@ -12,7 +12,6 @@ output:
 ---
 
 
----
 # Local and remote
 
 ```{r setup_03, include = FALSE}
@@ -48,27 +47,6 @@ git --version
 - `r gl()` account 
 
 
----
-# Prerequisite: a terminal `r lc()`
-
-### All users
-
-- [R Studio](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE)
-
---
-
-### Windows 
-
-- [Cygwin](https://www.cygwin.com/) / [Windows 10 bash shell](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/)
-
---
-
-### Perso
-
-- I work on [Debian](https://www.debian.org/) / my Desktop environment is [Gnome](https://www.gnome.org/)
-- I use [gnome-terminal](https://help.gnome.org/users/gnome-terminal/stable/) with [Z shell](https://en.wikipedia.org/wiki/Z_shell) and a configuration framework named [prezto](https://github.com/sorin-ionescu/prezto) 
-
-
 
 
 ---
@@ -81,89 +59,250 @@ class: inverse, center, middle
 
 ## `r gh()`
 
-??? 
-Good buffer, may do it or not! If not just say that it will be good if already set!
+
+---
+# Create a repository on `r gh()`
+
+### `r lk()` https://docs.github.com/en/get-started/quickstart/create-a-repo
+
+--
+
+### One entire chapter in [Pro Git](https://git-scm.com/book/en/v2/GitHub-Account-Setup-and-Configuration)
+
+--
+
+## [GitHub CLI](https://cli.github.com/)
+
+```sh
+$ gh repo create inSilecoInc/proj1 --public
+```
+
+<br>
+
+--
+
+## `r lc()` Let's do this!
 
 
 ---
-# Get a GitHub Token 
+#2 protocols to access a `r gh()` repo
 
+## Https
 
-### Since August 2021 required a personal access token (PAT)
-
-### [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
-
----
-# Create a repository 
-
-### [Create a repo](https://docs.github.com/en/get-started/quickstart/create-a-repo)
-
-
----
-# Add your local repository 
-
-
-
----
-# Managing credentials
-
-## Store your PAT
-
+- `r nf()` Since August 2021 a [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) (PAT) is required
 - https://cran.r-project.org/web/packages/credentials/vignettes/intro.html
 - https://usethis.r-lib.org/articles/git-credentials.html
 - https://git-scm.com/docs/git-credential-store
 
+--
 
-## Use SSH 
+## SSH (preferred)
 
 - https://phoenixnap.com/kb/generate-ssh-key-windows-10
-
-
 - https://ndpsoftware.com/git-cheatsheet.html#loc=workspace;
-
-
-
---- 
-# Remote branches
-
-
-
+- https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 
 
 
 
 ---
+# Add remote repo to your local repo
 
-class: inverse, center, middle
+## Https
 
-# Pull & Push
+```sh
+$ git remote add origin https://github.com/inSilecoInc/proj1.git
+```
+--
 
-![:custom_hr]()
+## SSH
+
+```sh
+$ git remote add origin git@github.com:inSilecoInc/proj1.git
+```
+
+- Now `r gt()` is aware of the existence of a remote repository 
+- NB: a remote repository is just another repo
 
 
 
 ---
+# Inspect the remote repository
 
-class: inverse, center, middle
+```sh
+$ git remote show origin
+#> * remote origin
+#>   Fetch URL: git@github.com:inSilecoInc/proj1.git
+#>   Push  URL: git@github.com:inSilecoInc/proj1.git
+#>   HEAD branch: (unknown)
+```
 
-# Clone & Fork 
 
-![:custom_hr]()
+---
+# Set the upstream/main branch
 
+```sh
+# make sure you are on main branch
+$ git switch main
+# first push
+$ git push -u origin main
+```
+
+- `r nf()` same as `$ git push --set-upstream origin main`
+
+--
+
+### Now your local `main` branch tracks the `origin/main`
+
+
+---
+# Inspect the remote repository
+
+```sh
+$ git remote show origin
+#> * remote origin
+#>   Fetch URL: git@github.com:inSilecoInc/proj1.git
+#>   Push  URL: git@github.com:inSilecoInc/proj1.git
+#>   HEAD branch: main
+#>   Remote branch:
+#>     main tracked
+#>   Local branch configured for 'git pull':
+#>     main merges with remote main
+#>   Local ref configured for 'git push':
+#>     main pushes to main (up to date)
+```
+
+---
+# Inspect the remote repository
+
+```sh
+$ git branch
+#> * main
+#>  topicA
+#>  topicB
+```
+
+--
+
+```sh
+$ git branch -a
+#> * main
+#>   topicA
+#>   topicB
+#>   remotes/origin/main
+```
+
+### `r nf()` Having a local repo and a remote repo is simply about tracking more branches.
+
+
+---
+# Inspect the remote repository
+
+
+```sh
+$ git branch -v
+#> * main   f878ca9 Add seq_ncol()
+#>   topicA 13a0b23 Add seq_ncol()
+#>   topicB ad7d26b Improve documentation
+```
+
+--
+
+```sh
+git branch -vv
+#> * main   f878ca9 [origin/main] Add seq_ncol()
+#>   topicA 13a0b23 Add seq_ncol()
+#>   topicB ad7d26b Improve documentation
+```
+
+--
+
+```sh
+$ git log --oneline
+#> f878ca9 (HEAD -> main, origin/main) Add seq_ncol()
+#> 07bedb8 Improve the documentation
+#> 851b17b Add seq_nrow()
+#> 7f65943 Add our README
+```
+???
+You cannot move the HEAD to a remote branch
+
+
+---
+# How `r gt()` works
+
+.center[![:scale 100%](img/part3/rem_0.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 100%](img/part3/rem_1.png)]
+
+---
+# How `r gt()` works - 1st push
+
+.center[![:scale 100%](img/part3/rem_2.png)]
+
+
+
+
+---
+# `r lc()` Let's do this
+
+## Add a remote.
+
+
+
+---
+# `r lc()` Let's do this
+
+## Clone and fork
+
+
+### 1. **Clone** 
+
+```sh
+$ git clone git@github.com:inSilecoInc/demogit.git
+#> Cloning into 'demogit'...
+#> remote: Enumerating objects: 3, done.
+#> remote: Counting objects: 100% (3/3), done.
+#> remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+#> Receiving objects: 100% (3/3), done.
+```
+
+- `git clone` get a copy of the remote repo (`git`);
+- set up a local branch to track the default remote branch. 
+
+--
+
+### 2. **Fork**
+
+- Copy a `r gh()` repository on one of your `r gh()` account.
+
+`r tr()` More on this [next session](_04_rmarkdown.html)!
+
+???
+delete add re-initiate proj1 with a readme and a .gitignore for clone
+then do a fork and then a clone
 
 
 ---
 # Using several remotes
 
+### `r nf()` I set up 3 remotes for one of our repo 
+
+https://github.com/inSilecoInc/demogit
+
 ```sh
 $ git remote -vv
-mirror	git@gitlab.com:KevCaz/demogit.git (fetch)
-mirror	git@gitlab.com:KevCaz/demogit.git (push)
-mirror2	git@raspberrypi.local:/srv/git/demogit.git (fetch)
-mirror2	git@raspberrypi.local:/srv/git/demogit.git (push)
-origin	git@github.com:inSilecoInc/demogit.git (fetch)
-origin	git@github.com:inSilecoInc/demogit.git (push)
+#> mirror	git@gitlab.com:KevCaz/demogit.git (fetch)
+#> mirror	git@gitlab.com:KevCaz/demogit.git (push)
+#> mirror2	git@raspberrypi.local:/srv/git/demogit.git (fetch)
+#> mirror2	git@raspberrypi.local:/srv/git/demogit.git (push)
+#> origin	git@github.com:inSilecoInc/demogit.git (fetch)
+#> origin	git@github.com:inSilecoInc/demogit.git (push)
 ```
+
 
 
 
@@ -172,18 +311,214 @@ origin	git@github.com:inSilecoInc/demogit.git (push)
 
 class: inverse, center, middle
 
-# Collaborative workflows
+# Fetch, pull & push
 
 ![:custom_hr]()
+
+---
+# Fetch, pull & push
+
+> git-fetch - Download objects and refs from another repository
+
+> git-pull - Fetch from and integrate with another repository or a local
+       branch
+
+> git-push - Update remote refs along with associated objects
+
+
+---
+# Fetch
+
+### Download missing refs and objects
+
+```sh
+$ git fetch
+```
+
+--
+
+```sh
+$ git fetch origin
+```
+
+--
+
+```sh
+$ git fetch --all
+```
+
+
 
 
 
 ---
-# Collaborative workflows
+# Pull 
 
-- https://github.com/github/gitignore
-- https://nvie.com/posts/a-successful-git-branching-model/
-- https://danielkummer.github.io/git-flow-cheatsheet/
+
+```sh
+$ git pull
+#> [...]
+```
+
+--
+
+
+## Fetch + merge
+
+--
+
+```sh
+$ git fetch
+#> [...]
+$ git merge origin/main
+#> [...]
+```
+
+
+---
+# How `r gt()` works
+
+.center[![:scale 100%](img/part3/rem_3.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 100%](img/part3/rem_4.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 100%](img/part3/rem_5.png)]
+
+
+
+
+
+---
+# Push 
+
+
+
+```sh
+$ git push
+#> [...]
+```
+
+--
+
+--
+
+```sh
+$ git push <option> <repo> <branch>
+#> [...]
+```
+
+--
+
+```sh
+$ git push origin -d topicA
+#> [...]
+```
+
+- to delete a remote branch
+
+
+
+---
+# How `r gt()` works
+
+.center[![:scale 100%](img/part3/rem_6.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 100%](img/part3/rem_7.png)]
+
+
+
+
+---
+
+class: inverse, center, middle
+
+# Remote branches
+
+![:custom_hr]()
+
+## `r gh()`
+
+
+---
+# Add a new branch to the remote
+
+
+```sh
+$ git switch -c topicC
+[...]
+```
+
+--
+
+```sh
+$ git push
+#> fatal: The current branch topicC has no upstream branch.
+#> To push the current branch and set the remote as upstream, use
+#> 
+#>    git push --set-upstream origin topicC
+```
+
+--
+
+```sh
+$ git push -u origin topicC
+#> Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+#> To raspberrypi.local:/srv/git/coolio.git
+#>  * [new branch]      topicC -> topicC
+#> Branch 'topicC' set up to track remote branch 'topicC' from 'origin'.
+```
+
+---
+# How `r gt()` works
+
+.center[![:scale 100%](img/part3/rem_8.png)]
+
+---
+# How `r gt()` works
+
+.center[![:scale 100%](img/part3/rem_9.png)]
+
+---
+# Track a remote branch  
+
+
+```sh
+$ git checkout --track origin/topicA 
+```
+
+--
+
+```sh
+$ git switch -t topicA
+#> Branch 'topicA' set up to track remote branch 'topicA' from 'origin'.
+#> Switched to a new branch 'topicA'
+```
+
+--
+
+```sh
+$ git switch topicA
+#> Branch 'topicA' set up to track remote branch 'topicA' from 'origin'.
+#> Switched to a new branch 'topicA'
+```
+
+???
+and with -c it can be renamed.
+
+---
+# Cheat sheet
+
+- `r lk()` https://ndpsoftware.com/git-cheatsheet.html#loc=workspace
+
 
 
 
@@ -199,32 +534,43 @@ class: inverse, center, middle
 
 
 ---
-# Inspect commits
+# Collaborative workflows
 
-```sh
-git show 618b684
-#> commit 618b68425a3183a69b7472c3cda177f26acef3f4 (HEAD)
-#> Author: Kevin Cazelles <kevin.cazelles@insileco.io>
-#> Date:   Sun Jan 9 23:55:29 2022 -0500
-#> 
-#>     add our README
-#> 
-#> diff --git a/README.md b/README.md
-#> new file mode 100644
-#> index 0000000..1f18e72
-#> --- /dev/null
-#> +++ b/README.md
-#> @@ -0,0 +1,2 @@
-#> +# Our great project
-#> +This is a great project
-```
+- `r lk()` https://nvie.com/posts/a-successful-git-branching-model/
+- `r lk()` https://danielkummer.github.io/git-flow-cheatsheet/
 
 
 ---
-# Reset commit 
+# Configuration: `git config`
 
-- `git show`
-- `git reset`
-- `git diff`
-- `git rebase -i`
-- `git `
+- `r lk()` https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
+
+
+```sh
+$ git config --global user.email "kevin.cazelles@gmail.com"
+```
+
+```sh
+$ git config --local core.editor emacs
+```
+
+--
+
+- `r lk()` https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
+
+```sh
+$ git config --global alias.co checkout
+```
+- then `git co` = `git checkout`
+- shell aliased
+
+
+---
+# Some commands you might use at some point
+
+- `git tag`: create tags
+- `git diff`: check difference between commits (and more)
+- `git show`: inspect a commit 
+- `git rebase -i`: rewrite history interactively
+- `git reset`: undo commits
+- `git filter-branch`: remove stuff from history (see [`git-filter-repo`](https://github.com/newren/git-filter-repo))
