@@ -964,6 +964,11 @@ now let's use references (refs) for pointers and objects for objets
 ```sh
 $ git switch -d HEAD~2
 $ git switch -c topicB
+```
+
+--
+
+```sh
 $ echo "one more line" >> README.md
 $ git add README.md
 $ git commit -m "Improve documentation"
@@ -973,20 +978,18 @@ $ git commit -m "Improve documentation"
 
 ```sh
 $ git switch main
-$ git merge topicB
 ```
 
----
-# Merge commit
+--
 
 ```sh
 $ git merge topicB
-Auto-merging README.md
-CONFLICT (content): Merge conflict in README.md
-Automatic merge failed; fix conflicts and then commit the result.
+#> Auto-merging README.md
+#> CONFLICT (content): Merge conflict in README.md
+#> Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-## Interactive merge
+### `r tr()` Interactive merge `r tr()`
 
 ---
 # Interactive merging 
@@ -1001,10 +1004,13 @@ $ git merge --abort
 
 to stop merging.
 
+--
 
 ```sh
 $ git merge add README.md
 ```
+
+--
 
 to add file for which conflict has been resolved.
 
@@ -1119,7 +1125,8 @@ $ git rebase main
 #> Could not apply d8b6335... Improve documentation
 ```
 
-### Interactive mode
+
+### `r tr()` interactive mode `r tr()`
 
 
 ---

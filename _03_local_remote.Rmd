@@ -69,6 +69,14 @@ class: inverse, center, middle
 
 ### One entire chapter in [Pro Git](https://git-scm.com/book/en/v2/GitHub-Account-Setup-and-Configuration)
 
+--
+
+## [GitHub CLI](https://cli.github.com/)
+
+```sh
+$ gh repo create inSilecoInc/proj1 --public
+```
+
 <br>
 
 --
@@ -77,7 +85,7 @@ class: inverse, center, middle
 
 
 ---
-# Three ways to access a `r gh()` repo
+#2 protocols to access a `r gh()` repo
 
 ## Https
 
@@ -92,14 +100,8 @@ class: inverse, center, middle
 
 - https://phoenixnap.com/kb/generate-ssh-key-windows-10
 - https://ndpsoftware.com/git-cheatsheet.html#loc=workspace;
+- https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 
---
-
-## [GitHub CLI](https://cli.github.com/)
-
-```sh
-$ gh repo create inSilecoInc/proj1 --public
-```
 
 
 
@@ -142,7 +144,7 @@ $ git remote show origin
 ```sh
 # make sure you are on main branch
 $ git switch main
-# fist push
+# first push
 $ git push -u origin main
 ```
 
@@ -190,6 +192,8 @@ $ git branch -a
 #>   remotes/origin/main
 ```
 
+### `r nf()` Having a local repo and a remote repo is simply about tracking more branches.
+
 
 ---
 # Inspect the remote repository
@@ -235,7 +239,7 @@ You cannot move the HEAD to a remote branch
 .center[![:scale 100%](img/part3/rem_1.png)]
 
 ---
-# How `r gt()` works
+# How `r gt()` works - 1st push
 
 .center[![:scale 100%](img/part3/rem_2.png)]
 
@@ -255,10 +259,15 @@ You cannot move the HEAD to a remote branch
 ## Clone and fork
 
 
-### 1. Clone 
+### 1. **Clone** 
 
 ```sh
-$ git@github.com:inSilecoInc/demogit.git
+$ git clone git@github.com:inSilecoInc/demogit.git
+#> Cloning into 'demogit'...
+#> remote: Enumerating objects: 3, done.
+#> remote: Counting objects: 100% (3/3), done.
+#> remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+#> Receiving objects: 100% (3/3), done.
 ```
 
 - `git clone` get a copy of the remote repo (`git`);
@@ -266,7 +275,7 @@ $ git@github.com:inSilecoInc/demogit.git
 
 --
 
-### 2. Fork 
+### 2. **Fork**
 
 - Copy a `r gh()` repository on one of your `r gh()` account.
 
@@ -339,7 +348,6 @@ $ git fetch --all
 ```
 
 
-### `r nf()` Having a local repo and a remote repo is simply about tracking more branches.
 
 
 
@@ -393,14 +401,10 @@ $ git merge origin/main
 
 ```sh
 $ git push
+#> [...]
 ```
 
 --
-
-```sh
-$ git pull
-#> [...]
-```
 
 --
 
@@ -415,6 +419,8 @@ $ git push <option> <repo> <branch>
 $ git push origin -d topicA
 #> [...]
 ```
+
+- to delete a remote branch
 
 
 
