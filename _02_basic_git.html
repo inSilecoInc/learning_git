@@ -999,30 +999,39 @@ $ git merge topicB
 # Interactive merging 
 
 
-### While merging...
+```sh
+# check what to do
+$ git status
+```
 
+--
 
 ```sh
+# stop merging
 $ git merge --abort
 ```
 
-to stop merging.
-
 --
 
 ```sh
-$ git merge add README.md
+# add file for which conflict has been resolved.
+$ git add README.md
 ```
 
 --
 
-to add file for which conflict has been resolved.
+```sh
+# end conflicts resolution/ end merging
+$ git commit -m "merge commit"
+```
+
+--
 
 ```sh
+# go next step
 $ git merge --continue
 ```
 
-to continue the current in-progress merge
 
 
 ---
