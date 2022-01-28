@@ -1,5 +1,5 @@
 # icons ready 
-# icons::download_fontawesome()
+icons::download_fontawesome()
 
 parts = c(
   "_00_introduction.Rmd", 
