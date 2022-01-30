@@ -18,6 +18,9 @@ source("_setup.R")
 
 <!-- rmarkdown::render("_05_csas.Rmd") -->
 
+# Working collaboratively with GitHub `r gh()`
+
+
 ---
 
 class: inverse, center, middle
