@@ -48,7 +48,7 @@ git --version
 - Sign up on https://github.com, then go to https://docs.github.com/en/get-started
 
 ---
-# Prerequisites: pandoc & <img src="img/part4/rmarkdown.png" style="vertical-align: middle;margin:10px" width="40px"></img>
+# Prerequisites: pandoc & <img src="https://github.com/rstudio/rmarkdown/raw/main/man/figures/logo.png" style="vertical-align: middle;margin:10px" width="40px"></img>
 
 ##  Pandoc
 
@@ -62,7 +62,7 @@ pandoc --version
 
 --
 
-##  rmarkdown <img src="img/part4/rmarkdown.png" style="vertical-align: middle;margin:10px" width="40px"></img> installed
+##  rmarkdown <img src="https://github.com/rstudio/rmarkdown/raw/main/man/figures/logo.png" style="vertical-align: middle;margin:10px" width="40px"></img> installed
 
 ```{r eval=FALSE}
 # Install from CRAN
@@ -229,8 +229,15 @@ Create a local copy of a `r gh()` remote repo from:
 $ git clone <repo>
 ```
 
+---
+# Adding collaborators 
 
+- Navigate to your `r gh()` settings 
+- Go to `Collaborators`
+- Click on `Add people` to invite collaborators
 
+<center><img src="img/part4/collaborator.png" style="vertical-align: middle;margin:10px" width="800px"></img></center>
+ 
 
 ---
 # `r lc()` Let's do this
@@ -239,25 +246,7 @@ $ git clone <repo>
 
 ## Fork a repository
 
-
-
-<!-- git remote show origin; Work with proj1 -->
-
-<!-- 
-Alors, on va commencer par présenter clone vs fork, ce qu'ils font 
-
-
-
-- Why we use them 
-- What they do
-- When we use them 
-
-https://www.theserverside.com/answer/Git-fork-vs-clone-Whats-the-difference#:~:text=Any%20public%20Git%20repository%20can,synchronize%20with%20the%20target%20repository.
-
-https://www.toolsqa.com/git/difference-between-git-clone-and-git-fork/
- -->
-
-
+## Add a collaborator
 
 ---
 class: inverse, center, middle
@@ -421,7 +410,7 @@ class: inverse, center, middle
 ![:custom_hr]()
 
 <img src="img/part4/knitr.png" style="vertical-align: middle;margin:10px" width="120px"></img>
-<img src="img/part4/rmarkdown.png" style="vertical-align: middle;margin:10px" width="120px"></img>
+<img src="https://github.com/rstudio/rmarkdown/raw/main/man/figures/logo.png" style="vertical-align: middle;margin:10px" width="120px"></img>
 
 
 ---
@@ -438,7 +427,7 @@ class: inverse, center, middle
 
 ---
 
-# <img src="img/part4/rmarkdown.png" style="vertical-align: middle;margin:10px" width="50px"></img> R Markdown
+# <img src="https://github.com/rstudio/rmarkdown/raw/main/man/figures/logo.png" style="vertical-align: middle;margin:10px" width="50px"></img> R Markdown
 
 [`rmarkdown`](https://cran.r-project.org/package=rmarkdown) .font90[09/2014 (0.3.3) &nbsp; // &nbsp; 02/2021 (2.7)]
 
@@ -451,7 +440,7 @@ class: inverse, center, middle
 
 class: inverse, center, middle
 
-# <img src="img/part4/rmarkdown.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
+# <img src="https://github.com/rstudio/rmarkdown/raw/main/man/figures/logo.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
 
 ![:custom_hr]()
 
@@ -459,7 +448,7 @@ class: inverse, center, middle
 
 ---
 
-# <img src="img/part4/rmarkdown.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
+# <img src="https://github.com/rstudio/rmarkdown/raw/main/man/figures/logo.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
 
 ## R Markdown file
 
@@ -478,7 +467,7 @@ class: inverse, center, middle
 
 ---
 
-# <img src="img/part4/rmarkdown.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
+# <img src="https://github.com/rstudio/rmarkdown/raw/main/man/figures/logo.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
 
 ## Exporting .font80[*a.k.a.* knitting 🧶]
 
@@ -494,7 +483,7 @@ class: inverse, center, middle
 
 ---
 
-# <img src="img/part4/rmarkdown.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
+# <img src="https://github.com/rstudio/rmarkdown/raw/main/man/figures/logo.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
 
 ## Exporting .font80[*a.k.a.* knitting 🧶]
 
@@ -996,7 +985,7 @@ In our case, it also makes it easy to share and disseminate our research and our
 ## Activating GitHub Pages
 
 - Navigate to your `r gh()` settings 
-- Go to pages 
+- Go to `Pages` 
 - Select `main` branch as source
 
 <center><img src="img/part4/ghp1.png" style="vertical-align: middle;margin:10px" width="650px"></img></center>
