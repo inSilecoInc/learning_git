@@ -11,69 +11,152 @@ output:
       beforeInit: "macros.js"
 ---
 
+<!-- rmarkdown::render("_05_csas.Rmd") -->
 
-```{r include = FALSE, purl = FALSE}
+```{r setup_05, include = FALSE}
 source("_setup.R")
+# knitr::clean_cache(TRUE)
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #37abc8\"></i>",
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+xaringanExtra::use_scribble()
 ```
 
-<!-- rmarkdown::render("_05_csas.Rmd") -->
+# Working collaboratively with GitHub `r gh()`
+
+
+---
+# Prerequisites
+
+
+## `r gt()` installed
+
+
+```{bash}
+git --version
+```
+
+--
+
+## Access to a GitHub `r gh()` account 
+
+- Sign up on https://github.com, then go to https://docs.github.com/en/get-started
+
+---
+# Prerequisites
+
+##  Pandoc
+
+.font90[
+```{bash, eval=FALSE}
+pandoc --version
+#> pandoc 2.11.4
+```
+]
+
+.font80[`r nf()` Installed with `r rp()` Studio, otherwise go [here](https://pandoc.org/installing.html) for installation info]
+
+
+--
+
+## <img src="https://github.com/rstudio/rmarkdown/raw/main/man/figures/logo.png" style="vertical-align: middle;margin:10px" width="40px"></img> rmarkdown installed
+
+.font90[
+```{r eval=FALSE}
+# Install from CRAN
+install.packages('rmarkdown')
+```
+]
+
+--
+
+## <img src="https://yihui.org/images/logo-tinytex.png" style="vertical-align: middle;margin:10px" width="40px"></img> TinyTex 
+
+.font90[
+```{r eval = FALSE}
+install.packages("tinytex")
+tinytex::install_tinytex()
+```
+]
+
+
+---
+class: inverse, center, middle
+
+# Working collaboratively with GitHub
+
+![:custom_hr]()
+
+## `r gh()`
+
+
+---
+# Working collaboratively with GitHub
+
+## Last session...
+
+- we mentionned that *Pull requests* must be submitted to merge a forked repo back to the upstream repo
+- we hinted that *Pull requests* should be considered for collaboration with `r gh()`
+
+--
+
+## Today...
+
+- we learn what *Pull requests* are! 
+
+
+---
+# Pull requests 
+
+## What they are 
+
+---
+# Pull requests 
+
+## Why they should be used 
+
+---
+# Pull requests 
+
+## How to do them 
+
+Let's say I've made changes to a branch or on a forked repo and wish to merge them back with the main branch or the upstream repo 
+
+---
+# Pull requests 
+
+## How to do them 
+
+---
+# `r lc()` Let's do this
+
+## Create a branch 
+
+## Make a change 
+
+## Submit a Pull Request
+
 
 ---
 
 class: inverse, center, middle
 
-# bookdown & csasdown
+# Creating CSAS reports: csasdown
 
 ![:custom_hr]()
 
-## .font200[`r rfa("markdown")`]
+[<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="150px"></img>](https://github.com/pbs-assess/csasdown)
+
 
 ---
-
-# Customizing documents
-
-## `r rfa("html5")` Themes
-
-- There are 12 custom themes available in `rmarkdown`, and multiple others available through numerous R packages. See [here](https://www.datadreaming.org/post/r-markdown-theme-gallery/) and [here](https://cran.r-project.org/web/packages/prettydoc/vignettes/tactile.html) for examples.
-
-```yaml
----
-title: Awesome report
-author: Me, You, Them
-date: 2021-03-01
-output:
-  html_document:
-    theme: lumen
----
-```
-
----
-
-# Customizing documents
-
-## `r rfa("file-pdf")` Templates
-
-- Specify a LaTeX template `.tex` file to use pre-specified document formatting guidelines. See [here](https://www.overleaf.com/latex/templates) for many templates. Many scientific journals provide LaTeX templates.
-- Download the desired template and refer to it in the .font80[**YAML**] header.
-
-
-```yaml
----
-title: Awesome report
-author: Me, You, Them
-date: 2021-03-01
-output:
-  pdf_document:
-    template: my_template.tex
----
-```
-
----
-
-# `r rfa("book")` The `down` universe
+# `r bk()` The `down` universe
 
 - [`bookdown`](https://bookdown.org/): Write a notebook
-- [`csasdown`](https://github.com/pbs-assess/csasdown): Write a CSAS document
+- ***[`csasdown`](https://github.com/pbs-assess/csasdown): Write a CSAS document***
 - [`thesisdown`](https://github.com/ismayc/thesisdown): Write a thesis
 - [`rticles`](https://github.com/rstudio/rticles): Write a scientific article
 - [`posterdown`](https://github.com/brentthorne/posterdown): Create a poster
@@ -81,3 +164,149 @@ output:
 - [`vitae`](https://github.com/mitchelloharawild/vitae): Build a CV
 - [`blogdown`](https://bookdown.org/yihui/blogdown/): Generate a blog
 - [`pkgdown`](https://pkgdown.r-lib.org/): Generate R package documentation
+
+---
+# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
+
+
+`csasdown` .font90[v.0.0.10.9000] 
+[`r gh()`](https://github.com/pbs-assess/csasdown) 
+[`r rfa("desktop")`](https://www.dropbox.com/s/7m23mh3yfhk5ah8/csasdown-slides.pdf?dl=1)
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/part5/csasdown_begins.png")
+```
+
+Developed by Sean Anderson 
+[`r rfa("envelope")`](mailto:sean.anderson@dfo-mpo.gc.ca) 
+[`r rfa("globe-americas")`](https://seananderson.ca/) 
+
+> Reproducible CSAS Reports with R Markdown
+
+--
+
+> csasdown is an R package that facilitates generating Canadian Science Advisory Secretariat (CSAS) documents in PDF or Word format using R Markdown and bookdown.
+
+--
+
+> csasdown gratefully builds on the work of many others including bookdown, thesisdown, and csas-style by Yihui Xie, Chester Ismay, Nick Solomon, Ben Marwick, Chris Grandin, Andrew Edwards, Matthew Grinnel
+
+
+
+---
+# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
+
+## What it does 
+
+---
+# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
+
+## Install the package 
+
+```{r eval = FALSE}
+install.packages("remotes")
+remotes::install_github("pbs-assess/csasdown")
+```
+
+---
+# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
+
+## Create a draft
+
+There are 3 types of documents available 
+
+- Research Document: `csasdown::draft("resdoc")`
+- Technical Report: `csasdown::draft("techreport")`
+- Science Response: `csasdown::draft("sr")`
+
+`r nf()` Each draft contains valuable information included by the authors. Create the drafts and consult the documents!
+
+--
+
+```{r eval = FALSE}
+csasdown::draft("techreport")
+```
+
+---
+# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
+
+## Create a draft
+
+.pull-left[
+```{r echo=FALSE, out.width="50%"}
+knitr::include_graphics("img/part5/resdoc_draft1.png")
+```
+]
+
+.pull-right[
+- Structure of the document
+]
+
+---
+# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
+
+## `index.Rmd`
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/part5/resdoc_draft2.png")
+```
+
+- Main document for the report 
+- Edit authors, title, abstract, affiliations, etc
+
+---
+# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
+
+## Chapters
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/part5/resdoc_draft3.png")
+```
+
+- One document, or partial document, per chapter
+- Begin chapter with main title formatting `# Title`
+- Add text, figures, tables, etc
+
+.font80[`r tr()` You do not have to follow this logic, as long as the documents are well referenced in `_bookdown.yml` (next slide)]
+
+
+---
+# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
+
+## `bookdown.yml`
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/part5/resdoc_draft4.png")
+```
+
+- Specifies which partial documents and the order in which the documents are included in the final report
+
+---
+# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
+
+## Render the CSAS document 
+
+```{r eval = FALSE}
+bookdown::render_book("index.Rmd")
+```
+
+---
+# `r lc()` Let's do this
+
+
+---
+
+class: inverse, center, middle
+
+# Collaborating on CSAS reports
+
+![:custom_hr]()
+
+## .font400[`r gh()`] [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: top;margin:10px" width="110px"></img>](https://github.com/pbs-assess/csasdown)
+
+
+---
+# `r lc()` Let's do this
+
+
+
