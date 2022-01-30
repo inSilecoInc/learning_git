@@ -901,20 +901,144 @@ Option             | Run code | Show code | Output | Plots | Messages | Warnings
 
 Table from [R for Data Science](https://r4ds.had.co.nz/r-markdown.html#chunk-options)
 
+---
+
+# `r rfa("book")` The `down` universe
+
+- [`bookdown`](https://bookdown.org/): Write a notebook
+- [`csasdown`](https://github.com/pbs-assess/csasdown): Write a CSAS document .font60[(next session)]
+- [`thesisdown`](https://github.com/ismayc/thesisdown): Write a thesis
+- [`rticles`](https://github.com/rstudio/rticles): Write a scientific article
+- [`posterdown`](https://github.com/brentthorne/posterdown): Create a poster
+- [`xaringan`](https://github.com/yihui/xaringan): Create nice presentation .font60[(like this one)]
+- [`vitae`](https://github.com/mitchelloharawild/vitae): Build a CV
+- [`blogdown`](https://bookdown.org/yihui/blogdown/): Generate a blog
+- [`pkgdown`](https://pkgdown.r-lib.org/): Generate R package documentation
 
 ---
 # `r lc()` Let's do this
 
-## Create a `r gh()` with a simple `rmd` document
+## Create a simple `rmd` document in our repo
+
+## Create html document
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/part4/rmarkdownflow_html.png")
+```
+
+
+---
+class: inverse, center, middle
+
+# GitHub Pages
+
+<html><div style='float:left'></div><hr color='#ffdd55' style="margin-top: -60px;" size=1px width=720px></html>
+
+## Transform you `r gh()` repo into a website
+
+---
+# GitHub Pages
+
+GitHub provides a free web hosting services called [GitHub Pages](https://docs.github.com/en/pages) that allows you to turn your `r gh()` repo into websites
+
+> GitHub Pages is a static site hosting service that takes HTML, CSS, and JavaScript files straight from a repository on GitHub, optionally runs the files through a build process, and publishes a website. 
+
+---
+# GitHub Pages
+
+There are [multiple advantages](https://medium.com/@cheukting.ho/newbie-tips-5-advantage-of-using-github-pages-for-hosting-35bee4c1ce14) to use GitHub Pages for developpers
+
+- Free 
+- Version control
+- Custom domain 
+- Supports HTTPS
+
+--
+
+In our case, it also makes it easy to share and disseminate our research and our work through: 
+
+- [Blogs](https://blog.insileco.io/)
+- [Websites](https://www.insileco.io/)
+- [Books & reports](https://kevcaz.insileco.io/Rmarkdowndocfr/)
+- [Presentations](https://www.insileco.io/learning_git/)
+
+---
+# GitHub Pages 
+
+## How to create github page from repository
+
+1. Open new GitHub repository and activate GitHub page
+2. Link this new repo to a RStudio project
+3. Add a `.Rmd` document and generate the HTML document (we know that part!)
+4. Declare (`add`) and document (`commit`) the modifications on the repository
+5. Send these modifications with the HTML output on Github via RStudio
+
+
+---
+# GitHub Pages 
+
+## How to create github page from repository
+
+1. Open new GitHub repository and ***activate GitHub page***
+2. Link this new repo to a RStudio project
+3. Add a `.Rmd` document and generate the HTML document (we know that part!)
+4. Declare (`add`) and document (`commit`) the modifications on the repository
+5. Send these modifications with the HTML output on Github via RStudio
+
+--
+
+`r tr()` exported html must be names `index.html`
+
+
+---
+# GitHub Pages 
+
+## Activating GitHub Pages
+
+- Navigate to your `r gh()` settings 
+- Go to pages 
+- Select `main` branch as source
+
+<center><img src="img/part4/ghp1.png" style="vertical-align: middle;margin:10px" width="650px"></img></center>
+
 
 ---
 
-# Github pages
+# GitHub Pages
 
-see https://github.com/inSileco/ResearchDown
+## Activating GitHub Pages
+
+### Congratulations!
+
+<center><img src="img/part4/ghp2.png" style="vertical-align: middle;margin:10px" width="500px"></img></center>
+
+--
+... now be patient & wait few minutes to see the results
+
+```{r echo=FALSE, out.width="35%", fig.align = 'center'}
+knitr::include_graphics("img/part4/ironcat.jpeg")
+```
 
 ---
+# `r lc()` Let's do this
 
-# Github actions
+## Transform our repo into a website
 
-prepare this section, just provide an overview for working with multiple people
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/part4/rmarkdownflow_html_github.png")
+```
+
+
+---
+# Additional ressources 
+
+This was a brief intro to GitHub Pages and the possibilities it offers 
+
+- See [documentation page](https://docs.github.com/en/pages) for mucu more info 
+- [Jekyll](https://jekyllrb.com/)
+- [Hugo](https://gohugo.io/)
+
+
+
+
+
