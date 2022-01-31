@@ -12,14 +12,247 @@ output:
 ---
 
 
-```{r include = FALSE, purl = FALSE}
-source("_setup.R")
-```
-
 <!-- rmarkdown::render("_04_rmarkdown.Rmd") -->
 
----
+```{r setup_04, include = FALSE}
+source("_setup.R")
+# knitr::clean_cache(TRUE)
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #37abc8\"></i>",
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+xaringanExtra::use_scribble()
+```
 
+# Accessing and modifying `r gh()` repositories
+
+
+---
+# Prerequisites: `r gt()` & `r gh()`
+
+
+## `r gt()` installed
+
+
+```{bash}
+git --version
+```
+
+--
+
+## Access to a GitHub `r gh()` account 
+
+- Sign up on https://github.com, then go to https://docs.github.com/en/get-started
+
+---
+# Prerequisites: pandoc & <img src="https://github.com/rstudio/rmarkdown/raw/main/man/figures/logo.png" style="vertical-align: middle;margin:10px" width="40px"></img>
+
+##  Pandoc
+
+```{bash, eval=FALSE}
+pandoc --version
+#> pandoc 2.11.4
+```
+
+.font80[`r nf()` Installed with `r rp()` Studio, otherwise go [here](https://pandoc.org/installing.html) for installation info]
+
+
+--
+
+##  rmarkdown <img src="https://github.com/rstudio/rmarkdown/raw/main/man/figures/logo.png" style="vertical-align: middle;margin:10px" width="40px"></img> installed
+
+```{r eval=FALSE}
+# Install from CRAN
+install.packages('rmarkdown')
+```
+
+---
+class: inverse, center, middle
+
+# Accessing and modifying repositories
+
+![:custom_hr]()
+
+## `r gh()`
+
+
+
+---
+#  How to access repositories on `r gh()`
+
+.pull-left[
+## `git fork`
+
+Copy any public repository to your `r gh()` account or organization without making changes to the upstream repository
+
+.font80[`r nf()` Issues, branches, pull requests and other `r gh()` features will not be copied]
+]
+
+.pull-right[
+## `git clone` 
+]
+
+---
+#  How to access repositories on `r gh()`
+
+.pull-left[
+## `git fork`
+
+Copy any public repository to your `r gh()` account or organization without making changes to the upstream repository
+
+.font80[`r nf()` Issues, branches, pull requests and other `r gh()` features will not be copied]
+]
+
+.pull-right[
+## `git clone` 
+
+Create a local copy of a `r gh()` remote repo from:
+ 
+- your account
+- another user
+- `r gh()` organizations
+
+]
+
+---
+#  Committing changes to a `r gh()` repository
+
+.pull-left[
+## `git fork`
+
+- Fork repo 
+- Make changes 
+- Submit a *Pull request* .font80[(next session)]
+]
+
+.pull-right[
+## `git clone` 
+]
+
+---
+#  Committing changes to a `r gh()` repository
+
+.pull-left[
+## `git fork`
+
+- Fork repo 
+- Make changes 
+- Submit a *Pull request* .font80[(next session)]
+]
+
+.pull-right[
+## `git clone` 
+
+- Clone repo 
+- Make changes 
+- Push / merge changes
+
+.font80[`r nf()` Consider using *Pull requests* when collaborating on a repo (next session)]
+
+.font80[`r nf()` must be a collaborator or organization member to push commits to a repo you do not own]
+]
+
+
+
+---
+#  Should I clone or should I fork?
+
+
+.pull-left[
+## `git fork`
+
+- Begin a project from an existing public `r gh()` repo 
+- Propose changes to someone else's project
+- Continue a project without affecting the upstream repo
+]
+
+.pull-right[
+## `git clone` 
+]
+
+---
+#  Should I clone or should I fork?
+
+
+.pull-left[
+## `git fork`
+
+- Begin a project from an existing public `r gh()` repo 
+- Propose changes to someone else's project
+- Continue a project without affecting the upstream repo
+]
+
+.pull-right[
+## `git clone` 
+
+- Get a local copy of your `r gh()` repo 
+- Actively collaborate on a projects
+
+.font80[`r tr()` Cloning is still required if forking a `r gh()` repo]
+]
+
+--
+
+.font80[`r nf()` See [here](https://www.geeksforgeeks.org/difference-between-fork-and-clone-in-github/) and [here](https://www.theserverside.com/answer/Git-fork-vs-clone-Whats-the-difference) for more on the difference between forking and cloning]
+
+---
+# Forking vs cloning: what's happening?
+
+<center><img src="img/part4/fc1.png" style="vertical-align: middle;margin:10px" width="325px"></img></center>
+
+---
+# Forking vs cloning: what's happening?
+
+<center><img src="img/part4/fc2.png" style="vertical-align: middle;margin:10px" width="325px"></img></center>
+
+
+---
+# Forking
+
+- Go to the `r gh()` repo you wish to fork and click on `Fork` .font70[(top-right)]
+
+<center><img src="img/part4/fork.png" style="vertical-align: middle;margin:10px" width="500px"></img></center>
+
+--
+
+- Navigate to your profile to get the newly forked repo's URL
+
+<center><img src="img/part4/clone.png" style="vertical-align: middle;margin:10px" width="250"></img></center>
+
+--
+
+- Clone the forked `r gh()` repository using your preferred protocol .font70[(coming up!)]
+
+---
+# Cloning 
+
+```sh
+$ git clone <repo>
+```
+
+---
+# Adding collaborators 
+
+- Navigate to your `r gh()` settings 
+- Go to `Collaborators`
+- Click on `Add people` to invite collaborators
+
+<center><img src="img/part4/collaborator.png" style="vertical-align: middle;margin:10px" width="800px"></img></center>
+ 
+
+---
+# `r lc()` Let's do this
+
+## Clone a repository 
+
+## Fork a repository
+
+## Add a collaborator
+
+---
 class: inverse, center, middle
 
 # Markdown
@@ -27,6 +260,15 @@ class: inverse, center, middle
 ![:custom_hr]()
 
 ## .font200[`r rfa("markdown")`]
+
+
+---
+
+# `r rfa("markdown")` Markdown
+
+## Reproducibility workshop  [`r gh()`](https://github.com/inSilecoInc/workshop_reproducibility)
+
+### March 2021
 
 
 ---
@@ -120,7 +362,7 @@ Paragraph
 
 ## Variants
 
-- Original developers (John Gruber and Aaron Swartz) did not continue developing Markdown after its release in 2004
+- Original developers (John Gruber and Aaron Swartz, a.k.a. [The Internet's Own Boy](https://www.imdb.com/title/tt3268458/)) did not continue developing Markdown after its release in 2004
 
 --
 
@@ -143,7 +385,7 @@ Paragraph
 
 **Why?**
 
-  - `r rfa("r-project")` uses it through [R Markdown](https://rmarkdown.rstudio.com/lesson-8.html) .font60[much more on this later]
+  - `r rfa("r-project")` uses it through [R Markdown](https://rmarkdown.rstudio.com/lesson-8.html) 
 
 --
 
@@ -171,13 +413,13 @@ class: inverse, center, middle
 
 ![:custom_hr]()
 
-<img src="img/knitr.png" style="vertical-align: middle;margin:10px" width="120px"></img>
-<img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="120px"></img>
+<img src="img/part4/knitr.png" style="vertical-align: middle;margin:10px" width="120px"></img>
+<img src="https://github.com/rstudio/rmarkdown/raw/main/man/figures/logo.png" style="vertical-align: middle;margin:10px" width="120px"></img>
 
 
 ---
 
-# <img src="img/knitr.png" style="vertical-align: middle;margin:10px" width="50px"></img> knitr
+# <img src="img/part4/knitr.png" style="vertical-align: middle;margin:10px" width="50px"></img> knitr
 
 [`knitr`](https://cran.r-project.org/package=knitr) .font90[01/2012 (0.1) &nbsp; // &nbsp; 01/2021 (1.3.1)]
 
@@ -189,20 +431,20 @@ class: inverse, center, middle
 
 ---
 
-# <img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="50px"></img> R Markdown
+# <img src="https://github.com/rstudio/rmarkdown/raw/main/man/figures/logo.png" style="vertical-align: middle;margin:10px" width="50px"></img> R Markdown
 
 [`rmarkdown`](https://cran.r-project.org/package=rmarkdown) .font90[09/2014 (0.3.3) &nbsp; // &nbsp; 02/2021 (2.7)]
 
 > Convert R Markdown documents into a variety of formats.
 
-<center><img src="img/Rmdformat.png" style="vertical-align: middle"></img></center>
+<center><img src="img/part4/Rmdformat.png" style="vertical-align: middle"></img></center>
 
 
 ---
 
 class: inverse, center, middle
 
-# <img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
+# <img src="https://github.com/rstudio/rmarkdown/raw/main/man/figures/logo.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
 
 ![:custom_hr]()
 
@@ -210,7 +452,7 @@ class: inverse, center, middle
 
 ---
 
-# <img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
+# <img src="https://github.com/rstudio/rmarkdown/raw/main/man/figures/logo.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
 
 ## R Markdown file
 
@@ -224,12 +466,12 @@ class: inverse, center, middle
 ]
 
 .pull-right[
-<img src="img/rmd.png" style="vertical-align: middle" width="100%"></img>
+<img src="img/part4/rmd.png" style="vertical-align: middle" width="100%"></img>
 ]
 
 ---
 
-# <img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
+# <img src="https://github.com/rstudio/rmarkdown/raw/main/man/figures/logo.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
 
 ## Exporting .font80[*a.k.a.* knitting 🧶]
 
@@ -239,13 +481,13 @@ class: inverse, center, middle
 ]
 
 .pull-right[
-<img src="img/Rmdformat.png" style="vertical-align: middle"></img>
+<img src="img/part4/Rmdformat.png" style="vertical-align: middle"></img>
 ]
 
 
 ---
 
-# <img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
+# <img src="https://github.com/rstudio/rmarkdown/raw/main/man/figures/logo.png" style="vertical-align: middle;margin:10px" width="50px"></img> Basic anatomy
 
 ## Exporting .font80[*a.k.a.* knitting 🧶]
 
@@ -473,12 +715,6 @@ __Bold__ **text**
 
 ---
 
-# `r rfa("markdown")` Document formatting
-
-Link to a book and resources
-
----
-
 class: inverse, center, middle
 
 #  `r rfa("code")` Code chunks
@@ -652,244 +888,159 @@ Option             | Run code | Show code | Output | Plots | Messages | Warnings
 
 Table from [R for Data Science](https://r4ds.had.co.nz/r-markdown.html#chunk-options)
 
-
 ---
 
+# `r rfa("book")` The `down` universe
+
+- [`bookdown`](https://bookdown.org/): Write a notebook
+- [`csasdown`](https://github.com/pbs-assess/csasdown): Write a CSAS document .font60[(next session)]
+- [`thesisdown`](https://github.com/ismayc/thesisdown): Write a thesis
+- [`rticles`](https://github.com/rstudio/rticles): Write a scientific article
+- [`posterdown`](https://github.com/brentthorne/posterdown): Create a poster
+- [`xaringan`](https://github.com/yihui/xaringan): Create nice presentation .font60[(like this one)]
+- [`vitae`](https://github.com/mitchelloharawild/vitae): Build a CV
+- [`blogdown`](https://bookdown.org/yihui/blogdown/): Generate a blog
+- [`pkgdown`](https://pkgdown.r-lib.org/): Generate R package documentation
+
+--
+
+***Other resources:***
+
+- [R Markdown book](https://bookdown.org/yihui/rmarkdown/)
+- [knitr documentation](https://yihui.org/knitr/)
+- [inSileco web book (fr)](https://kevcaz.insileco.io/Rmarkdowndocfr/)
+- [inSileco reproducibility workshop](https://www.insileco.io/workshop_reproducibility/#89)
+
+---
+# `r lc()` Let's do this
+
+## Create a simple `rmd` document in our repo
+
+## Create html document
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/part4/rmarkdownflow_html.png")
+```
+
+
+---
 class: inverse, center, middle
 
-# Bibliography and citations
+# GitHub Pages
 
-![:custom_hr]()
+<html><div style='float:left'></div><hr color='#ffdd55' style="margin-top: -60px;" size=1px width=720px></html>
 
-<img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="120px"></img>
+## Transform your `r gh()` repo into a website
 
 ---
+# GitHub Pages
 
-# Bibliography
+GitHub provides a free web hosting services called [GitHub Pages](https://docs.github.com/en/pages) that allows you to turn your `r gh()` repo into websites
 
-## Bibliographic files
+> GitHub Pages is a static site hosting service that takes HTML, CSS, and JavaScript files straight from a repository on GitHub, optionally runs the files through a build process, and publishes a website. 
 
-- Bibliographies are typically included to a `.Rmd` document using an external bibliographic file
+---
+# GitHub Pages
+
+There are [multiple advantages](https://medium.com/@cheukting.ho/newbie-tips-5-advantage-of-using-github-pages-for-hosting-35bee4c1ce14) to use GitHub Pages for developpers
+
+- Free 
+- Version control
+- Custom domain 
+- Supports HTTPS
 
 --
 
-- *Pandoc* can use a wide variety of [bibliographic files](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#Specifying_a_Bibliography) to manage bibliographies and citations.
+In our case, it also makes it easy to share and disseminate our research and our work through: 
+
+- [Blogs](https://blog.insileco.io/)
+- [Websites](https://www.insileco.io/)
+- [Books & reports](https://kevcaz.insileco.io/Rmarkdowndocfr/)
+- [Presentations](https://www.insileco.io/learning_git/)
+
+---
+# GitHub Pages 
+
+## How to create github page from repository
+
+1. Open a new GitHub repository and activate GitHub pages
+2. Link this new repo to a RStudio project
+3. Add a `.Rmd` document and generate the HTML document (we know that part!)
+4. Declare (`add`) and document (`commit`) the modifications on the repository
+5. Send these modifications with the HTML output on GitHub via RStudio
+
+
+---
+# GitHub Pages 
+
+## How to create github page from repository
+
+1. Open a new GitHub repository and ***activate GitHub pages***
+2. Link this new repo to a RStudio project
+3. Add a `.Rmd` document and generate the HTML document (we know that part!)
+4. Declare (`add`) and document (`commit`) the modifications on the repository
+5. Send these modifications with the HTML output on GitHub via RStudio
 
 --
 
-- For scientific writing, we recommend using a `mybiblio.bib` file in BiBTeX format, which you can export from your favorite reference manager software (*e.g.* [Zotero](https://www.zotero.org/), [`r rfa("mendeley")` Mendeley](https://www.mendeley.com/), [EndNote](https://endnote.com/))
+`r tr()` exported html must be named `index.html`
+
+
+---
+# GitHub Pages 
+
+## Activating GitHub Pages
+
+- Navigate to your `r gh()` settings 
+- Go to `Pages` 
+- Select `main` branch as source
+
+<center><img src="img/part4/ghp1.png" style="vertical-align: middle;margin:10px" width="650px"></img></center>
+
+
+---
+
+# GitHub Pages
+
+## Activating GitHub Pages
+
+### Congratulations!
+
+<center><img src="img/part4/ghp2.png" style="vertical-align: middle;margin:10px" width="500px"></img></center>
 
 --
+... now be patient & wait few minutes to see the results
 
-- Note that bibliographic metadata can be included in the [YAML header](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#Inline_References). We however do not recommend using this strategy, unless you wish to cite few references.
-
-
----
-
-# Bibliography
-
-## `.bib` file
-
-```md
-@article{galbraith2012,
-  author = {Galbraith, Peter S. and Larouche, Pierre and Chass{\'e}, Jo{\"e}l and Petrie, Brian},
-  title = {Sea-Surface Temperature in Relation to Air Temperature in the {{Gulf}} of {{St}}. {{Lawrence}}: {{Interdecadal}} Variability and Long Term Trends},
-  journal = {Deep Sea Research Part II: Topical Studies in Oceanography},
-  volume = {77-80},
-  pages = {10--20},
-  year = {2012},
-  doi = {10.1016/j.dsr2.2012.04.001},
-  series = {Satellite {{Oceanography}} and {{Climate Change}}}
-}
-```
-
-- Use the citation key `galbraith2012` for in-text citations (more on this later)
-
----
-
-# Bibliography
-
-## Include to `.Rmd`
-
-- Include a bibliography to a `.Rmd` in the .font60[**YAML**] header using the `bibliography` option
-
-```yaml
----
-title: "My document title"
-date: "01-03-2021"
-author: Me, you, them
-output: pdf_document
-bibliography: mybiblio.bib
----
-```
-
-.font90[
-`r rfa("exclamation-triangle")` Be sure that the path to your `.bib` file is well identified.
-]
-
-
-
----
-
-# Bibliography
-
-## Placement
-
-- A bibliography will be added at the end of the document by default. Use an appropriate header at the end and you are good to go.
-
-```md
-...that will revolutionize the way we think about science.
-
-# References
-```
-
---
-
-- If you wish to include text after the bibliography, such as an appendix, your can use the `<div id="refs"></div>` HTML tag (see [here](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html) for more on this):
-
-```md
-...that will revolutionize the way we think about science.
-
-# References
-
-<div id="refs"></div>
-
-# Appendix
+```{r echo=FALSE, out.width="35%", fig.align = 'center'}
+knitr::include_graphics("img/part4/ironcat.jpeg")
 ```
 
 ---
+# `r lc()` Let's do this
 
-# Bibliography
+## Transform our repo into a website
 
-## Citation syntax
-
-- Use citation key with `@` to refer to a reference: `@id`
-
-.pull-left[
-.font80[
-```md
-Cite in parentheses [@galbraith2012].
-```
-]
-]
-
-.pull-right[
-.font80[Cite in parentheses (Galbraith et al. 2012)]
-]
-
---
-
-.pull-left[
-.font80[
-```md
-Cite in parentheses [@galbraith2012; @cazelles2018].
-```
-]
-]
-
-.pull-right[
-.font80[Cite in parentheses (Galbraith et al. 2012, Cazelles et al. 2018)]
-]
-
---
-
-.pull-left[
-.font80[
-```md
-Cite in parentheses + text [see @galbraith2012 pp. 30].
-```
-]
-]
-
-.pull-right[
-.font80[Cite in parentheses + text (see Galbraith et al. 2012 pp. 30)]
-]
-
---
-
-.pull-left[
-.font80[
-```md
-Cite @galbraith2012 in a sentence.
-```
-]
-]
-
-.pull-right[
-.font80[Cite Galbraith et al. (2012) in a sentence.]
-]
-
-
-
----
-
-# Bibliography
-
-## Styling
-
-- By default, pandoc uses the Chicago author-date format
-- You can use another style by specifying CSL style files with the the `csl` option in the .font60[**YAML**] header.
-- CSL files contain bibliographic and citation formatting informations.
-- There are hundreds of styles available on [GitHub](https://github.com/citation-style-language/styles) and scientific journals often provide their own CSL file.
-
-```yaml
----
-title: "My document title"
-date: "01-03-2021"
-author: Me, you, them
-output: pdf_document
-bibliography: mybiblio.bib
-csl: mystyle.csl
----
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/part4/rmarkdownflow_html_github.png")
 ```
 
-.font90[
-`r rfa("exclamation-triangle")` Be sure that the path to your `.csl` file is well identified.
-]
-
 
 ---
+# Additional ressources 
 
-class: inverse, center, middle
+*This was a brief intro to GitHub Pages and the possibilities it offers*
 
-# Wrapping up
+***For more:***
 
-![:custom_hr]()
+- [GitHub Pages documentation page](https://docs.github.com/en/pages)
+- [Jekyll](https://jekyllrb.com/)
+  - [Jekyll & GitHub Pages](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll)
+  - Example: [`r gh()`](https://github.com/jekyll/example) [`r rfa("globe-americas")`](http://jekyll.github.io/example/)
+- [Hugo](https://gohugo.io/)
+  - [GitHub Pages & Hugo](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
+  - Example: [`r gh()`](https://github.com/inSilecoInc/inSilecoInc.github.io) [`r rfa("globe-americas")`](https://www/insileco.io/)
 
-<img src="img/rmarkdown.png" style="vertical-align: middle;margin:10px" width="120px"></img>
 
 
----
 
 
-# Wrapping up
-
-✔️ **Document your document**: use YAML to set up meaningful metadata
-
-✔️ **Style your document**: use YAML to add options to your chosen output format
-
-✔️ **Organize your text**: use markdown headers with `#`
-
-✔️ **Organize your code**: use `knitr` chunk labels
-
-✔️ **Style your text**: use markdown **bold**, *italics*, `r rfa("list-ul")` bullets, `r rfa("list-ol")` lists, hyperlinks, ...
-
-✔️ **Style your output**: use `knitr` chunk options
-
-✔️ **Add a bibliography**: use `@id`, `mybiblio.bib`, `mystyle.csl`
-
-✔️ **Export your document**: use `rmarkdown::render()`
-
-✔️ **Enjoy a simplified life** .font50[most of the time]
-
----
-
-# Github pages
-
-see https://github.com/inSileco/ResearchDown
-
----
-
-# Github actions
-
-prepare this section, just provide an overview for working with multiple people

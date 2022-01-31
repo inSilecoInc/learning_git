@@ -134,7 +134,8 @@ class: inverse, center, middle
 
 ## R Markdown
 
-## Coming soon...
+## `r rfa("html5")` [Click here to view the slides.](_04_rmarkdown.html)
+
 
 
 ---

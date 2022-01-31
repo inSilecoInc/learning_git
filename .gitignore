@@ -8,6 +8,7 @@ index_cache/
 script.R
 proj1/
 proj2/
+_04_rmarkdown_files
 
 
 # History files
@@ -50,7 +51,3 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
-_04_rmarkdown.html
-_05_csas.html
-_07_rmarkdown_exercise.html
-_08_csas_exercise.html
