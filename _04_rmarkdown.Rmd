@@ -194,6 +194,10 @@ Create a local copy of a `r gh()` remote repo from:
 .font80[`r tr()` Cloning is still required if forking a `r gh()` repo]
 ]
 
+--
+
+.font80[`r nf()` See [here](https://www.geeksforgeeks.org/difference-between-fork-and-clone-in-github/) and [here](https://www.theserverside.com/answer/Git-fork-vs-clone-Whats-the-difference) for more on the difference between forking and cloning]
+
 ---
 # Forking vs cloning: what's happening?
 
@@ -358,7 +362,7 @@ Paragraph
 
 ## Variants
 
-- Original developers (John Gruber and Aaron Swartz) did not continue developing Markdown after its release in 2004
+- Original developers (John Gruber and Aaron Swartz, a.k.a. [The Internet's Own Boy](https://www.imdb.com/title/tt3268458/)) did not continue developing Markdown after its release in 2004
 
 --
 
@@ -711,12 +715,6 @@ __Bold__ **text**
 
 ---
 
-# `r rfa("markdown")` Document formatting
-
-Link to a book and resources
-
----
-
 class: inverse, center, middle
 
 #  `r rfa("code")` Code chunks
@@ -904,6 +902,15 @@ Table from [R for Data Science](https://r4ds.had.co.nz/r-markdown.html#chunk-opt
 - [`blogdown`](https://bookdown.org/yihui/blogdown/): Generate a blog
 - [`pkgdown`](https://pkgdown.r-lib.org/): Generate R package documentation
 
+--
+
+***Other resources:***
+
+- [R Markdown book](https://bookdown.org/yihui/rmarkdown/)
+- [knitr documentation](https://yihui.org/knitr/)
+- [inSileco web book (fr)](https://kevcaz.insileco.io/Rmarkdowndocfr/)
+- [inSileco reproducibility workshop](https://www.insileco.io/workshop_reproducibility/#89)
+
 ---
 # `r lc()` Let's do this
 
@@ -968,7 +975,7 @@ In our case, it also makes it easy to share and disseminate our research and our
 
 ## How to create github page from repository
 
-1. Open new GitHub repository and ***activate GitHub pages***
+1. Open a new GitHub repository and ***activate GitHub pages***
 2. Link this new repo to a RStudio project
 3. Add a `.Rmd` document and generate the HTML document (we know that part!)
 4. Declare (`add`) and document (`commit`) the modifications on the repository
@@ -1021,11 +1028,17 @@ knitr::include_graphics("img/part4/rmarkdownflow_html_github.png")
 ---
 # Additional ressources 
 
-This was a brief intro to GitHub Pages and the possibilities it offers 
+*This was a brief intro to GitHub Pages and the possibilities it offers*
 
-- See [documentation page](https://docs.github.com/en/pages) for more info 
+***For more:***
+
+- [GitHub Pages documentation page](https://docs.github.com/en/pages)
 - [Jekyll](https://jekyllrb.com/)
+  - [Jekyll & GitHub Pages](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll)
+  - Example: [`r gh()`](https://github.com/jekyll/example) [`r rfa("globe-americas")`](http://jekyll.github.io/example/)
 - [Hugo](https://gohugo.io/)
+  - [GitHub Pages & Hugo](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
+  - Example: [`r gh()`](https://github.com/inSilecoInc/inSilecoInc.github.io) [`r rfa("globe-americas")`](https://www/insileco.io/)
 
 
 
