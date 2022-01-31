@@ -923,7 +923,7 @@ class: inverse, center, middle
 
 <html><div style='float:left'></div><hr color='#ffdd55' style="margin-top: -60px;" size=1px width=720px></html>
 
-## Transform you `r gh()` repo into a website
+## Transform your `r gh()` repo into a website
 
 ---
 # GitHub Pages
@@ -956,11 +956,11 @@ In our case, it also makes it easy to share and disseminate our research and our
 
 ## How to create github page from repository
 
-1. Open new GitHub repository and activate GitHub page
+1. Open a new GitHub repository and activate GitHub pages
 2. Link this new repo to a RStudio project
 3. Add a `.Rmd` document and generate the HTML document (we know that part!)
 4. Declare (`add`) and document (`commit`) the modifications on the repository
-5. Send these modifications with the HTML output on Github via RStudio
+5. Send these modifications with the HTML output on GitHub via RStudio
 
 
 ---
@@ -968,15 +968,15 @@ In our case, it also makes it easy to share and disseminate our research and our
 
 ## How to create github page from repository
 
-1. Open new GitHub repository and ***activate GitHub page***
+1. Open new GitHub repository and ***activate GitHub pages***
 2. Link this new repo to a RStudio project
 3. Add a `.Rmd` document and generate the HTML document (we know that part!)
 4. Declare (`add`) and document (`commit`) the modifications on the repository
-5. Send these modifications with the HTML output on Github via RStudio
+5. Send these modifications with the HTML output on GitHub via RStudio
 
 --
 
-`r tr()` exported html must be names `index.html`
+`r tr()` exported html must be named `index.html`
 
 
 ---
@@ -1023,7 +1023,7 @@ knitr::include_graphics("img/part4/rmarkdownflow_html_github.png")
 
 This was a brief intro to GitHub Pages and the possibilities it offers 
 
-- See [documentation page](https://docs.github.com/en/pages) for mucu more info 
+- See [documentation page](https://docs.github.com/en/pages) for more info 
 - [Jekyll](https://jekyllrb.com/)
 - [Hugo](https://gohugo.io/)
 
