@@ -1,5 +1,5 @@
 ---
-title: "bookdown & csasdown"
+title: "Pull Requests & csasdown"
 output:
   xaringan::moon_reader:
     css: [default, rd.css, rd-font.css, "hygge"]
@@ -97,39 +97,169 @@ class: inverse, center, middle
 ---
 # Working collaboratively with GitHub
 
-## Last session...
+##  Collaborative development models 
 
-- we mentionned that *Pull requests* must be submitted to merge a forked repo back to the upstream repo
-- we hinted that *Pull requests* should be considered for collaboration with `r gh()`
+.pull-left[
+***Shared repository model***
 
---
+- Collaborators are granted direct access to a single shared repo
+- Create branches for development
+- Merge changes to main branch
+- Small teams and organizations collaborating on private projects
+]
 
-## Today...
 
-- we learn what *Pull requests* are! 
+---
+# Working collaboratively with GitHub
 
+##  Collaborative development models 
+
+.pull-left[
+***Shared repository model***
+
+- Collaborators are granted direct access to a single shared repo
+- Create branches for development
+- Merge changes to main branch
+- Small teams and organizations collaborating on private projects
+]
+
+.pull-right[
+***Fork and pull model***
+
+- Fork repo and push changes to your own repo 
+- No permission required
+- Changes pulled to upstream repo through pull requests 
+- Favoured by open source projects for independent development
+]
+
+---
+# Working collaboratively with GitHub
+
+##  Collaborative development models 
+
+.pull-left[
+***Shared repository model***
+
+- Collaborators are granted direct access to a single shared repo
+- Create branches for development
+- Merge changes to main branch
+- Small teams and organizations collaborating on private projects
+]
+
+.pull-right[
+***Fork and pull model***
+
+- Fork repo and push changes to your own repo 
+- No permission required
+- Changes pulled to upstream repo through pull requests 
+- Favoured by open source projects for independent development
+]
+
+.pull-left[
+`r nf()` ***pull requests*** are recommended
+]
+
+.pull-right[
+`r nf()` ***pull requests*** are mandatory
+]
 
 ---
 # Pull requests 
 
-## What they are 
+## What are they?
+
+> Pull requests let you tell others about changes you've pushed to a branch in a repository on GitHub. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before your changes are merged into the base branch. 
+
+<!--
+https://www.atlassian.com/git/tutorials/making-a-pull-request#:~:text=Pull%20requests%20are%20a%20feature,them%20into%20the%20official%20project. 
+-->
 
 ---
 # Pull requests 
 
-## Why they should be used 
+## Why use them?
+
+- Code review
+- Test and validate code 
+- Find errors or improvement opportunities 
+- Education / training of other developers
+- Allow less experienced coder to contribute without worrying they will mess up the main project
+
+.font80[`r nf()` [Here](https://co-learning.eu/2017/10/04/why-and-how-do-we-use-pull-request/) is a nice blog post on the benefits of using pull requests for co-development]
 
 ---
 # Pull requests 
 
-## How to do them 
+## What is the process of creating one?
+
+.pull-left[
+***Shared repository model*** 
+
+- Create a branch
+- Make, commit and push changes to branch
+- Create pull request 
+- Assign pull request
+- Review process 
+- Merge branch to base branch
+]
+
+---
+# Pull requests 
+
+## What is the process of creating one?
+
+.pull-left[
+***Shared repository model*** 
+
+- Create a branch
+- Make, commit and push changes to branch
+- Create pull request 
+- Assign pull request
+- Review process 
+- Merge branch to base branch
+]
+
+.pull-right[
+***Fork and pull model*** 
+
+- Fork a repository
+- Make, commit and push changes to fork
+- Create pull request 
+- Assign pull request
+- Review process 
+- Merge fork to upstream repo
+]
+
+---
+# Pull requests 
+
+## How do I create one?
+
+From a branch 
+
+From a fork
 
 Let's say I've made changes to a branch or on a forked repo and wish to merge them back with the main branch or the upstream repo 
 
+
+`r nf()` Go [here](https://docs.github.com/en/pull-requests) for all you need to know on pull requests on `r gh()`
+
+
 ---
 # Pull requests 
 
-## How to do them 
+## How do I create one?
+
+
+---
+# Pull requests 
+
+## How do I assign it?
+
+---
+# Pull requests 
+
+## Review process
 
 ---
 # `r lc()` Let's do this
@@ -138,7 +268,9 @@ Let's say I've made changes to a branch or on a forked repo and wish to merge th
 
 ## Make a change 
 
-## Submit a Pull Request
+## Create a pull request
+
+## Asign pull request
 
 
 ---
