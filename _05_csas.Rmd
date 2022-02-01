@@ -170,9 +170,9 @@ class: inverse, center, middle
 
 > Pull requests let you tell others about changes you've pushed to a branch in a repository on GitHub. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before your changes are merged into the base branch. 
 
-<!--
-https://www.atlassian.com/git/tutorials/making-a-pull-request#:~:text=Pull%20requests%20are%20a%20feature,them%20into%20the%20official%20project. 
--->
+
+
+.font80[`r nf()` Go [Here](https://co-learning.eu/2017/10/04/why-and-how-do-we-use-pull-request/) for all you need to know on pull requests on `r gh()`]
 
 ---
 # Pull requests 
@@ -233,33 +233,172 @@ https://www.atlassian.com/git/tutorials/making-a-pull-request#:~:text=Pull%20req
 ---
 # Pull requests 
 
-## How do I create one?
+## What is the process of creating one?
 
-From a branch 
+.pull-left[
+***Shared repository model*** 
 
-From a fork
+- Create a branch
+- Make, commit and push changes to branch
+- **Create pull request**
+- **Assign pull request**
+- **Review process**
+- Merge branch to base branch
+]
 
-Let's say I've made changes to a branch or on a forked repo and wish to merge them back with the main branch or the upstream repo 
+.pull-right[
+***Fork and pull model*** 
 
-
-`r nf()` Go [here](https://docs.github.com/en/pull-requests) for all you need to know on pull requests on `r gh()`
+- Fork a repository
+- Make, commit and push changes to fork
+- **Create pull request**
+- **Assign pull request**
+- **Review process**
+- Merge fork to upstream repo
+]
 
 
 ---
 # Pull requests 
 
-## How do I create one?
+## Creating pull requests
+
+- Navigate to repo on `r gh()`
+- Click on *Pull request*
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/part5/pr1.png")
+```
+
+---
+# Pull requests 
+
+## Creating pull requests
+
+- Click on *New pull request*
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/part5/pr2.png")
+```
+
+---
+# Pull requests 
+
+## Creating pull requests
+
+***From a branch:***
+
+.pull-left[
+- Select branches to merge
+  - `base`: merge into
+  - `compare`: merge from
+]
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/part5/pr3.png")
+```
+
+---
+# Pull requests 
+
+## Creating pull requests
+
+***From a Fork:***
+
+.pull-left[
+- Select repos to merge
+  - `base repository`: upstream repo
+  - `head repository`: forked repo
+]
+
+.pull-right[
+- Select branches to merge
+  - `base`: merge into
+  - `compare`: merge from
+]
+
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/part5/pr4.png")
+```
 
 
 ---
 # Pull requests 
 
-## How do I assign it?
+## Creating pull requests
+
+- Click on *Create pull request*
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/part5/pr5.png")
+```
+
+---
+# Pull requests 
+
+## Creating pull requests
+
+- Write your pull request description
+
+```{r echo=FALSE, out.width="67%"}
+knitr::include_graphics("img/part5/pr6.png")
+```
+
+- .font80[`r nf()` [Writing A Great Pull Request Description](https://www.pullrequest.com/blog/writing-a-great-pull-request-description/)]
+- .font80[`r nf()` [How to write the perfect pull request](https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/)]
+
+---
+# Pull requests 
+
+## Creating pull requests
+
+- Click on *Create pull request* 
+
+```{r echo=FALSE, out.width="67%"}
+knitr::include_graphics("img/part5/pr7.png")
+```
+
+---
+# Pull requests 
+
+## Creating pull requests
+
+And you're done! 
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/part5/pr8.png")
+```
+
+---
+# Pull requests 
+
+## Assigning pull requests
+
+.pull-left[
+`r nf()` You can assign reviewer(s) to your pull request while you are creating the pull request, or after it's been created
+]
+
+.pull-right[
+```{r echo=FALSE, out.width="70%"}
+knitr::include_graphics("img/part5/pr9.png")
+```
+]
 
 ---
 # Pull requests 
 
 ## Review process
+
+.pull-left[
+`r nf()` You can assign reviewer(s) to your pull request while you are creating the pull request, or after it's been created
+]
+
+.pull-right[
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/part5/pr10.png")
+```
+]
 
 ---
 # `r lc()` Let's do this
