@@ -83,15 +83,162 @@ tinytex::install_tinytex()
 ```
 ]
 
-
 ---
+
 class: inverse, center, middle
 
-# Working collaboratively with GitHub
+# Creating CSAS reports: csasdown
 
 ![:custom_hr]()
 
-## `r gh()`
+[<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="150px"></img>](https://github.com/pbs-assess/csasdown)
+
+
+---
+# `r bk()` The `down` universe
+
+- [`bookdown`](https://bookdown.org/): Write a notebook
+- ***[`csasdown`](https://github.com/pbs-assess/csasdown): Write a CSAS document***
+- [`thesisdown`](https://github.com/ismayc/thesisdown): Write a thesis
+- [`rticles`](https://github.com/rstudio/rticles): Write a scientific article
+- [`posterdown`](https://github.com/brentthorne/posterdown): Create a poster
+- [`xaringan`](https://github.com/yihui/xaringan): Create nice presentation
+- [`vitae`](https://github.com/mitchelloharawild/vitae): Build a CV
+- [`blogdown`](https://bookdown.org/yihui/blogdown/): Generate a blog
+- [`pkgdown`](https://pkgdown.r-lib.org/): Generate R package documentation
+
+---
+# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
+
+
+`csasdown` .font90[v.0.0.10.9000] 
+[`r gh()`](https://github.com/pbs-assess/csasdown) 
+[`r rfa("desktop")`](https://www.dropbox.com/s/7m23mh3yfhk5ah8/csasdown-slides.pdf?dl=1)
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/part5/csasdown_begins.png")
+```
+
+Developed by Sean Anderson 
+[`r rfa("envelope")`](mailto:sean.anderson@dfo-mpo.gc.ca) 
+[`r rfa("globe-americas")`](https://seananderson.ca/) 
+
+> Reproducible CSAS Reports with R Markdown
+
+--
+
+> csasdown is an R package that facilitates generating Canadian Science Advisory Secretariat (CSAS) documents in PDF or Word format using R Markdown and bookdown.
+
+--
+
+> csasdown gratefully builds on the work of many others including bookdown, thesisdown, and csas-style by Yihui Xie, Chester Ismay, Nick Solomon, Ben Marwick, Chris Grandin, Andrew Edwards, Matthew Grinnel
+
+
+---
+# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
+
+## Install the package 
+
+```{r eval = FALSE}
+install.packages("remotes")
+remotes::install_github("pbs-assess/csasdown")
+```
+
+---
+# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
+
+## Create a draft
+
+There are 3 types of documents available 
+
+- Research Document: `csasdown::draft("resdoc")`
+- Technical Report: `csasdown::draft("techreport")`
+- Science Response: `csasdown::draft("sr")`
+
+`r nf()` Each draft contains valuable information included by the authors. Create the drafts and consult the documents!
+
+--
+
+```{r eval = FALSE}
+csasdown::draft("techreport")
+```
+
+---
+# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
+
+## Create a draft
+
+.pull-left[
+```{r echo=FALSE, out.width="50%"}
+knitr::include_graphics("img/part5/resdoc_draft1.png")
+```
+]
+
+.pull-right[
+- Structure of the resulting document
+]
+
+---
+# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
+
+## `index.Rmd`
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/part5/resdoc_draft2.png")
+```
+
+- Main document for the report 
+- Edit authors, title, abstract, affiliations, etc
+
+---
+# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
+
+## Chapters
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/part5/resdoc_draft3.png")
+```
+
+- One document, or partial document, per chapter
+- Begin chapter with main title formatting `# Title`
+- Add text, figures, tables, etc
+
+.font80[`r tr()` You do not have to follow this logic, as long as the documents are well referenced in `_bookdown.yml` (next slide)]
+
+
+---
+# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
+
+## `bookdown.yml`
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/part5/resdoc_draft4.png")
+```
+
+- Specifies which partial documents and the order in which the documents are included in the final report
+
+---
+# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
+
+## Render the CSAS document 
+
+```{r eval = FALSE}
+bookdown::render_book("index.Rmd")
+```
+
+---
+# `r lc()` Let's do this
+
+
+---
+
+class: inverse, center, middle
+
+# Collaborating on CSAS reports
+
+![:custom_hr]()
+
+## .font400[`r gh()`] [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: top;margin:10px" width="110px"></img>](https://github.com/pbs-assess/csasdown)
 
 
 ---
@@ -380,7 +527,7 @@ knitr::include_graphics("img/part5/pr8.png")
 ]
 
 .pull-right[
-```{r echo=FALSE, out.width="70%"}
+```{r echo=FALSE, out.width="60%"}
 knitr::include_graphics("img/part5/pr9.png")
 ```
 ]
@@ -390,15 +537,80 @@ knitr::include_graphics("img/part5/pr9.png")
 
 ## Review process
 
-.pull-left[
-`r nf()` You can assign reviewer(s) to your pull request while you are creating the pull request, or after it's been created
-]
+- Go to the new pull request in the *Pull request* tab
 
-.pull-right[
-```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("img/part5/pr10.png")
+```{r echo=FALSE, out.width="80%"}
+knitr::include_graphics("img/part5/pr-rev1.png")
 ```
-]
+
+---
+# Pull requests 
+
+## Review process
+
+- Go to *Files changed* to visualize proposed changes in the pull request
+
+```{r echo=FALSE, out.width="80%"}
+knitr::include_graphics("img/part5/pr-rev2.png")
+```
+
+---
+# Pull requests 
+
+## Review process
+
+- Review changes, add comments, commit changes of your own
+
+```{r echo=FALSE, out.width="80%"}
+knitr::include_graphics("img/part5/pr-rev2.png")
+```
+
+---
+# Pull requests 
+
+## Review process
+
+- Click *Review changes* and add a general comment describing your feedback
+
+```{r echo=FALSE, out.width="80%"}
+knitr::include_graphics("img/part5/pr-rev3.png")
+```
+
+---
+# Pull requests 
+
+## Review process
+
+- You can comment, approve or request improvements
+
+```{r echo=FALSE, out.width="80%"}
+knitr::include_graphics("img/part5/pr-rev4.png")
+```
+
+---
+# Pull requests 
+
+## Review process
+
+- When done, click *submit review*
+
+```{r echo=FALSE, out.width="80%"}
+knitr::include_graphics("img/part5/pr-rev5.png")
+```
+
+
+---
+# Pull requests 
+
+## Review process 
+
+- Once completed, merge and close pull request
+
+```{r echo=FALSE, out.width="80%"}
+knitr::include_graphics("img/part5/pr-rev6.png")
+```
+
+.font80[`r nf()` Can be an interative process, think peer-review!]
 
 ---
 # `r lc()` Let's do this
@@ -410,174 +622,3 @@ knitr::include_graphics("img/part5/pr10.png")
 ## Create a pull request
 
 ## Asign pull request
-
-
----
-
-class: inverse, center, middle
-
-# Creating CSAS reports: csasdown
-
-![:custom_hr]()
-
-[<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="150px"></img>](https://github.com/pbs-assess/csasdown)
-
-
----
-# `r bk()` The `down` universe
-
-- [`bookdown`](https://bookdown.org/): Write a notebook
-- ***[`csasdown`](https://github.com/pbs-assess/csasdown): Write a CSAS document***
-- [`thesisdown`](https://github.com/ismayc/thesisdown): Write a thesis
-- [`rticles`](https://github.com/rstudio/rticles): Write a scientific article
-- [`posterdown`](https://github.com/brentthorne/posterdown): Create a poster
-- [`xaringan`](https://github.com/yihui/xaringan): Create nice presentation
-- [`vitae`](https://github.com/mitchelloharawild/vitae): Build a CV
-- [`blogdown`](https://bookdown.org/yihui/blogdown/): Generate a blog
-- [`pkgdown`](https://pkgdown.r-lib.org/): Generate R package documentation
-
----
-# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
-
-
-`csasdown` .font90[v.0.0.10.9000] 
-[`r gh()`](https://github.com/pbs-assess/csasdown) 
-[`r rfa("desktop")`](https://www.dropbox.com/s/7m23mh3yfhk5ah8/csasdown-slides.pdf?dl=1)
-
-```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("img/part5/csasdown_begins.png")
-```
-
-Developed by Sean Anderson 
-[`r rfa("envelope")`](mailto:sean.anderson@dfo-mpo.gc.ca) 
-[`r rfa("globe-americas")`](https://seananderson.ca/) 
-
-> Reproducible CSAS Reports with R Markdown
-
---
-
-> csasdown is an R package that facilitates generating Canadian Science Advisory Secretariat (CSAS) documents in PDF or Word format using R Markdown and bookdown.
-
---
-
-> csasdown gratefully builds on the work of many others including bookdown, thesisdown, and csas-style by Yihui Xie, Chester Ismay, Nick Solomon, Ben Marwick, Chris Grandin, Andrew Edwards, Matthew Grinnel
-
-
-
----
-# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
-
-## What it does 
-
----
-# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
-
-## Install the package 
-
-```{r eval = FALSE}
-install.packages("remotes")
-remotes::install_github("pbs-assess/csasdown")
-```
-
----
-# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
-
-## Create a draft
-
-There are 3 types of documents available 
-
-- Research Document: `csasdown::draft("resdoc")`
-- Technical Report: `csasdown::draft("techreport")`
-- Science Response: `csasdown::draft("sr")`
-
-`r nf()` Each draft contains valuable information included by the authors. Create the drafts and consult the documents!
-
---
-
-```{r eval = FALSE}
-csasdown::draft("techreport")
-```
-
----
-# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
-
-## Create a draft
-
-.pull-left[
-```{r echo=FALSE, out.width="50%"}
-knitr::include_graphics("img/part5/resdoc_draft1.png")
-```
-]
-
-.pull-right[
-- Structure of the document
-]
-
----
-# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
-
-## `index.Rmd`
-
-```{r echo=FALSE, out.width="90%"}
-knitr::include_graphics("img/part5/resdoc_draft2.png")
-```
-
-- Main document for the report 
-- Edit authors, title, abstract, affiliations, etc
-
----
-# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
-
-## Chapters
-
-```{r echo=FALSE, out.width="90%"}
-knitr::include_graphics("img/part5/resdoc_draft3.png")
-```
-
-- One document, or partial document, per chapter
-- Begin chapter with main title formatting `# Title`
-- Add text, figures, tables, etc
-
-.font80[`r tr()` You do not have to follow this logic, as long as the documents are well referenced in `_bookdown.yml` (next slide)]
-
-
----
-# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
-
-## `bookdown.yml`
-
-```{r echo=FALSE, out.width="90%"}
-knitr::include_graphics("img/part5/resdoc_draft4.png")
-```
-
-- Specifies which partial documents and the order in which the documents are included in the final report
-
----
-# [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: middle;margin:10px" width="50px"></img>](https://github.com/pbs-assess/csasdown) csasdown
-
-## Render the CSAS document 
-
-```{r eval = FALSE}
-bookdown::render_book("index.Rmd")
-```
-
----
-# `r lc()` Let's do this
-
-
----
-
-class: inverse, center, middle
-
-# Collaborating on CSAS reports
-
-![:custom_hr]()
-
-## .font400[`r gh()`] [<img src="https://github.com/pbs-assess/csasdown/raw/master/man/figures/csasdown-logo.png" style="vertical-align: top;margin:10px" width="110px"></img>](https://github.com/pbs-assess/csasdown)
-
-
----
-# `r lc()` Let's do this
-
-
-
