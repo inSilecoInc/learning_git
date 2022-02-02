@@ -8,6 +8,7 @@ Authors@R: c(
 Description: A template for our workshop presentations.
 Imports:
   iseWorkshops,
+  palmerpenguins,
   rmarkdown,
   csasdown,
   gert
