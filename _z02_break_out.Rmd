@@ -1,6 +1,5 @@
 ---
-title: "Breakout session 2"
-subtitle: "R Markdown"
+title: "Module 2"
 output:
   xaringan::moon_reader:
     css: [default, rd.css, rd-font.css, "hygge"]
@@ -13,20 +12,20 @@ output:
 ---
 
 
-```{r include = FALSE, purl = FALSE}
+# Let's practice - Module 2
+
+```{r setup_zz2, include = FALSE}
 source("_setup.R")
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #37abc8\"></i>",
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+xaringanExtra::use_scribble()
 ```
-
-<!-- rmarkdown::render("_07_rmarkdown_exercise.Rmd") -->
-
----
-
-class: inverse, center, middle
-
-# Exercise
-
-![:custom_hr]()
-
+<!-- rmarkdown::render("_z02_break_out.Rmd") -->
 
 
 

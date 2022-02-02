@@ -132,7 +132,7 @@ class: inverse, center, middle
 
 ![:custom_hr]()
 
-## R Markdown
+## GitHub repos & R Markdown
 
 ## `r rfa("html5")` [Click here to view the slides.](_04_rmarkdown.html)
 
@@ -146,9 +146,9 @@ class: inverse, center, middle
 
 ![:custom_hr]()
 
-## `bookdown` & `csasdown`
+## Pull requests & `csasdown`
 
-## Coming soon...
+## `r rfa("html5")` [Click here to view the slides.](_05_csas.html)
 
 
 ---
@@ -161,6 +161,6 @@ class: inverse, center, middle
 
 ## Module 1 `r rfa("html5")` [Click here to view the slides.](_z01_break_out.html)
 
-## Module 2 `r rfa("html5")`  Coming soon...
+## Module 2 `r rfa("html5")` [Click here to view the slides.](_z02_break_out.html)
 
-## Module 3 `r rfa("html5")` Coming soon...
+## Module 3 `r rfa("html5")` [Click here to view the slides.](_z03_break_out.html)
