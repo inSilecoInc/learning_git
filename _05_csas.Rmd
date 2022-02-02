@@ -158,7 +158,14 @@ There are 3 types of documents available
 - Technical Report: `csasdown::draft("techreport")`
 - Science Response: `csasdown::draft("sr")`
 
-`r nf()` Each draft contains valuable information included by the authors. Create the drafts and consult the documents!
+--
+
+.font90[`r nf()` By default, the draft files are added in the current root folder. You can use the argument `create_dir = TRUE` for the draft to be created in a folder entitled `index/`]
+
+--
+
+.font90[`r nf()` Each draft contains valuable information included by the authors. Create the drafts and consult the documents!]
+
 
 --
 
