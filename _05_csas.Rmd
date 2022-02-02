@@ -29,9 +29,6 @@ xaringanExtra::use_scribble()
 # Working collaboratively with GitHub `r gh()`
 
 
-# Working collaboratively with GitHub `r gh()`
-
-
 ---
 # Prerequisites
 
@@ -86,6 +83,9 @@ tinytex::install_tinytex()
 ```
 ]
 
+# Working collaboratively with GitHub `r gh()`
+
+
 ---
 
 class: inverse, center, middle
@@ -105,7 +105,7 @@ class: inverse, center, middle
 - [`thesisdown`](https://github.com/ismayc/thesisdown): Write a thesis
 - [`rticles`](https://github.com/rstudio/rticles): Write a scientific article
 - [`posterdown`](https://github.com/brentthorne/posterdown): Create a poster
-- [`xaringan`](https://github.com/yihui/xaringan): Create nice presentation
+- [`xaringan`](https://github.com/yihui/xaringan): Create nice presentation (e.g. this presentation)
 - [`vitae`](https://github.com/mitchelloharawild/vitae): Build a CV
 - [`blogdown`](https://bookdown.org/yihui/blogdown/): Generate a blog
 - [`pkgdown`](https://pkgdown.r-lib.org/): Generate R package documentation
