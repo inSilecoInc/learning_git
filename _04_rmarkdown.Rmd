@@ -246,9 +246,9 @@ $ git clone <repo>
 ---
 # `r lc()` Let's do this
 
-## Clone a repository 
-
 ## Fork a repository
+
+## Clone a repository 
 
 ## Add a collaborator
 
