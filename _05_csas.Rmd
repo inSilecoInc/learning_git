@@ -235,10 +235,10 @@ knitr::include_graphics("img/part5/resdoc_draft4.png")
 ```{r eval = FALSE}
 bookdown::render_book("index.Rmd")
 ```
-
+<!-- 
 ---
 # `r lc()` Let's do this
-
+ -->
 
 ---
 
@@ -416,9 +416,7 @@ class: inverse, center, middle
 
 
 ---
-# Pull requests 
-
-## Creating pull requests
+# Creating pull requests
 
 - Navigate to repo on `r gh()`
 - Click on *Pull request*
@@ -428,9 +426,7 @@ knitr::include_graphics("img/part5/pr1.png")
 ```
 
 ---
-# Pull requests 
-
-## Creating pull requests
+# Creating pull requests
 
 - Click on *New pull request*
 
@@ -439,9 +435,7 @@ knitr::include_graphics("img/part5/pr2.png")
 ```
 
 ---
-# Pull requests 
-
-## Creating pull requests
+# Creating pull requests
 
 ***From a branch:***
 
@@ -456,9 +450,7 @@ knitr::include_graphics("img/part5/pr3.png")
 ```
 
 ---
-# Pull requests 
-
-## Creating pull requests
+# Creating pull requests
 
 ***From a Fork:***
 
@@ -481,9 +473,7 @@ knitr::include_graphics("img/part5/pr4.png")
 
 
 ---
-# Pull requests 
-
-## Creating pull requests
+# Creating pull requests
 
 - Click on *Create pull request*
 
@@ -492,9 +482,7 @@ knitr::include_graphics("img/part5/pr5.png")
 ```
 
 ---
-# Pull requests 
-
-## Creating pull requests
+# Creating pull requests
 
 - Write your pull request description
 
@@ -506,9 +494,7 @@ knitr::include_graphics("img/part5/pr6.png")
 - .font80[`r nf()` [How to write the perfect pull request](https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/)]
 
 ---
-# Pull requests 
-
-## Creating pull requests
+# Creating pull requests
 
 - Click on *Create pull request* 
 
@@ -517,9 +503,7 @@ knitr::include_graphics("img/part5/pr7.png")
 ```
 
 ---
-# Pull requests 
-
-## Creating pull requests
+# Creating pull requests
 
 And you're done! 
 
@@ -528,9 +512,7 @@ knitr::include_graphics("img/part5/pr8.png")
 ```
 
 ---
-# Pull requests 
-
-## Assigning pull requests
+# Assigning pull requests
 
 .pull-left[
 `r nf()` You can assign reviewer(s) to your pull request while you are creating the pull request, or after it's been created
@@ -543,9 +525,18 @@ knitr::include_graphics("img/part5/pr9.png")
 ]
 
 ---
-# Pull requests 
+# `r lc()` Let's do this
 
-## Review process
+## Create a branch 
+
+## Make a change 
+
+## Create a pull request
+
+## Assign pull request
+
+---
+# Reviewing pull requests
 
 - Go to the new pull request in the *Pull request* tab
 
@@ -554,9 +545,7 @@ knitr::include_graphics("img/part5/pr-rev1.png")
 ```
 
 ---
-# Pull requests 
-
-## Review process
+# Reviewing pull requests
 
 - Go to *Files changed* to visualize proposed changes in the pull request
 
@@ -565,9 +554,7 @@ knitr::include_graphics("img/part5/pr-rev2.png")
 ```
 
 ---
-# Pull requests 
-
-## Review process
+# Reviewing pull requests
 
 - Review changes, add comments, commit changes of your own
 
@@ -576,9 +563,7 @@ knitr::include_graphics("img/part5/pr-rev2.png")
 ```
 
 ---
-# Pull requests 
-
-## Review process
+# Reviewing pull requests
 
 - Click *Review changes* and add a general comment describing your feedback
 
@@ -587,9 +572,7 @@ knitr::include_graphics("img/part5/pr-rev3.png")
 ```
 
 ---
-# Pull requests 
-
-## Review process
+# Reviewing pull requests
 
 - You can comment, approve or request improvements
 
@@ -598,9 +581,7 @@ knitr::include_graphics("img/part5/pr-rev4.png")
 ```
 
 ---
-# Pull requests 
-
-## Review process
+# Reviewing pull requests
 
 - When done, click *submit review*
 
@@ -610,9 +591,7 @@ knitr::include_graphics("img/part5/pr-rev5.png")
 
 
 ---
-# Pull requests 
-
-## Review process 
+# Reviewing pull requests
 
 - Once completed, merge and close pull request
 
@@ -625,10 +604,4 @@ knitr::include_graphics("img/part5/pr-rev6.png")
 ---
 # `r lc()` Let's do this
 
-## Create a branch 
-
-## Make a change 
-
-## Create a pull request
-
-## Asign pull request
+## Review & merge pull request 
