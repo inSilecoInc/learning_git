@@ -235,10 +235,6 @@ knitr::include_graphics("img/part5/resdoc_draft4.png")
 ```{r eval = FALSE}
 bookdown::render_book("index.Rmd")
 ```
-<!-- 
----
-# `r lc()` Let's do this
- -->
 
 ---
 
